@@ -7,6 +7,7 @@ public class SurfaceEntity : MonoBehaviour {
 	public Planet planet { get; set; }
 
 	public float hoverHeight = 0;
+	public bool faceVelocity = true;
 
 	public Rigidbody body { get; private set; }
 
@@ -26,8 +27,8 @@ public class SurfaceEntity : MonoBehaviour {
 			// make sure distance is correct
 			pos = pos.normalized * (planet.radius + hoverHeight);
 			transform.position = planet.transform.position + pos;
-			if (velocity.magnitude > 0) {
-				transform.up = pos;
+			if (faceVelocity && velocity.magnitude > 0) {
+				transform.LookAt(transform.position + velocity, pos);
 			}
 		}
 	}

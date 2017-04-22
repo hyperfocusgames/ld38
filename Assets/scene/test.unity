@@ -395,11 +395,11 @@ GameObject:
   m_Component:
   - component: {fileID: 1963853081}
   - component: {fileID: 1963853086}
-  - component: {fileID: 1963853085}
   - component: {fileID: 1963853084}
   - component: {fileID: 1963853082}
   - component: {fileID: 1963853087}
   - component: {fileID: 1963853083}
+  - component: {fileID: 1963853085}
   m_Layer: 0
   m_Name: player
   m_TagString: Untagged
@@ -431,7 +431,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 24775163dbe68644f9574cccfaddc7cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hoverHeight: 0.1
+  hoverHeight: 0.2
+  faceVelocity: 1
 --- !u!54 &1963853083
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -479,8 +480,8 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!65 &1963853085
-BoxCollider:
+--- !u!135 &1963853085
+SphereCollider:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
@@ -489,7 +490,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
+  m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!33 &1963853086
 MeshFilter:
