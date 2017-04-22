@@ -2,11 +2,11 @@ using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 
+[RequireComponent(typeof(SurfaceEntity), typeof(ShipData))]
 public class PlayerController : MonoBehaviour {
 
 	SurfaceEntity entity;
 	private ShipData ship;
-	public float moveForce = 100;
 
 	void Awake() {
 		entity = GetComponent<SurfaceEntity>();
@@ -16,8 +16,8 @@ public class PlayerController : MonoBehaviour {
 	void FixedUpdate() {
 		Vector3 up = CameraRig.instance.transform.up;
 		Vector3 right = CameraRig.instance.transform.right;
-		entity.body.AddForce(up * Input.GetAxisRaw("Vertical") * moveForce);
-		entity.body.AddForce(right * Input.GetAxisRaw("Horizontal") * moveForce);
+		entity.body.AddForce(up * Input.GetAxisRaw("Vertical") * ship.MoveSpeed);
+		entity.body.AddForce(right * Input.GetAxisRaw("Horizontal") * ship.MoveSpeed);
 		
 		if(Input.GetAxisRaw("Fire1") > 0)
 		{

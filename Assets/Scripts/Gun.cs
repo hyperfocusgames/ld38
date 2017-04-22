@@ -8,6 +8,15 @@ public class Gun : MonoBehaviour
 	{
 		GameObject go = Instantiate(projectile, transform.position, Quaternion.Euler(transform.forward));
 		Damager dam = go.AddComponent<Damager>();
+		SurfaceEntity entity = go.AddComponent<SurfaceEntity>();
+		entity.hoverHeight = GetComponentInParent<SurfaceEntity>().hoverHeight;
+
+		// ***** None of these work *****
+		entity.body.AddForce(speed * transform.up, ForceMode.Impulse);
+		entity.body.AddForce(speed * transform.forward, ForceMode.Impulse);
+		entity.body.AddForce(speed * transform.right, ForceMode.Impulse);
+		// ******************************
+
 		dam.damage = damage;
 		dam.damPlayer = damPlayer;
 		dam.damEnemy = damEnemy;
