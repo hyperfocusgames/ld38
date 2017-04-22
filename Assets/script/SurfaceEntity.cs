@@ -5,35 +5,28 @@ using System.Collections.Generic;
 public class SurfaceEntity : MonoBehaviour {
 
 	public Planet planet { get; set; }
+	public Vector3 velocity { get; set; } 
 
 	public float hoverHeight = 0;
-	public Rigidbody body { get; private set; }
-	public Vector3 normal { get { return transform.localPosition.normalized; } }
 
 	void Awake() {
 		planet = FindObjectOfType<Planet>();
-		body = GetComponent<Rigidbody>();
+		velocity = Vector3.up * 5;
 	}
 
 	void Update() {
 		if (planet != null) {
-			AlignPosition();
+			Vector3 pos = transform.position - planet.transform.position;
+			// make sure velocity is tangent to planet surface
+			float speed = velocity.magnitude;
+			velocity = Vector3.ProjectOnPlane(velocity, pos).normalized * speed;
+			// apply velocity
+			Vector3 oldPos = pos;
+			pos += velocity * Time.deltaTime;
+			// make sure distance is correct
+			pos = pos.normalized * (planet.radius + hoverHeight);
+			transform.position = planet.transform.position + pos;
 		}
-	}
-
-	void AlignPosition() {
-
-
-		// try to rotate to maintain correct up normal
-			// Vector3 oldNormal = transform.up;
-			// float angleDelta = Vector3.Angle(oldNormal, normal);
-			// Vector3 axis = Vector3.Cross(oldNormal, normal);
-			// transform.Rotate(axis, angleDelta);
-		// maintain proper distance from planet surface
-		Vector3 position = transform.localPosition;
-		position = position.normalized * (planet.radius + hoverHeight);
-		transform.localPosition = position;
-		transform.up = normal;
 	}
 
 
