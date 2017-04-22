@@ -13,7 +13,8 @@ public class CameraRig : SingletonBehaviour<CameraRig> {
 
 	void Update() {
 		if (trackTarget != null) {
-			// transform.forward = - trackTarget.normal;
+			transform.position = trackTarget.planet.transform.position;
+			transform.LookAt(-trackTarget.transform.up, trackTarget.body.velocity);
 		}
 	}
 
