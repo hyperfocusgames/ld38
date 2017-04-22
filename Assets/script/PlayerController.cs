@@ -14,8 +14,8 @@ public class PlayerController : MonoBehaviour {
 	void FixedUpdate() {
 		Vector3 up = CameraRig.instance.transform.up;
 		Vector3 right = CameraRig.instance.transform.right;
-		// entity.body.AddForce(up * Input.GetAxisRaw("Vertical") * moveForce, ForceMode.Force);
-		// entity.body.AddForce(right * Input.GetAxisRaw("Horizontal") * moveForce, ForceMode.Force);
+		entity.body.AddForce(up * Input.GetAxisRaw("Vertical") * moveForce);
+		entity.body.AddForce(right * Input.GetAxisRaw("Horizontal") * moveForce);
 	}
 
 }
