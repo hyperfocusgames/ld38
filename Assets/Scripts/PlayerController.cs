@@ -11,6 +11,7 @@ public class PlayerController : MonoBehaviour {
 	void Awake() {
 		entity = GetComponent<SurfaceEntity>();
 		ship = GetComponent<ShipData>();
+		entity.body.velocity = transform.forward; // give it a tiny push to fix the camera shit (this is a game jam ok)
 	}
 
 	void FixedUpdate() {

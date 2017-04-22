@@ -28,7 +28,8 @@ public class SurfaceEntity : MonoBehaviour {
 			// make sure distance is correct
 			pos = pos.normalized * (planet.radius + hoverHeight);
 			transform.position = planet.transform.position + pos;
-			if (faceVelocity && velocity.magnitude > 0) {
+			if (faceVelocity) {
+				body.constraints = RigidbodyConstraints.FreezeRotation;
 				transform.LookAt(transform.position + velocity, pos);
 			}
 		}
