@@ -6,6 +6,11 @@ public class ROFUpgrade : Upgrade
 {
     public override void activate()
     {
-        PlayerData.player.rofUpgrade();
+        PlayerData.rofUpgrade();
+    }
+
+    public override string toString()
+    {
+        return "Upgrades your ship's rate of fire by " + PlayerData.ROFUpgradeAmount;
     }
 }

@@ -4,25 +4,35 @@ using UnityEngine;
 
 public static class UpgradesDeck
 {
-	public class UpgradeCard
-	{
-		Upgrade upgrade;	// Upgrade to be applied
-		int amount;			// Number of this upgrade in the deck (less than 0 is infinite)
+	public static int numUpgradesToDraw = 3;
 
-		public UpgradeCard(Upgrade u, int a)
-		{
-			upgrade = u;
-			amount = a;
-		}
-	}
-
-	static List<UpgradeCard> deck;
+	private static List<Upgrade> deck;
 
 	static UpgradesDeck()
 	{
-		deck.Add(new UpgradeCard(new GunUpgrade(), 1));
-		deck.Add(new UpgradeCard(new ROFUpgrade(), -1));
-		deck.Add(new UpgradeCard(new SpeedUpgrade(), -1));
-		deck.Add(new UpgradeCard(new DamUpgrade(), -1));
+		deck = new List<Upgrade>();
+
+		deck.Add(new GunUpgrade());
+		deck.Add(new ROFUpgrade());
+		deck.Add(new SpeedUpgrade());
+		deck.Add(new DamUpgrade());
+		deck.Add(new HPUpgrade());
+		deck.Add(new HealUpgrade());
+	}
+
+	public static Upgrade draw()
+	{
+		int r = Random.Range(0, deck.Count);
+		Upgrade u = deck[r];
+		if(u.limited)
+		{
+			deck.RemoveAt(r);
+		}
+		return u;
+	}
+
+	public static void insert(Upgrade u)
+	{
+		deck.Add(u);
 	}
 }

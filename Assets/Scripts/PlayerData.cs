@@ -2,23 +2,25 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class PlayerData : ShipData
 {
 	public static PlayerData player;
 
-	public float moveSpeedUpgradeAmount = 10f;
-	public int hpUpgradeAmount = 1;
-	public float rofUpgradeAmount = 1;
-	public int damUpgradeAmount = 1;
-	private int numMoveSpeedUpgrades = 1;
-	private int NumHPUpgrades = 1;
-	private int numROFUpgrades = 1;
-	private int numDamUpgrades = 1;
+	public static float moveSpeedUpgradeAmount = 10f;
+    private static int hpUpgradeAmount = 1;
+    public static float rofUpgradeAmount = 1;
+	public static int damUpgradeAmount = 1;
+	private static int numMoveSpeedUpgrades = 1;
+	private static int NumHPUpgrades = 1;
+	private static int numROFUpgrades = 1;
+	private static int numDamUpgrades = 1;
 	public Gun[] upgradeGuns;
 
 	new protected void Awake()
 	{
 		base.Awake();
+		DontDestroyOnLoad(this);
 
 		player = this;
 
@@ -35,7 +37,7 @@ public class PlayerData : ShipData
 
 	new protected int MaxHP
 	{
-		get{ return base.MaxHP + (hpUpgradeAmount * NumHPUpgrades); }
+		get{ return base.MaxHP + (HpUpgradeAmount * NumHPUpgrades); }
 	}
 
 	new protected float RateOfFire
@@ -48,17 +50,33 @@ public class PlayerData : ShipData
 		get{ return base.Damage + (damUpgradeAmount * numDamUpgrades); }
 	}
 
-	public void rofUpgrade()
-	{
-		numROFUpgrades++;
-	}
+    public static float MoveSpeedUpgradeAmount { get { return moveSpeedUpgradeAmount; } }
+    public static int HpUpgradeAmount { get { return hpUpgradeAmount; } }
+    public static int ROFUpgradeAmount { get { return hpUpgradeAmount; } }
+    public static int DamUpgradeAmount { get { return hpUpgradeAmount; } }
 
-	public void damUpgrade()
+
+    public static void moveSpeedUpgrade()
 	{
 		numDamUpgrades++;
 	}
 
-	public void moveSpeedUpgrade()
+	public static void hpUpgrade()
+	{
+		NumHPUpgrades++;
+	}
+
+	public void heal()
+	{
+		hp = MaxHP;
+	}
+
+	public static void rofUpgrade()
+	{
+		numROFUpgrades++;
+	}
+
+	public static void damUpgrade()
 	{
 		numDamUpgrades++;
 	}

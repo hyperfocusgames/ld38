@@ -26,6 +26,7 @@ GameObject:
   - component: {fileID: 54670136261175894}
   - component: {fileID: 135083764337364406}
   - component: {fileID: 114093729546483744}
+  - component: {fileID: 114946881611805356}
   m_Layer: 0
   m_Name: player
   m_TagString: Untagged
@@ -111,13 +112,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d176fc1457ab3247a2cd04ff108e5fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  moveSpeed: 100
+  baseHP: 1
+  hp: 0
   projectile: {fileID: 0}
-  rateOfFire: 0.5
-  projectileSpeed: 1
-  damage: 1
   damPlayer: 0
   damEnemy: 1
-  guns: []
 --- !u!114 &114547524766803996
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -142,7 +142,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be41864d2888afb4e800827028f43255, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveForce: 25
+--- !u!114 &114946881611805356
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1403725935028892}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 24775163dbe68644f9574cccfaddc7cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hoverHeight: 0
+  faceVelocity: 1
 --- !u!135 &135083764337364406
 SphereCollider:
   m_ObjectHideFlags: 1

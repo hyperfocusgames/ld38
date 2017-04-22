@@ -6,23 +6,21 @@ using System.Collections.Generic;
 public class PlayerController : MonoBehaviour {
 
 	SurfaceEntity entity;
-	private ShipData ship;
 
 	void Awake() {
 		entity = GetComponent<SurfaceEntity>();
-		ship = GetComponent<ShipData>();
 		entity.body.velocity = transform.forward; // give it a tiny push to fix the camera shit (this is a game jam ok)
 	}
 
 	void FixedUpdate() {
 		Vector3 up = CameraRig.instance.transform.up;
 		Vector3 right = CameraRig.instance.transform.right;
-		entity.body.AddForce(up * Input.GetAxisRaw("Vertical") * ship.MoveSpeed);
-		entity.body.AddForce(right * Input.GetAxisRaw("Horizontal") * ship.MoveSpeed);
+		entity.body.AddForce(up * Input.GetAxisRaw("Vertical") * PlayerData.player.MoveSpeed);
+		entity.body.AddForce(right * Input.GetAxisRaw("Horizontal") * PlayerData.player.MoveSpeed);
 		
 		if(Input.GetAxisRaw("Fire1") > 0)
 		{
-			ship.shoot();
+			PlayerData.player.shoot();
 		}
 	}
 

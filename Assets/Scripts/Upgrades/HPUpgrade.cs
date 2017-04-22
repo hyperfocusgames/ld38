@@ -2,15 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DamUpgrade : Upgrade
+public class HPUpgrade : Upgrade
 {
     public override void activate()
     {
-        PlayerData.damUpgrade();
+        PlayerData.hpUpgrade();
     }
 
     public override string toString()
     {
-        return "Upgrades your ship's damage by " + PlayerData.DamUpgradeAmount;
+        return "Upgrades your ship's HP by " + PlayerData.HpUpgradeAmount;
     }
 }

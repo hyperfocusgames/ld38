@@ -2,15 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DamUpgrade : Upgrade
+public class HealUpgrade : Upgrade
 {
     public override void activate()
     {
-        PlayerData.damUpgrade();
+        PlayerData.player.heal();
     }
 
     public override string toString()
     {
-        return "Upgrades your ship's damage by " + PlayerData.DamUpgradeAmount;
+        return "Heals your ship to full health";
     }
 }

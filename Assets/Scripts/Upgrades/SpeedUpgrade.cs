@@ -6,6 +6,11 @@ public class SpeedUpgrade : Upgrade
 {
     public override void activate()
     {
-        PlayerData.player.moveSpeedUpgrade();
+        PlayerData.moveSpeedUpgrade();
+    }
+
+    public override string toString()
+    {
+        return "Upgrades your ship's speed by " + PlayerData.MoveSpeedUpgradeAmount;
     }
 }
