@@ -132,9 +132,10 @@ Transform:
   m_GameObject: {fileID: 380942371}
   m_LocalRotation: {x: 0.150784, y: -0.5929067, z: 0.06766424, w: 0.7881291}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 10.77}
   m_Children:
   - {fileID: 654643007}
+  - {fileID: 1263246078}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 18.537, y: -74.621, z: -4.3640003}
@@ -233,7 +234,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 654643002}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -5}
+  m_LocalPosition: {x: 0, y: 0, z: -1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 380942372}
@@ -265,7 +266,7 @@ Transform:
   m_GameObject: {fileID: 765685204}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 3.12, y: 3.12, z: 3.12}
+  m_LocalScale: {x: 6, y: 6, z: 6}
   m_Children: []
   m_Father: {fileID: 2031265286}
   m_RootOrder: 0
@@ -379,11 +380,11 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1263246076}
-  m_LocalRotation: {x: 0.40821788, y: -0.23456968, z: 0.10938163, w: 0.8754261}
-  m_LocalPosition: {x: 0, y: 3, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: 0.23870926, y: 0.32304606, z: -0.17969395, w: 0.8979807}
+  m_LocalPosition: {x: -0.21643609, y: 2.8361144, z: -0.088554785}
+  m_LocalScale: {x: 0.59766775, y: 0.9113468, z: 0.5838361}
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 380942372}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
 --- !u!1001 &1809555779
@@ -423,7 +424,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4794133592358680, guid: 8391452bd85111e49b4a135f498ee8a4, type: 2}
       propertyPath: m_RootOrder
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 114093729546483744, guid: 8391452bd85111e49b4a135f498ee8a4,
         type: 2}
@@ -468,7 +469,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   surfaceModel: {fileID: 765685205}
-  radius: 1.56
+  radius: 3
 --- !u!4 &2031265286
 Transform:
   m_ObjectHideFlags: 0
@@ -481,7 +482,7 @@ Transform:
   m_Children:
   - {fileID: 765685205}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2031265287
 MonoBehaviour:
@@ -496,4 +497,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mountainPrefab: {fileID: 114178843488461484, guid: 6d3a5303a148d774c9aaa33cb6813ac9,
     type: 2}
-  mountainCount: 20
+  mountainCount: 15
