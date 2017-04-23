@@ -8,6 +8,7 @@ public class Exploder : Damager
 
 	private void explode()
 	{
+		Debug.Log("Explode");
 		Collider[] cols = Physics.OverlapSphere(transform.position, radius);
 		foreach(Collider col in cols)
 		{
@@ -27,7 +28,16 @@ public class Exploder : Damager
 	void OnTriggerEnter(Collider col)
 	{
 		if((damPlayer && col.tag == "Player") ||
-		 	(damEnemy && col.tag == "Enemy"))
+		 	(damEnemy && col.tag == "Enemy") ||
+			 (col.tag != "Player" && col.tag != "Enemy"))
+		{
+			explode();
+		}
+	}
+	void OnCollisionEnter(Collision col)
+	{
+		if((damPlayer && col.collider.tag == "Player") ||
+		 	(damEnemy && col.collider.tag == "Enemy"))
 		{
 			explode();
 		}

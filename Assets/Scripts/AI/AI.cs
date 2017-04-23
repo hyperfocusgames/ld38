@@ -32,7 +32,6 @@ public class AI : MonoBehaviour
 		else
 		{
 			Vector3 target = PlayerData.player.transform.position + (playerEntity.body.velocity * aimAheadTime);
-			//Debug.DrawLine(transform.position, target);
 
 			Vector3 toPlayer = target - transform.position;
 

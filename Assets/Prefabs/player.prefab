@@ -76,6 +76,9 @@ GameObject:
   - component: {fileID: 135523169282852246}
   - component: {fileID: 114801548547602276}
   - component: {fileID: 114163824593807186}
+  - component: {fileID: 114020355460723576}
+  - component: {fileID: 114027081497026204}
+  - component: {fileID: 114881502446669198}
   m_Layer: 0
   m_Name: player
   m_TagString: Player
@@ -223,6 +226,33 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 1
+--- !u!114 &114020355460723576
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1403725935028892}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c4831af31760d0b4ba8612c0aeea43fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stopDist: 4
+--- !u!114 &114027081497026204
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1403725935028892}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 24775163dbe68644f9574cccfaddc7cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hoverHeight: 0.5
+  faceVelocity: 1
+  accelerationRollFactor: 0
+  accelerationSmoothing: 5
 --- !u!114 &114117432562370720
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -305,7 +335,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 25
-  baseHP: 5
+  baseHP: 3
   hp: 0
   projectile: {fileID: 1436498337013374, guid: 61656262cae2da9438456400eed44a27, type: 2}
   rateOfFire: 0.5
@@ -314,6 +344,24 @@ MonoBehaviour:
   upgradeGuns:
   - {fileID: 114890913277137748}
   - {fileID: 114117432562370720}
+--- !u!114 &114881502446669198
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1403725935028892}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c0351b17189b88141aae46283c8a6be8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveSpeed: 15
+  baseHP: 1
+  hp: 0
+  projectile: {fileID: 1439116553215780, guid: 4e6b60191cac52949bf55c5a7354b5c1, type: 2}
+  rateOfFire: 0.5
+  damPlayer: 1
+  damEnemy: 0
 --- !u!114 &114890913277137748
 MonoBehaviour:
   m_ObjectHideFlags: 1
