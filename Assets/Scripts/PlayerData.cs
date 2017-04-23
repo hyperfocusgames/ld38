@@ -41,8 +41,6 @@ public class PlayerData : ShipData
 		}
 
 		base.Awake();
-
-		missileUpgrade();
 	}
 
 	void Update() {
