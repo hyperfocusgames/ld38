@@ -29,6 +29,7 @@ public class LevelManager : SingletonBehaviour<LevelManager> {
 			foreach (SurfaceEntity entity in FindObjectsOfType<SurfaceEntity>()) {
 				entity.planet = planet;
 			}
+			CameraRig.instance.cam.backgroundColor = planet.backgroundColor;
 		}
 		else {
 			GameManager.levelFinished();

@@ -8,7 +8,7 @@ public class CameraRig : SingletonBehaviour<CameraRig> {
 	public Camera cam { get; private set; }
 
 	void Awake() {
-		cam = GetComponent<Camera>();
+		cam = GetComponentInChildren<Camera>();
 	}
 
 	void Update() {

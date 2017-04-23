@@ -152,25 +152,6 @@ Prefab:
       propertyPath: trackTarget
       value: 
       objectReference: {fileID: 1963853082}
-    - target: {fileID: 4004496454427184, guid: abec7946d31a34f479d7ff6ffe4f09d3, type: 2}
-      propertyPath: m_LocalScale.z
-      value: 12
-      objectReference: {fileID: 0}
-    - target: {fileID: 20921475100715558, guid: abec7946d31a34f479d7ff6ffe4f09d3,
-        type: 2}
-      propertyPath: m_BackGroundColor.r
-      value: 0.1381249
-      objectReference: {fileID: 0}
-    - target: {fileID: 20921475100715558, guid: abec7946d31a34f479d7ff6ffe4f09d3,
-        type: 2}
-      propertyPath: m_BackGroundColor.g
-      value: 0.089046285
-      objectReference: {fileID: 0}
-    - target: {fileID: 20921475100715558, guid: abec7946d31a34f479d7ff6ffe4f09d3,
-        type: 2}
-      propertyPath: m_BackGroundColor.b
-      value: 0.19852942
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: abec7946d31a34f479d7ff6ffe4f09d3, type: 2}
   m_IsPrefabParent: 0
@@ -357,8 +338,7 @@ MonoBehaviour:
   planetPrefabs:
   - {fileID: 114448947987373628, guid: 5cd696eb640be264eb8542a7fe742f84, type: 2}
   - {fileID: 114448947987373628, guid: dd3bdb8cf8a9a394ab0f530cf29f97fb, type: 2}
-  minPlanetCount: 4
-  maxPlanetCount: 6
+  planetCount: 5
 --- !u!4 &2006968448
 Transform:
   m_ObjectHideFlags: 0

@@ -145,6 +145,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   surfaceModel: {fileID: 4080898546710430}
   radius: 5
+  backgroundColor: {r: 0.25048658, g: 0.47619602, b: 0.8308824, a: 1}
 --- !u!135 &135970715340878814
 SphereCollider:
   m_ObjectHideFlags: 1

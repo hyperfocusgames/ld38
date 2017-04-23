@@ -6,6 +6,7 @@ public class Planet : MonoBehaviour {
 
 	public Transform surfaceModel;
 	public float radius = 1;
+	public Color backgroundColor = Color.black;
 
 	void Awake() {
 	}
@@ -13,6 +14,9 @@ public class Planet : MonoBehaviour {
 	void OnValidate() {
 		if (surfaceModel) {
 			surfaceModel.localScale = Vector3.one * radius * 2;
+		}
+		if (CameraRig.instance) {
+			CameraRig.instance.cam.backgroundColor = backgroundColor;
 		}
 	}
 
