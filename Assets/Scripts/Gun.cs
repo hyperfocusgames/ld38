@@ -4,19 +4,24 @@ using UnityEngine;
 
 public class Gun : MonoBehaviour
 {
+	SurfaceEntity parentEntity;
+	void Awake()
+	{
+		parentEntity = GetComponentInParent<SurfaceEntity>();
+	}
+
 	public void activate(GameObject projectile, float speed, int damage, bool damPlayer, bool damEnemy)
 	{
-		GameObject go = Instantiate(projectile, transform.position, Quaternion.Euler(transform.forward));
-		
-		Damager dam = GetComponent<Damager>();
+		GameObject go = Instantiate(projectile, transform.position, transform.rotation);
+
+		Damager dam = go.GetComponent<Damager>();
 		dam.damage = damage;
 		dam.damPlayer = damPlayer;
 		dam.damEnemy = damEnemy;
 
-		SurfaceEntity entity = GetComponent<SurfaceEntity>();
-		entity.hoverHeight = GetComponentInParent<SurfaceEntity>().hoverHeight;
+		SurfaceEntity entity = go.GetComponent<SurfaceEntity>();
+		entity.hoverHeight = parentEntity.hoverHeight;
 
-		GetComponent<Projectile>().force = speed * transform.up;
-
+		go.GetComponent<Projectile>().speed = speed;
 	}
 }

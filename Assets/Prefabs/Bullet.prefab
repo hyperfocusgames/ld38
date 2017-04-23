@@ -23,6 +23,9 @@ GameObject:
   - component: {fileID: 135545669099019342}
   - component: {fileID: 23097673753659372}
   - component: {fileID: 54152451377681674}
+  - component: {fileID: 114607668635333258}
+  - component: {fileID: 114292189799118934}
+  - component: {fileID: 114755332137231890}
   m_Layer: 0
   m_Name: Bullet
   m_TagString: Untagged
@@ -97,6 +100,47 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 0
+--- !u!114 &114292189799118934
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1439116553215780}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 24775163dbe68644f9574cccfaddc7cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hoverHeight: 0
+  faceVelocity: 1
+  accelerationRollFactor: 1
+  accelerationSmoothing: 5
+--- !u!114 &114607668635333258
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1439116553215780}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7deb73ea3a1884141978e331018b4f49, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  force: {x: 0, y: 0, z: 0}
+--- !u!114 &114755332137231890
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1439116553215780}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af771162723581b4eaf2ebc7690a8d30, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 1
+  damPlayer: 1
+  damEnemy: 0
 --- !u!135 &135545669099019342
 SphereCollider:
   m_ObjectHideFlags: 1

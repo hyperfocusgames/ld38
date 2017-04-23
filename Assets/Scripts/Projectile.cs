@@ -4,16 +4,26 @@ using UnityEngine;
 
 public class Projectile : MonoBehaviour
 {
-	public Vector3 force;
+	private const float timeout = 1f;
+	private float startTime;
+	public float speed;
 	SurfaceEntity entity;
 
 	void Awake()
 	{
-		entity = gameObject.GetComponent<SurfaceEntity>();
+		entity = GetComponent<SurfaceEntity>();
+		startTime = Time.time;
 	}
 
 	void FixedUpdate()
 	{
-		entity.body.AddForce(force);
+		if(Time.time - startTime > timeout)
+		{
+			Destroy(gameObject);
+		}
+
+		entity.body.velocity = transform.forward * speed;
 	}
+
+
 }

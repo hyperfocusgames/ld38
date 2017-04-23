@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class ShipData : MonoBehaviour
 {
-    public float moveSpeed = 100f;             	// Force to be applied in movement
+    public float moveSpeed = 50f;             	// Force to be applied in movement
 	public int baseHP = 1;						// Starting HP
 	public int hp;								// Current HP
     public GameObject projectile;               // Projectile to fire
     private float rateOfFire = .5f;             // Base rate of fire (This is divided by the number of guns to get effective ROF)
-    private float projectileSpeed = 1f;         // Speed of projectile when fired
+    private float projectileSpeed = 10f;         // Speed of projectile when fired
     private int damage = 1;                     // Damage to be done by projectile
     public bool damPlayer = false;				// Should the player be damaged by this?
 	public bool damEnemy = true;				// Should enemies be damaged by this?
