@@ -12,9 +12,23 @@ public class PlanetGenerator : MonoBehaviour {
 	void Awake() {
 		planet = GetComponent<Planet>();
 		props = new List<TerrainProp>();
+		if (LevelManager.instance != null) {
+			EnsurePropSpawn(LevelManager.instance.warpGatePrefab);
+			EnsurePropSpawn(LevelManager.instance.playerSpawnPrefab);
+		}
 		foreach (PropScatter propScatter in propScatter) {
 			propScatter.PlaceClusters(this);
 		}
+	}
+
+	// try to spawn and place a prop, make sure it happens
+	T EnsurePropSpawn<T>(T prefab) where T : TerrainProp {
+			T prop;
+			do {
+				prop = Instantiate(prefab);
+				prop.name = prefab.name;
+			} while(!PlaceProp(prop, Random.onUnitSphere));
+			return prop;
 	}
 
 	// try to place a prop at a position on the planet (position in planetary local space)

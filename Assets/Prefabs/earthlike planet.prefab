@@ -54,7 +54,7 @@ Transform:
   m_GameObject: {fileID: 1670951566169252}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 10, y: 10, z: 10}
+  m_LocalScale: {x: 16, y: 16, z: 16}
   m_Children: []
   m_Father: {fileID: 4617393792644500}
   m_RootOrder: 0
@@ -132,6 +132,10 @@ MonoBehaviour:
     clusterCount: 10
     clusterSize: 25
     clusterRadius: 2
+  - prefab: {fileID: 114740645293154344, guid: af997a0b70e4468448d78b7376b40bc8, type: 2}
+    clusterCount: 5
+    clusterSize: 15
+    clusterRadius: 1.5
 --- !u!114 &114448947987373628
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -144,7 +148,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   surfaceModel: {fileID: 4080898546710430}
-  radius: 5
+  radius: 8
+  radiusVariance: 0
+  backgroundColor: {r: 0.25048658, g: 0.47619602, b: 0.8308824, a: 1}
 --- !u!135 &135970715340878814
 SphereCollider:
   m_ObjectHideFlags: 1

@@ -33,6 +33,10 @@ public static class GameManager
 		numEnemies++;
 	}
 
+	public static void planetFinished() {
+		
+	} 
+
 	public static void levelFinished()
 	{
 		SceneManager.LoadScene(upgradesScene);
