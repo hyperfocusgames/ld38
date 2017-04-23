@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Projectile : MonoBehaviour
 {
-	private const float timeout = 1f;
+	public float timeout = 2f;
 	private float startTime;
 	public float speed;
 	SurfaceEntity entity;
@@ -24,6 +24,5 @@ public class Projectile : MonoBehaviour
 
 		entity.body.velocity = transform.forward * speed;
 	}
-
 
 }

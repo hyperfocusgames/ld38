@@ -11,6 +11,6 @@ public class DamUpgrade : Upgrade
 
     public override string toString()
     {
-        return "Upgrades your ship's damage by " + PlayerData.DamUpgradeAmount;
+        return "<b>Damage Upgrade:<\b> Upgrades your ship's damage by " + PlayerData.DamUpgradeAmount;
     }
 }

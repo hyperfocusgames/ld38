@@ -13,11 +13,23 @@ public static class UpgradesDeck
 		deck = new List<Upgrade>();
 
 		deck.Add(new GunUpgrade());
+		deck.Add(new MissileUpgrade());
 		deck.Add(new ROFUpgrade());
 		deck.Add(new SpeedUpgrade());
 		deck.Add(new DamUpgrade());
 		deck.Add(new HPUpgrade());
 		deck.Add(new HealUpgrade());
+		deck.Add(new StunUpgrade());
+		deck.Add(new ShieldUpgrade());
+		// 8 Recharge time reductions - Reduces to minimum of 1 sec
+		deck.Add(new ShieldRechargeUpgrade());
+		deck.Add(new ShieldRechargeUpgrade());
+		deck.Add(new ShieldRechargeUpgrade());
+		deck.Add(new ShieldRechargeUpgrade());
+		deck.Add(new ShieldRechargeUpgrade());
+		deck.Add(new ShieldRechargeUpgrade());
+		deck.Add(new ShieldRechargeUpgrade());
+		deck.Add(new ShieldRechargeUpgrade());
 	}
 
 	public static Upgrade draw()
