@@ -2,6 +2,7 @@ using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 
+[RequireComponent(typeof(Rigidbody))]
 public class SurfaceEntity : MonoBehaviour {
 
 	public Planet planet { get; set; }

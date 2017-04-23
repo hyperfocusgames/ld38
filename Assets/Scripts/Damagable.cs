@@ -4,18 +4,22 @@ using UnityEngine;
 
 public class Damagable : MonoBehaviour
 {
-	public int hp = 1;
+	ShipData ship;
 
-	public void set(int val)
+	void Awake()
 	{
-		hp = val;
+		ship = GetComponent<ShipData>();
 	}
 
 	public void damage(int dam)
 	{
-		hp -= dam;
-		if(hp <= 0)
+		ship.hp -= dam;
+		if(ship.hp <= 0)
 		{
+			if(tag == "Enemy")
+			{
+				GameManager.killEnemy();
+			}
 			Destroy(gameObject);
 		}
 	}
