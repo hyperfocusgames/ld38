@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 114448947987373628}
   - component: {fileID: 114207947920328952}
   m_Layer: 0
-  m_Name: luna
+  m_Name: cheese
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -86,7 +86,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: a783b4b2d73588a4eb2586762a4a1ba2, type: 2}
+  - {fileID: 2100000, guid: 733980fbc6897354085ca2ca22f84d76, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -124,7 +124,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   propScatter:
-  - prefab: {fileID: 114250901012907408, guid: 8ba78c6895f98864696c0a9f44a047c7, type: 2}
+  - prefab: {fileID: 114250901012907408, guid: dcd66238893e5b542830836d495f5850, type: 2}
     spawnRate:
       serializedVersion: 2
       m_Curve:
