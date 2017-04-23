@@ -7,16 +7,12 @@ public class LevelManager : SingletonBehaviour<LevelManager> {
 	public WarpGate warpGatePrefab;
 	public Planet[] planetPrefabs;
 
-	public int minPlanetCount = 4;
-	public int maxPlanetCount = 6;
-
-	public int planetCount { get; private set; }
+	public int planetCount = 5;
 	public int planetNumber { get; private set; }
 
 	public Planet planet { get; private set; }
 
 	void Awake() {
-		planetCount = Random.Range(minPlanetCount, maxPlanetCount + 1);
 		planetNumber = 0;
 		NextPlanet();
 	}
