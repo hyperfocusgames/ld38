@@ -4,8 +4,7 @@ using UnityEngine;
 
 public class AI : MonoBehaviour
 {
-	protected const float aimAheadTime = .5f;
-
+	public float aimAheadTime = 1f;
 	public float stopDist = 3f;
 	public bool stunable = true;
 
@@ -14,44 +13,54 @@ public class AI : MonoBehaviour
 	protected ShipData ship;
 	protected Planet planet;
 
-	void Awake()
+	private void setup()
 	{
-		entity = GetComponent<SurfaceEntity>();
-		ship = GetComponent<ShipData>();
-		planet = GameObject.FindObjectOfType<Planet>();
+		if(entity == null)
+		{
+			entity = GetComponent<SurfaceEntity>();
+		}
+		if(ship == null)
+		{
+			ship = GetComponent<ShipData>();
+		}
+		if(planet == null)
+		{
+			planet = GameObject.FindObjectOfType<Planet>();
+		}
+		if(playerEntity == null && PlayerData.player != null)
+		{
+			playerEntity = PlayerData.player.GetComponent<SurfaceEntity>();
+		}
+
 	}
 
 	void Update ()
 	{
-		if(!ship.isStunned())
+		if(playerEntity == null || entity == null || ship == null || planet == null)
 		{
-			if(playerEntity == null)
+			setup();
+		}
+		else if(!ship.isStunned())
+		{
+			Vector3 player = PlayerData.player.transform.position;
+
+			Vector3 toPlayer = player - transform.position;
+
+			// If player is further than stop distance, move closer
+			if(toPlayer.magnitude >= stopDist)
 			{
-				if(PlayerData.player != null)
-				{
-					playerEntity = PlayerData.player.GetComponent<SurfaceEntity>();
-				}
+				Vector3 target = player + (playerEntity.body.velocity * aimAheadTime);	// Aim where player will be in the future
+				Vector3 toTarget = target - transform.position;
+				entity.body.AddForce(toTarget.normalized * ship.moveSpeed);
 			}
+			// Stop and face target
 			else
 			{
-				Vector3 target = PlayerData.player.transform.position + (playerEntity.body.velocity * aimAheadTime);
-
-				Vector3 toPlayer = target - transform.position;
-
-				// If player is further than stop distance, move closer
-				if(toPlayer.magnitude >= stopDist)
-				{
-					entity.body.AddForce(toPlayer.normalized * ship.moveSpeed);
-				}
-				// Stop and face target
-				else
-				{
-					entity.transform.LookAt(target, planet.transform.position - transform.position);
-				}
-
-				// Constantly fire when able
-				ship.shoot();
+				entity.transform.LookAt(player, transform.position - planet.transform.position);
 			}
+
+			// Constantly fire when able
+			ship.shoot();
 		}
 	}
 }

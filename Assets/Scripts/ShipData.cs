@@ -115,7 +115,16 @@ public class ShipData : MonoBehaviour
 
 	public void dealDamage(int amt)
 	{
-		hp -= amt;
+		if(shield - amt < 0)
+		{
+			amt -= shield;
+			shield = 0;
+			hp -= amt;
+		}
+		else
+		{
+			shield -= amt;
+		}
 		lastHitTime = Time.time;
 	}
 

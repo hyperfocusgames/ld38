@@ -4,14 +4,14 @@ using UnityEngine;
 
 public class Exploder : Damager
 {
-	public float radius = .2f;
+	public float radius = 1f;
 
 	private void explode()
 	{
-		Debug.Log("Explode");
 		Collider[] cols = Physics.OverlapSphere(transform.position, radius);
 		foreach(Collider col in cols)
 		{
+			Debug.Log(col.name);
 			if((damPlayer && col.tag == "Player") ||
 		 		(damEnemy && col.tag == "Enemy"))
 			{
