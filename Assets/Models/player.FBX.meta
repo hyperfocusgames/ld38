@@ -9,19 +9,24 @@ ModelImporter:
     100002: Plane001
     100004: Plane002
     100006: //RootNode
+    100008: PlayerShip
     400000: Box002
     400002: Plane001
     400004: Plane002
     400006: //RootNode
+    400008: PlayerShip
     2300000: Box002
     2300002: Plane001
     2300004: Plane002
+    2300006: PlayerShip
     3300000: Box002
     3300002: Plane001
     3300004: Plane002
+    3300006: PlayerShip
     4300000: Plane001
     4300002: Plane002
     4300004: Box002
+    4300006: PlayerShip
     9500000: //RootNode
   materials:
     importMaterials: 0
