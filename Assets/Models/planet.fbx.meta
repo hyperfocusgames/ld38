@@ -6,10 +6,19 @@ ModelImporter:
   serializedVersion: 19
   fileIDToRecycleName:
     100000: //RootNode
+    100002: planet1
+    100004: Sphere
     400000: //RootNode
+    400002: planet1
+    400004: Sphere
     2300000: //RootNode
+    2300002: planet1
+    2300004: Sphere
     3300000: //RootNode
+    3300002: planet1
+    3300004: Sphere
     4300000: planet1
+    4300002: Sphere
   materials:
     importMaterials: 0
     materialName: 0
