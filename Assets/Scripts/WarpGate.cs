@@ -4,13 +4,12 @@ using UnityEngine;
 
 public class WarpGate : TerrainProp {
 
-	void Awake() {
-		AttachToPlanet(GetComponentInParent<Planet>());
-	}
-
 	void OnTriggerEnter(Collider col) {
 		if (col.GetComponentInParent<PlayerData>() != null) {
 			LevelManager.instance.NextPlanet();
+			if (WarpFlash.instance) {
+				WarpFlash.instance.Flash();
+			}
 		}
 	}
 
