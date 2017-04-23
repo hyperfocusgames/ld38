@@ -8,6 +8,12 @@ public class CameraRig : SingletonBehaviour<CameraRig> {
 	public Camera cam { get; private set; }
 	public AnimationCurve planetZoomFactor = AnimationCurve.Linear(0, 1, 1, 1);
 
+	public Color skyColor {
+		get { return cam.backgroundColor; }
+		set { cam.backgroundColor = value; }
+	}
+
+
 	void Awake() {
 		cam = GetComponentInChildren<Camera>();
 	}
@@ -26,5 +32,6 @@ public class CameraRig : SingletonBehaviour<CameraRig> {
 			planet.radius * 2 * planetZoomFactor.Evaluate(planet.radius)
 		);
 	} 
+
 
 }
