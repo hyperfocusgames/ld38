@@ -132,6 +132,10 @@ MonoBehaviour:
     clusterCount: 10
     clusterSize: 25
     clusterRadius: 2
+  - prefab: {fileID: 114740645293154344, guid: af997a0b70e4468448d78b7376b40bc8, type: 2}
+    clusterCount: 5
+    clusterSize: 15
+    clusterRadius: 1.5
 --- !u!114 &114448947987373628
 MonoBehaviour:
   m_ObjectHideFlags: 1
