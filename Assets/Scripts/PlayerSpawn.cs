@@ -4,8 +4,10 @@ using System.Collections.Generic;
 
 public class PlayerSpawn : TerrainProp {
 
-	void Start() {
-		PlayerData.player.transform.position = transform.position;
+	void OnPlanetStart() {
+		PlayerData player = PlayerData.player;
+		player.gameObject.SetActive(true);
+		player.transform.position = transform.position;
 	}
 
 }

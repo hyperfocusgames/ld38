@@ -4,9 +4,11 @@ using System.Collections.Generic;
 
 public class LevelManager : SingletonBehaviour<LevelManager> {
 
-	public WarpGate warpGatePrefab;
 	public PlayerSpawn playerSpawnPrefab;
+	public WarpGate warpGatePrefab;
+	public EnemySpawn enemySpawnPrefab;
 	public WeightedPlanet[] planetPrefabs;
+	public EnemySpawnInfo[] enemySpawns;
 
 	public int planetCount = 5;
 	public int planetNumber { get; private set; }
@@ -32,6 +34,10 @@ public class LevelManager : SingletonBehaviour<LevelManager> {
 			}
 			CameraRig rig = CameraRig.instance;
 			rig.ZoomToFitPlanet(planet);
+			planet.BroadcastMessage("OnPlanetStart", planet, SendMessageOptions.DontRequireReceiver);
+			foreach (Projectile projectile in FindObjectsOfType<Projectile>()) {
+				Destroy(projectile.gameObject);
+			}
 		}
 		else {
 			GameManager.levelFinished();
@@ -40,5 +46,13 @@ public class LevelManager : SingletonBehaviour<LevelManager> {
 
 	[System.Serializable]
 	public class WeightedPlanet : WeightedElement<Planet> {}
+
+	[System.Serializable]
+	public class EnemySpawnInfo {
+		public EnemyData prefab;
+		public AnimationCurve spawnRate = AnimationCurve.Linear(0, 1, 1, 1);
+		public float spawnFactor = 1;
+		public int maxClusterSize = 1;
+	}
 
 }
