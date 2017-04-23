@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657874, g: 0.4964127, b: 0.5748172, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -108,72 +108,6 @@ NavMeshSettings:
     tileSize: 256
     accuratePlacement: 0
   m_NavMeshData: {fileID: 0}
---- !u!1001 &141023912
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 4794133592358680, guid: 8391452bd85111e49b4a135f498ee8a4, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: 1.142
-      objectReference: {fileID: 0}
-    - target: {fileID: 4794133592358680, guid: 8391452bd85111e49b4a135f498ee8a4, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4794133592358680, guid: 8391452bd85111e49b4a135f498ee8a4, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4794133592358680, guid: 8391452bd85111e49b4a135f498ee8a4, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4794133592358680, guid: 8391452bd85111e49b4a135f498ee8a4, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4794133592358680, guid: 8391452bd85111e49b4a135f498ee8a4, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4794133592358680, guid: 8391452bd85111e49b4a135f498ee8a4, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4794133592358680, guid: 8391452bd85111e49b4a135f498ee8a4, type: 2}
-      propertyPath: m_RootOrder
-      value: 4
-      objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 114093729546483744, guid: 8391452bd85111e49b4a135f498ee8a4, type: 2}
-  m_ParentPrefab: {fileID: 100100000, guid: 8391452bd85111e49b4a135f498ee8a4, type: 2}
-  m_IsPrefabParent: 0
---- !u!1 &182780923 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1403725935028892, guid: 8391452bd85111e49b4a135f498ee8a4,
-    type: 2}
-  m_PrefabInternal: {fileID: 141023912}
---- !u!114 &182780924
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 182780923}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0b1f847c70a1351408be6e5530a93509, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  moveSpeed: 100
-  baseHP: 1
-  hp: 0
-  projectile: {fileID: 0}
-  damPlayer: 0
-  damEnemy: 1
-  upgradeGuns: []
 --- !u!1 &334017697
 GameObject:
   m_ObjectHideFlags: 0
