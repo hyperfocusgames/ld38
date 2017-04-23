@@ -29,7 +29,10 @@ public class LevelManager : SingletonBehaviour<LevelManager> {
 			foreach (SurfaceEntity entity in FindObjectsOfType<SurfaceEntity>()) {
 				entity.planet = planet;
 			}
-			CameraRig.instance.cam.backgroundColor = planet.backgroundColor;
+			CameraRig rig = CameraRig.instance;
+			rig.cam.backgroundColor = planet.backgroundColor;
+			rig.ZoomToFitPlanet(planet);
+
 		}
 		else {
 			GameManager.levelFinished();

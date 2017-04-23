@@ -54,7 +54,7 @@ Transform:
   m_GameObject: {fileID: 1670951566169252}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 10, y: 10, z: 10}
+  m_LocalScale: {x: 6, y: 6, z: 6}
   m_Children: []
   m_Father: {fileID: 4617393792644500}
   m_RootOrder: 0
@@ -140,7 +140,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   surfaceModel: {fileID: 4080898546710430}
-  radius: 5
+  radius: 3
+  radiusVariance: 0
   backgroundColor: {r: 0.1381249, g: 0.089046285, b: 0.19852942, a: 1}
 --- !u!135 &135970715340878814
 SphereCollider:
