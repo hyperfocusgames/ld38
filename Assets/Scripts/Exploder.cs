@@ -11,7 +11,6 @@ public class Exploder : Damager
 		Collider[] cols = Physics.OverlapSphere(transform.position, radius);
 		foreach(Collider col in cols)
 		{
-			Debug.Log(col.name);
 			if((damPlayer && col.tag == "Player") ||
 		 		(damEnemy && col.tag == "Enemy"))
 			{

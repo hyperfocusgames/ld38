@@ -25,6 +25,7 @@ public class ShipData : MonoBehaviour
 	protected float stunTime = 0f;						// Amount of time to stun for
 	protected bool stunned = false;						// Is this stunned?
 	protected float lastHitTime = float.MinValue;		// Time of last damage taken
+	protected SurfaceEntity entity;				// Surface entity attached to this
 
     public virtual float MoveSpeed {
 		get{ return moveSpeed; }
@@ -68,6 +69,7 @@ public class ShipData : MonoBehaviour
 		findGuns();
 		hp = MaxHP;
 		shield = MaxShield;
+		entity = GetComponent<SurfaceEntity>();
 	}
 
 	// Find all active guns and store them in guns
@@ -82,7 +84,7 @@ public class ShipData : MonoBehaviour
 		// Cooled down
 		if(CooledDown() && guns.Length > 0)
 		{
-			guns[gunNum].activate(projectile, projectileSpeed, Damage, damPlayer, damEnemy);	// Shoot
+			guns[gunNum].activate(projectile, projectileSpeed + entity.body.velocity.magnitude, Damage, damPlayer, damEnemy);	// Shoot
 			gunNum = (gunNum + 1) % guns.Length;	// Go to next gun
 			lastShot = Time.time;					// Set last shot to now
 			cooledDown = false;
