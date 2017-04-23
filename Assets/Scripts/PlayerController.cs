@@ -11,14 +11,20 @@ public class PlayerController : MonoBehaviour {
 	void Awake() {
 		entity = GetComponent<SurfaceEntity>();
 		ship = GetComponent<ShipData>();
+	}
+	
+	void Start() {
 		entity.body.velocity = transform.forward; // give it a tiny push to fix the camera shit (this is a game jam ok)
 	}
 
 	void FixedUpdate() {
 		Vector3 up = CameraRig.instance.transform.up;
 		Vector3 right = CameraRig.instance.transform.right;
-		entity.body.AddForce(up * Input.GetAxisRaw("Vertical") * moveForce);
-		entity.body.AddForce(right * Input.GetAxisRaw("Horizontal") * moveForce);
+		Vector3 input
+			= up * Input.GetAxisRaw("Vertical")
+			+ right * Input.GetAxisRaw("Horizontal");
+		input.Normalize();
+		entity.body.AddForce(input * moveForce);
 		
 		if(Input.GetAxisRaw("Fire1") > 0)
 		{
