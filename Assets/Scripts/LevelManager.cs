@@ -15,6 +15,7 @@ public class LevelManager : SingletonBehaviour<LevelManager> {
 
 	public Planet planet { get; private set; }
 
+
 	void Awake() {
 		planetNumber = 0;
 		NextPlanet();
@@ -42,6 +43,10 @@ public class LevelManager : SingletonBehaviour<LevelManager> {
 		else {
 			GameManager.levelFinished();
 		}
+	}
+
+	public void OnEnemyDeath() {
+
 	}
 
 	[System.Serializable]

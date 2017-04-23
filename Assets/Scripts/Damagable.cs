@@ -16,11 +16,13 @@ public class Damagable : MonoBehaviour
 		ship.dealDamage(dam);
 		if(ship.hp <= 0)
 		{
-			if(tag == "Enemy")
-			{
-				GameManager.killEnemy();
-			}
-			Destroy(gameObject);
+			Die();
 		}
+	}
+
+	public void Die() {
+		// do death things
+		BroadcastMessage("OnDeath", SendMessageOptions.DontRequireReceiver);
+		Destroy(gameObject);
 	}
 }
