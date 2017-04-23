@@ -7,6 +7,7 @@ public class AI : MonoBehaviour
 	protected const float aimAheadTime = .5f;
 
 	public float stopDist = 3f;
+	public bool stunable = true;
 
 	protected SurfaceEntity entity;
 	protected SurfaceEntity playerEntity;
@@ -22,32 +23,35 @@ public class AI : MonoBehaviour
 
 	void Update ()
 	{
-		if(playerEntity == null)
+		if(!ship.isStunned())
 		{
-			if(PlayerData.player != null)
+			if(playerEntity == null)
 			{
-				playerEntity = PlayerData.player.GetComponent<SurfaceEntity>();
+				if(PlayerData.player != null)
+				{
+					playerEntity = PlayerData.player.GetComponent<SurfaceEntity>();
+				}
 			}
-		}
-		else
-		{
-			Vector3 target = PlayerData.player.transform.position + (playerEntity.body.velocity * aimAheadTime);
-
-			Vector3 toPlayer = target - transform.position;
-
-			// If player is further than stop distance, move closer
-			if(toPlayer.magnitude >= stopDist)
-			{
-				entity.body.AddForce(toPlayer.normalized * ship.moveSpeed);
-			}
-			// Stop and face target
 			else
 			{
-				entity.transform.LookAt(target, planet.transform.position - transform.position);
-			}
+				Vector3 target = PlayerData.player.transform.position + (playerEntity.body.velocity * aimAheadTime);
 
-			// Constantly fire when able
-			ship.shoot();
+				Vector3 toPlayer = target - transform.position;
+
+				// If player is further than stop distance, move closer
+				if(toPlayer.magnitude >= stopDist)
+				{
+					entity.body.AddForce(toPlayer.normalized * ship.moveSpeed);
+				}
+				// Stop and face target
+				else
+				{
+					entity.transform.LookAt(target, planet.transform.position - transform.position);
+				}
+
+				// Constantly fire when able
+				ship.shoot();
+			}
 		}
 	}
 }

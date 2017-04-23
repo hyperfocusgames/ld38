@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Projectile : MonoBehaviour
 {
-	private const float timeout = 2f;
+	public float timeout = 2f;
 	private float startTime;
 	public float speed;
 	SurfaceEntity entity;
