@@ -4,14 +4,17 @@ using UnityEngine;
 
 public class AI : MonoBehaviour
 {
+	private const int patrolChangeChance = 1;
 	public float aimAheadTime = 1f;
 	public float stopDist = 3f;
+	public float viewDist = 5f;
 	public bool stunable = true;
 
 	protected SurfaceEntity entity;
-	protected SurfaceEntity playerEntity;
+	protected static SurfaceEntity playerEntity;
 	protected ShipData ship;
-	protected Planet planet;
+	protected static Planet planet;
+	protected Vector3 patrolTarget;
 
 	private void setup()
 	{
@@ -46,21 +49,46 @@ public class AI : MonoBehaviour
 
 			Vector3 toPlayer = player - transform.position;
 
-			// If player is further than stop distance, move closer
-			if(toPlayer.magnitude >= stopDist)
+			// If player is within view range, try to attack player
+			if(toPlayer.magnitude < viewDist)
 			{
-				Vector3 target = player + (playerEntity.body.velocity * aimAheadTime);	// Aim where player will be in the future
-				Vector3 toTarget = target - transform.position;
-				entity.body.AddForce(toTarget.normalized * ship.moveSpeed);
-			}
-			// Stop and face target
-			else
-			{
-				entity.transform.LookAt(player, transform.position - planet.transform.position);
+				followTarget(player, toPlayer);
 			}
 
-			// Constantly fire when able
-			ship.shoot();
+			else
+			{
+				patrol();
+			}
+				
 		}
+	}
+
+	private void followTarget(Vector3 target, Vector3 toTarget)
+	{
+		// If player is further than stop distance, move closer
+		if(toTarget.magnitude >= stopDist )
+		{
+			Vector3 prediction = target + (playerEntity.body.velocity * aimAheadTime);	// Aim where player will be in the future
+			Vector3 toPrediction = prediction - transform.position;
+			entity.body.AddForce(toPrediction.normalized * ship.MoveSpeed);
+		}
+		// Stop and face target
+		else
+		{
+			entity.transform.LookAt(target, transform.position - planet.transform.position);
+		}
+
+		// Constantly fire when able
+		ship.shoot();
+	}
+
+	private void patrol()
+	{
+		if(patrolTarget == null || Random.Range(0, 100) < patrolChangeChance)
+		{
+			patrolTarget = new Vector3(Random.Range(-planet.radius, planet.radius), Random.Range(-planet.radius, planet.radius), Random.Range(-planet.radius, planet.radius));
+		}
+		Vector3 toTarget = transform.position - patrolTarget;
+		entity.body.AddForce(toTarget.normalized * ship.MoveSpeed);
 	}
 }
