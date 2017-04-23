@@ -12,6 +12,11 @@ public class PlanetGenerator : MonoBehaviour {
 	void Awake() {
 		planet = GetComponent<Planet>();
 		props = new List<TerrainProp>();
+		if (LevelManager.instance != null) {
+			WarpGate warpGate = Instantiate(LevelManager.instance.warpGatePrefab);
+			warpGate.name = LevelManager.instance.warpGatePrefab.name;
+			PlaceProp(warpGate, Random.onUnitSphere);
+		}
 		foreach (PropScatter propScatter in propScatter) {
 			propScatter.PlaceClusters(this);
 		}
