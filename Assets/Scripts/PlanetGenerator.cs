@@ -47,7 +47,7 @@ public class PlanetGenerator : MonoBehaviour {
 
 		public void PlaceClusters(PlanetGenerator generator) {
 			for (int i = 0; i < clusterCount; i ++) {
-				Vector3 clusterCenter = Random.onUnitSphere;
+				Vector3 clusterCenter = Random.onUnitSphere * generator.planet.radius;
 				Transform cluster = new GameObject(string.Format("{0} cluster {1}", prefab.name, i)).transform;
 				cluster.parent = generator.planet.transform;
 				cluster.localPosition = Vector3.zero;

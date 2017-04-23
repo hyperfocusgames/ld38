@@ -17,7 +17,7 @@ public class PlayerData : ShipData
 	private static int numDamUpgrades = 1;
 	public Gun[] upgradeGuns;
 
-	new protected void Awake()
+ 	protected override void Awake()
 	{
 		base.Awake();
 		DontDestroyOnLoad(this);

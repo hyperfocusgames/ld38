@@ -43,7 +43,7 @@ public class ShipData : MonoBehaviour
 		set { baseHP = value; }
 	}
 
-    protected void Awake()
+  protected virtual void Awake()
 	{
 		Debug.Log("Awake");
 

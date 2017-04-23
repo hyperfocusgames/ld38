@@ -1,33 +1,22 @@
 fileFormatVersion: 2
-guid: bc16317b5605a7c409bb7d7e0a56c2ee
-timeCreated: 1492899300
+guid: 0ea4581193ad3dc4c96c5cc0ec82d3af
+timeCreated: 1492907768
 licenseType: Free
 ModelImporter:
   serializedVersion: 19
   fileIDToRecycleName:
-    100000: Box002
-    100002: Plane001
-    100004: Plane002
-    100006: //RootNode
-    100008: PlayerShip
-    400000: Box002
-    400002: Plane001
-    400004: Plane002
-    400006: //RootNode
-    400008: PlayerShip
-    2300000: Box002
-    2300002: Plane001
-    2300004: Plane002
-    2300006: PlayerShip
-    3300000: Box002
-    3300002: Plane001
-    3300004: Plane002
-    3300006: PlayerShip
-    4300000: Plane001
-    4300002: Plane002
-    4300004: Box002
-    4300006: PlayerShip
-    9500000: //RootNode
+    100000: treeleaves
+    100002: //RootNode
+    100004: treetrunk
+    400000: treeleaves
+    400002: //RootNode
+    400004: treetrunk
+    2300000: treeleaves
+    2300002: treetrunk
+    3300000: treeleaves
+    3300002: treetrunk
+    4300000: treetrunk
+    4300002: treeleaves
   materials:
     importMaterials: 0
     materialName: 0
@@ -73,7 +62,7 @@ ModelImporter:
     normalSmoothAngle: 60
     normalImportMode: 0
     tangentImportMode: 3
-  importAnimation: 0
+  importAnimation: 1
   copyAvatar: 0
   humanDescription:
     serializedVersion: 2
@@ -89,7 +78,7 @@ ModelImporter:
     rootMotionBoneName: 
     rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
     hasTranslationDoF: 0
-    hasExtraRoot: 1
+    hasExtraRoot: 0
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
   animationType: 0
