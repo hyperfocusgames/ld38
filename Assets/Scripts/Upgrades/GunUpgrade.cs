@@ -17,6 +17,6 @@ public class GunUpgrade : Upgrade
 
     public override string toString()
     {
-        return "Gives you more guns, allowing you to shoot faster";
+        return "<b>Multi-Shot:<\b> Gives you more guns, allowing you to shoot faster";
     }
 }

@@ -11,6 +11,6 @@ public class HPUpgrade : Upgrade
 
     public override string toString()
     {
-        return "Upgrades your ship's HP by " + PlayerData.HpUpgradeAmount;
+        return "<b>HP Upgrade:<\b> Upgrades your ship's HP by " + PlayerData.HpUpgradeAmount;
     }
 }

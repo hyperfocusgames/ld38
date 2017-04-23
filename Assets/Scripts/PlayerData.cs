@@ -7,19 +7,18 @@ public class PlayerData : ShipData
 {
 	public static PlayerData player;
 
-	public static float moveSpeedUpgradeAmount = 10f;
-    private static int hpUpgradeAmount = 1;
-    public static float rofUpgradeAmount = 1;
-	public static int damUpgradeAmount = 1;
-	private static int numMoveSpeedUpgrades = 1;
-	private static int NumHPUpgrades = 1;
-	private static int numROFUpgrades = 1;
-	private static int numDamUpgrades = 1;
+	public static float 	moveSpeedUpgradeAmount = 10f;
+    private static int 		hpUpgradeAmount = 1;
+    public static float 	rofUpgradeAmount = 1;
+	public static int 		damUpgradeAmount = 1;
+	private static int 		numMoveSpeedUpgrades = 1;
+	private static int 		NumHPUpgrades = 1;
+	private static int 		numROFUpgrades = 1;
+	private static int 		numDamUpgrades = 1;
 	public Gun[] upgradeGuns;
 
  	protected override void Awake()
 	{
-		base.Awake();
 		DontDestroyOnLoad(this);
 
 		player = this;
@@ -28,6 +27,7 @@ public class PlayerData : ShipData
 		{
 			g.gameObject.SetActive(false);
 		}
+		base.Awake();
 	}
 
 	new protected float MoveSpeed

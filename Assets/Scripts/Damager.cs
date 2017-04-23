@@ -10,11 +10,11 @@ public class Damager : MonoBehaviour
 
 	void OnTriggerEnter(Collider col)
 	{
-		Debug.Log("Collision : " + col.gameObject.name);
 		if((damPlayer && col.tag == "Player") ||
 		 	(damEnemy && col.tag == "Enemy"))
 		{
 			col.GetComponent<Damagable>().damage(damage);
+			Destroy(gameObject);
 		}
 	}
 }

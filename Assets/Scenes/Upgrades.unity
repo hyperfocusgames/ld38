@@ -147,33 +147,9 @@ Prefab:
       propertyPath: m_RootOrder
       value: 4
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 114093729546483744, guid: 8391452bd85111e49b4a135f498ee8a4, type: 2}
+    m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8391452bd85111e49b4a135f498ee8a4, type: 2}
   m_IsPrefabParent: 0
---- !u!1 &182780923 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1403725935028892, guid: 8391452bd85111e49b4a135f498ee8a4,
-    type: 2}
-  m_PrefabInternal: {fileID: 141023912}
---- !u!114 &182780924
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 182780923}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0b1f847c70a1351408be6e5530a93509, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  moveSpeed: 100
-  baseHP: 1
-  hp: 0
-  projectile: {fileID: 0}
-  damPlayer: 0
-  damEnemy: 1
-  upgradeGuns: []
 --- !u!1 &334017697
 GameObject:
   m_ObjectHideFlags: 0
