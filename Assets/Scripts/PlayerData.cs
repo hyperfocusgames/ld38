@@ -24,6 +24,8 @@ public class PlayerData : ShipData
 	public Gun[] upgradeGuns;	// Guns that will be enabled after the gun upgrade
 	public GameObject missile;	// The projectile that will be fired after the missile upgrade
 
+	public ParticleSystem lowHealthEffect;
+
  	protected override void Awake()
 	{
 		DontDestroyOnLoad(this);
@@ -43,7 +45,20 @@ public class PlayerData : ShipData
 		missileUpgrade();
 	}
 
-	public override float MoveSpeed
+	void Update() {
+		if (lowHealthEffect != null) {
+			if (hp <= 1) {
+				if (lowHealthEffect.isStopped){
+					lowHealthEffect.Play();
+				}
+			}
+			else {
+				lowHealthEffect.Stop();
+			}
+		}
+	}
+
+	new protected float MoveSpeed
 	{
 		get{ return moveSpeed + (moveSpeedUpgradeAmount * numMoveSpeedUpgrades); }
 	}
