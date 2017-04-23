@@ -17,6 +17,8 @@ public class PlayerData : ShipData
 	private static int numDamUpgrades = 1;
 	public Gun[] upgradeGuns;
 
+	public ParticleSystem lowHealthEffect;
+
  	protected override void Awake()
 	{
 		base.Awake();
@@ -27,6 +29,19 @@ public class PlayerData : ShipData
 		foreach(Gun g in upgradeGuns)
 		{
 			g.gameObject.SetActive(false);
+		}
+	}
+
+	void Update() {
+		if (lowHealthEffect != null) {
+			if (hp <= 1) {
+				if (lowHealthEffect.isStopped){
+					lowHealthEffect.Play();
+				}
+			}
+			else {
+				lowHealthEffect.Stop();
+			}
 		}
 	}
 
