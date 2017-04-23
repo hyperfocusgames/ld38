@@ -39,8 +39,8 @@ GameObject:
   - component: {fileID: 114547524766803996}
   - component: {fileID: 114573129052531648}
   - component: {fileID: 54670136261175894}
-  - component: {fileID: 114093729546483744}
   - component: {fileID: 135523169282852246}
+  - component: {fileID: 114801548547602276}
   m_Layer: 0
   m_Name: player
   m_TagString: Untagged
@@ -68,7 +68,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1403725935028892}
   m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 0, z: -3.65}
+  m_LocalPosition: {x: 0, y: -0, z: -7.65}
   m_LocalScale: {x: 0.8, y: 0.8, z: 0.8}
   m_Children:
   - {fileID: 4009191574722748}
@@ -129,24 +129,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 1
---- !u!114 &114093729546483744
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1403725935028892}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6d176fc1457ab3247a2cd04ff108e5fc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  projectile: {fileID: 0}
-  rateOfFire: 0.5
-  projectileSpeed: 1
-  damage: 1
-  damPlayer: 0
-  damEnemy: 1
-  guns: []
 --- !u!114 &114547524766803996
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -173,7 +155,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be41864d2888afb4e800827028f43255, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveForce: 25
+--- !u!114 &114801548547602276
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1403725935028892}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0b1f847c70a1351408be6e5530a93509, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveSpeed: 25
+  baseHP: 1
+  hp: 0
+  projectile: {fileID: 0}
+  damPlayer: 0
+  damEnemy: 1
+  upgradeGuns: []
 --- !u!135 &135523169282852246
 SphereCollider:
   m_ObjectHideFlags: 1
