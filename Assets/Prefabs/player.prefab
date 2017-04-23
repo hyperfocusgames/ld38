@@ -131,6 +131,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hoverHeight: 0.2
   faceVelocity: 1
+  accelerationRollFactor: 1
+  accelerationSmoothing: 5
 --- !u!114 &114573129052531648
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -155,6 +157,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hoverHeight: 0
   faceVelocity: 1
+  accelerationRollFactor: 1
+  accelerationSmoothing: 5
 --- !u!135 &135083764337364406
 SphereCollider:
   m_ObjectHideFlags: 1
