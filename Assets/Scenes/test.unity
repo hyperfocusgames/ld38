@@ -108,11 +108,6 @@ NavMeshSettings:
     tileSize: 256
     accuratePlacement: 0
   m_NavMeshData: {fileID: 0}
---- !u!198 &278381240 stripped
-ParticleSystem:
-  m_PrefabParentObject: {fileID: 198969836758230336, guid: 8391452bd85111e49b4a135f498ee8a4,
-    type: 2}
-  m_PrefabInternal: {fileID: 974614327}
 --- !u!1001 &974614327
 Prefab:
   m_ObjectHideFlags: 0
@@ -152,11 +147,10 @@ Prefab:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 114801548547602276, guid: 8391452bd85111e49b4a135f498ee8a4,
-        type: 2}
-      propertyPath: lowHealthEffect
-      value: 
-      objectReference: {fileID: 278381240}
+    - target: {fileID: 4493936410345236, guid: 8391452bd85111e49b4a135f498ee8a4, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -0.323
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8391452bd85111e49b4a135f498ee8a4, type: 2}
   m_IsPrefabParent: 0
