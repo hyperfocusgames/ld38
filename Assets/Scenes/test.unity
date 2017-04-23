@@ -194,16 +194,6 @@ Prefab:
       propertyPath: trackTarget
       value: 
       objectReference: {fileID: 1963853082}
-    - target: {fileID: 114616623441803406, guid: abec7946d31a34f479d7ff6ffe4f09d3,
-        type: 2}
-      propertyPath: planetZoomFactor.m_Curve.Array.data[1].time
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 114616623441803406, guid: abec7946d31a34f479d7ff6ffe4f09d3,
-        type: 2}
-      propertyPath: planetZoomFactor.m_Curve.Array.data[1].value
-      value: 0.7999878
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: abec7946d31a34f479d7ff6ffe4f09d3, type: 2}
   m_IsPrefabParent: 0
