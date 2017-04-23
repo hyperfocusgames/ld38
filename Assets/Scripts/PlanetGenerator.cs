@@ -13,23 +13,33 @@ public class PlanetGenerator : MonoBehaviour {
 		planet = GetComponent<Planet>();
 		props = new List<TerrainProp>();
 		if (LevelManager.instance != null) {
-			EnsurePropSpawn(LevelManager.instance.warpGatePrefab);
-			EnsurePropSpawn(LevelManager.instance.playerSpawnPrefab);
+			PlayerSpawn playerSpawn = EnsurePropSpawn(LevelManager.instance.playerSpawnPrefab);
+			EnsurePropSpawn(LevelManager.instance.warpGatePrefab, RandomOpposite(playerSpawn.transform.localPosition));
 		}
 		foreach (PropScatter propScatter in propScatter) {
 			propScatter.PlaceClusters(this);
 		}
 	}
 
+	// return a random position on the opposite hemisphere from a given point
+	System.Func<Vector3> RandomOpposite(Vector3 position) {
+		return () => {
+			Vector3 p = Random.onUnitSphere;
+			p *= - Vector3.Dot(p, position);
+			return p;
+		};
+	}
+
 	// try to spawn and place a prop, make sure it happens
-	T EnsurePropSpawn<T>(T prefab) where T : TerrainProp {
+	T EnsurePropSpawn<T>(T prefab, System.Func<Vector3> position) where T : TerrainProp {
 			T prop;
 			do {
 				prop = Instantiate(prefab);
 				prop.name = prefab.name;
-			} while(!PlaceProp(prop, Random.onUnitSphere));
+			} while(!PlaceProp(prop, position()));
 			return prop;
 	}
+	T EnsurePropSpawn<T>(T prefab) where T : TerrainProp { return EnsurePropSpawn(prefab, () => Random.onUnitSphere); }
 
 	// try to place a prop at a position on the planet (position in planetary local space)
 	// if there is not enough space, destroy the prop and return false
@@ -54,12 +64,16 @@ public class PlanetGenerator : MonoBehaviour {
 
 	[System.Serializable]
 	public class PropScatter {
+
 		public TerrainProp prefab;
+		public AnimationCurve spawnRate = AnimationCurve.Linear(0, 1, 1, 1);
 		public int clusterCount = 5;
+
 		public int clusterSize = 10;
 		public float clusterRadius = 1;
 
 		public void PlaceClusters(PlanetGenerator generator) {
+			int clusterCount = (int) spawnRate.Evaluate(Random.value) * this.clusterCount;
 			for (int i = 0; i < clusterCount; i ++) {
 				Vector3 clusterCenter = Random.onUnitSphere * generator.planet.radius;
 				Transform cluster = new GameObject(string.Format("{0} cluster {1}", prefab.name, i)).transform;

@@ -335,8 +335,7 @@ MonoBehaviour:
     type: 2}
   planetPrefabs:
   - {fileID: 114448947987373628, guid: 5cd696eb640be264eb8542a7fe742f84, type: 2}
-  - {fileID: 114448947987373628, guid: dd3bdb8cf8a9a394ab0f530cf29f97fb, type: 2}
-  planetCount: 5
+  planetCount: 50
 --- !u!4 &2006968448
 Transform:
   m_ObjectHideFlags: 0

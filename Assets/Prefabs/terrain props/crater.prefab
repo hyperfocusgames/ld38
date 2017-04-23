@@ -123,8 +123,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   meshes:
-  - {fileID: 4300002, guid: 6892381b91b467748be4e9a921657542, type: 3}
-  - {fileID: 4300000, guid: 6892381b91b467748be4e9a921657542, type: 3}
+  - weight: 1
+    value: {fileID: 4300002, guid: 6892381b91b467748be4e9a921657542, type: 3}
+  - weight: 1
+    value: {fileID: 4300000, guid: 6892381b91b467748be4e9a921657542, type: 3}
 --- !u!114 &114250901012907408
 MonoBehaviour:
   m_ObjectHideFlags: 1

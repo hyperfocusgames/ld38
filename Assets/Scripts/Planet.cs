@@ -18,9 +18,6 @@ public class Planet : MonoBehaviour {
 		if (surfaceModel) {
 			surfaceModel.localScale = Vector3.one * radius * 2;
 		}
-		if (CameraRig.instance) {
-			CameraRig.instance.cam.backgroundColor = backgroundColor;
-		}
 	}
 
 }

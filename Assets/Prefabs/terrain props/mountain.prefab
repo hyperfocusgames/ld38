@@ -136,8 +136,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   meshes:
-  - {fileID: 4300000, guid: 47bac4d20dc7709468ac3c354d8ba06d, type: 3}
-  - {fileID: 4300000, guid: bce8a9f6dfb253c4087d814785534709, type: 3}
+  - weight: 1
+    value: {fileID: 4300000, guid: 47bac4d20dc7709468ac3c354d8ba06d, type: 3}
+  - weight: 1
+    value: {fileID: 4300000, guid: 0cb389dfbf8446a4998348e0d8a4dc79, type: 3}
+  - weight: 1
+    value: {fileID: 4300000, guid: bce8a9f6dfb253c4087d814785534709, type: 3}
 --- !u!136 &136640724410046832
 CapsuleCollider:
   m_ObjectHideFlags: 1
