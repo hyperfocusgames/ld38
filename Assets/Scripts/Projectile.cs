@@ -25,5 +25,4 @@ public class Projectile : MonoBehaviour
 		entity.body.velocity = transform.forward * speed;
 	}
 
-
 }
