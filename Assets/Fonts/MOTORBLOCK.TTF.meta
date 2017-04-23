@@ -1,0 +1,21 @@
+fileFormatVersion: 2
+guid: 6bee652e7e823174aae6db5786061422
+timeCreated: 1492907864
+licenseType: Free
+TrueTypeFontImporter:
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: MotorBlock
+  fontNames:
+  - MotorBlock
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

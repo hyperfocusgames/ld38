@@ -1,0 +1,22 @@
+fileFormatVersion: 2
+guid: 629aed4d725d48c46bd7a4efe120ddef
+timeCreated: 1492907709
+licenseType: Free
+TrueTypeFontImporter:
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Crystal
+  fontNames:
+  - Crystal
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: a772ab01359357449aaf603d03fbb057, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
