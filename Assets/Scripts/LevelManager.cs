@@ -5,6 +5,7 @@ using System.Collections.Generic;
 public class LevelManager : SingletonBehaviour<LevelManager> {
 
 	public WarpGate warpGatePrefab;
+	public PlayerSpawn playerSpawnPrefab;
 	public Planet[] planetPrefabs;
 
 	public int planetCount = 5;

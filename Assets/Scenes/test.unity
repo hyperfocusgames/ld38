@@ -345,6 +345,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   warpGatePrefab: {fileID: 114480790586819870, guid: d925f49e6a4b4ed4d9553b20c78ebc75,
     type: 2}
+  playerSpawnPrefab: {fileID: 114807969500106566, guid: 2c2f3024b4d15b448908b1d772f85f8a,
+    type: 2}
   planetPrefabs:
   - {fileID: 114448947987373628, guid: 5cd696eb640be264eb8542a7fe742f84, type: 2}
   - {fileID: 114448947987373628, guid: dd3bdb8cf8a9a394ab0f530cf29f97fb, type: 2}
