@@ -42,7 +42,7 @@ GameObject:
   - component: {fileID: 114501528946006454}
   - component: {fileID: 114178264041090590}
   m_Layer: 0
-  m_Name: EnemyRanged 1
+  m_Name: EnemyMachinegun
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -310,6 +310,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4831af31760d0b4ba8612c0aeea43fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  aimAheadTime: 1
   stopDist: 4
   stunable: 1
 --- !u!114 &114379391224092910
