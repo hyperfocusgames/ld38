@@ -177,6 +177,8 @@ public class PlayerData : ShipData
 		{
 			hp = 1;
 		}
+	}
+	
 	void OnDamageTaken(int damage) {
 		ScreenFlash.instance.Flash(damageFlashColor, damageRecoveryTime);
 	}
