@@ -6,8 +6,8 @@ public class PlayerSpawn : TerrainProp {
 
 	void OnPlanetStart() {
 		PlayerData player = PlayerData.player;
-		player.gameObject.SetActive(true);
 		player.transform.position = transform.position;
+		player.Spawn();
 	}
 
 }

@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: 0d70805cd3d1c434ea3e2ecccf9c141b
-timeCreated: 1492924378
+guid: 551cb888c3c7f1444aa8a1581df7695d
+timeCreated: 1493006127
 licenseType: Free
 ModelImporter:
   serializedVersion: 19
@@ -9,7 +9,7 @@ ModelImporter:
     400000: //RootNode
     2300000: //RootNode
     3300000: //RootNode
-    4300000: Cube
+    4300000: shield
   materials:
     importMaterials: 0
     materialName: 0
@@ -50,7 +50,7 @@ ModelImporter:
     secondaryUVAreaDistortion: 15.000001
     secondaryUVHardAngle: 88
     secondaryUVPackMargin: 4
-    useFileScale: 1
+    useFileScale: 0
   tangentSpace:
     normalSmoothAngle: 60
     normalImportMode: 0
