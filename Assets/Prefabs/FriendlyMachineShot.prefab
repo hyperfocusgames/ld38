@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4588722924804384}
   - component: {fileID: 198116298762079894}
   - component: {fileID: 199284387863230708}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Particle System
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -42,7 +42,7 @@ GameObject:
   - component: {fileID: 114642940083301020}
   - component: {fileID: 114336834728000368}
   - component: {fileID: 96415303868074674}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: FriendlyMachineShot
   m_TagString: Untagged
   m_Icon: {fileID: 0}

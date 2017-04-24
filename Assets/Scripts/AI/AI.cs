@@ -37,7 +37,7 @@ public class AI : MonoBehaviour
 
 	}
 
-	void Update ()
+	void FixedUpdate ()
 	{
 		if(playerEntity == null || entity == null || ship == null || planet == null)
 		{

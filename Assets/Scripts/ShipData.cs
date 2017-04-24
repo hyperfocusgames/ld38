@@ -24,8 +24,9 @@ public class ShipData : MonoBehaviour
 	protected float startStunTime = float.MinValue;		// Time when stun was started
 	protected float stunTime = 0f;						// Amount of time to stun for
 	protected bool stunned = false;						// Is this stunned?
-	protected float lastHitTime = float.MinValue;		// Time of last damage taken
-	protected SurfaceEntity entity;				// Surface entity attached to this
+	private float lastHitTime = float.MinValue;		// Time of last damage taken
+	protected SurfaceEntity entity;						// Surface entity attached to this
+	protected Shield shieldObject;					// Shield attatched to this
 
     public virtual float MoveSpeed {
 		get{ return moveSpeed; }
@@ -64,12 +65,18 @@ public class ShipData : MonoBehaviour
 		set { stunTime = value; }
 	}
 
-  protected virtual void Awake()
+  	protected virtual void Awake()
 	{
 		findGuns();
 		hp = MaxHP;
 		shield = MaxShield;
 		entity = GetComponent<SurfaceEntity>();
+		shieldObject = GetComponentInChildren<Shield>();
+	}
+
+	void FixedUpdate()
+	{
+		rechargeShield();
 	}
 
 	// Find all active guns and store them in guns
@@ -117,6 +124,10 @@ public class ShipData : MonoBehaviour
 
 	public void dealDamage(int amt)
 	{
+		lastHitTime = Time.time;
+
+		rechargeShield();
+
 		if(shield - amt < 0)
 		{
 			amt -= shield;
@@ -127,15 +138,27 @@ public class ShipData : MonoBehaviour
 		{
 			shield -= amt;
 		}
-		lastHitTime = Time.time;
+
+		if(shield <= 0)
+		{
+			if(shieldObject != null)
+			{
+				shieldObject.gameObject.SetActive(false);
+			}
+		}
 	}
 
 	public void rechargeShield()
 	{
-		if(MaxShield > 0 && Time.time - lastHitTime > ShieldRechargeTime)
+		if(MaxShield > shield && Time.time - lastHitTime > ShieldRechargeTime)
 		{
+			Debug.Log("recharge");
 			shield++;
 			lastHitTime = Time.time;	// Just set this to now so it resets recharge cooldown
+			if(shieldObject != null)
+			{
+				shieldObject.gameObject.SetActive(true);
+			}
 		}
 	}
 }

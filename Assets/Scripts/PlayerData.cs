@@ -43,7 +43,7 @@ public class PlayerData : ShipData
 		base.Awake();
 	}
 
-	void Update() {
+	protected void Update() {
 		if (lowHealthEffect != null) {
 			if (hp <= 1) {
 				if (lowHealthEffect.isStopped){

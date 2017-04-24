@@ -9,6 +9,7 @@ TagManager:
   - StatPanel
   - ValuePanel
   - PauseWindow
+  - Shield
   layers:
   - Default
   - TransparentFX
@@ -18,7 +19,7 @@ TagManager:
   - UI
   - 
   - 
-  - 
+  - Projectiles
   - 
   - 
   - 
