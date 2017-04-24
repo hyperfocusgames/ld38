@@ -17,6 +17,7 @@ public class ShipData : MonoBehaviour
     public bool damPlayer = false;						// Should the player be damaged by this?
 	public bool damEnemy = true;						// Should enemies be damaged by this?
 	public AudioClip shootSound;
+	public float shootSoundPitchOffset = 0.05f;
 	public GameObject explosion;						// Effect to play on death
 
 	public float damageRecoveryTime = 0;
@@ -31,8 +32,10 @@ public class ShipData : MonoBehaviour
 	protected bool stunned = false;						// Is this stunned?
 	private float lastHitTime = float.MinValue;			// Time of last damage taken
 	protected SurfaceEntity entity;						// Surface entity attached to this
-	protected AudioSource _audioSource;					// Audio Source attached to this
+	protected AudioSource audioSource;					// Audio Source attached to this
 	protected Shield shieldObject;						// Shield attatched to this
+
+	float baseAudioPitch;
 
     public virtual float MoveSpeed {
 		get{ return moveSpeed; }
@@ -79,7 +82,10 @@ public class ShipData : MonoBehaviour
 		entity = GetComponent<SurfaceEntity>();
 
 		shieldObject = GetComponentInChildren<Shield>();
-		_audioSource = GetComponent<AudioSource> ();
+		audioSource = GetComponent<AudioSource> ();
+		if (audioSource != null) {
+			baseAudioPitch = audioSource.pitch;
+		}
 	}
 
 	void FixedUpdate()
@@ -103,7 +109,10 @@ public class ShipData : MonoBehaviour
 			gunNum = (gunNum + 1) % guns.Length;	// Go to next gun
 			lastShot = Time.time;					// Set last shot to now
 			cooledDown = false;
-			_audioSource.PlayOneShot(shootSound);
+			if (audioSource != null) {
+				audioSource.pitch = baseAudioPitch * (1 + Random.Range(- shootSoundPitchOffset, shootSoundPitchOffset));
+				audioSource.PlayOneShot(shootSound);
+			}
 		}
 	}
 

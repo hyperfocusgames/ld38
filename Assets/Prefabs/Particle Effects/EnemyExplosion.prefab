@@ -55,6 +55,7 @@ GameObject:
   - component: {fileID: 4055402799594278}
   - component: {fileID: 82236600182144918}
   - component: {fileID: 114136667201290168}
+  - component: {fileID: 114843825986312304}
   m_Layer: 0
   m_Name: EnemyExplosion
   m_TagString: Untagged
@@ -226,6 +227,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   time: 2
+--- !u!114 &114843825986312304
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1628607057731358}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc08030f9d9387f47b67f368ee52ffb1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tweakAmount: 0.15
 --- !u!198 &198407870775496594
 ParticleSystem:
   m_ObjectHideFlags: 1

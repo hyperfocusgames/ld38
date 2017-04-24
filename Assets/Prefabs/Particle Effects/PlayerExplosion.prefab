@@ -72,6 +72,7 @@ GameObject:
   - component: {fileID: 4845001930042276}
   - component: {fileID: 114564528027656852}
   - component: {fileID: 82953212950465900}
+  - component: {fileID: 114369330393225978}
   m_Layer: 0
   m_Name: PlayerExplosion
   m_TagString: Untagged
@@ -214,6 +215,18 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
+--- !u!114 &114369330393225978
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1991683658510300}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc08030f9d9387f47b67f368ee52ffb1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tweakAmount: 0.15
 --- !u!114 &114564528027656852
 MonoBehaviour:
   m_ObjectHideFlags: 1

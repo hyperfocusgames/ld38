@@ -304,8 +304,8 @@ MonoBehaviour:
   damPlayer: 1
   damEnemy: 0
   shootSound: {fileID: 0}
-  explosion: {fileID: 1628607057731358, guid: 2ddfb7bd49ab57945a0418d96516eee9, type: 2}
-  explosionTime: 1
+  shootSoundPitchOffset: 0.15
+  explosion: {fileID: 1820137755216622, guid: 2b19b00b094de2c4eb541f1f96d21397, type: 2}
   damageRecoveryTime: 0
 --- !u!114 &114564492335528442
 MonoBehaviour:
