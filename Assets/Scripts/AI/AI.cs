@@ -58,8 +58,12 @@ public class AI : MonoBehaviour
 			else
 			{
 				patrol();
-			}
-				
+			}		
+		}
+		if(playerEntity == null)
+		{
+			// If player is missing, just patrol. Use in menu screen?
+			patrol();
 		}
 	}
 

@@ -312,6 +312,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   aimAheadTime: 1
   stopDist: 4
+  viewDist: 5
   stunable: 1
 --- !u!114 &114379391224092910
 MonoBehaviour:

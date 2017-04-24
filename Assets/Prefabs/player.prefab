@@ -174,7 +174,7 @@ GameObject:
   - component: {fileID: 114171762483567782}
   - component: {fileID: 114497598688446238}
   m_Layer: 0
-  m_Name: player New
+  m_Name: player
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -884,7 +884,9 @@ MonoBehaviour:
   rateOfFire: 0.5
   damPlayer: 0
   damEnemy: 1
-  upgradeGuns: []
+  upgradeGuns:
+  - {fileID: 114380587171498136}
+  - {fileID: 114909693974218364}
   missile: {fileID: 1436498337013374, guid: 61656262cae2da9438456400eed44a27, type: 2}
   lowHealthEffect: {fileID: 198039084371005560}
 --- !u!114 &114276850441508244
@@ -946,6 +948,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be41864d2888afb4e800827028f43255, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pauseWindow: {fileID: 1133569863730940, guid: 9b277efdbe1847f47b3ecbe88b40ec3b,
+    type: 2}
 --- !u!114 &114909693974218364
 MonoBehaviour:
   m_ObjectHideFlags: 1

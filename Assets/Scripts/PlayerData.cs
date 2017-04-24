@@ -55,6 +55,14 @@ public class PlayerData : ShipData
 			}
 		}
 	}
+	
+	public static int NumMoveSpeedUpgrades { get { return numMoveSpeedUpgrades; } }
+    public static int NumHPUpgrades { get { return numHPUpgrades; } }
+    public static int NumShieldUpgrades { get { return numShieldUpgrades; } }
+    public static int NumShieldRechargeUpgrades { get { return numShieldRechargeUpgrades; } }
+    public static int NumROFUpgrades { get { return numROFUpgrades; } }
+    public static int NumDamUpgrades { get { return numDamUpgrades; } }
+    public static int NumStunUpgrades { get { return numStunUpgrades; } }
 
 	new protected float MoveSpeed
 	{
@@ -91,7 +99,7 @@ public class PlayerData : ShipData
     public static float ShieldRechargeUpgradeAmount { get { return shieldRechargeUpgradeAmount; } }
     public static float ROFUpgradeAmount { get { return rofUpgradeAmount; } }
     public static int DamUpgradeAmount { get { return damUpgradeAmount; } }
-    public static int StunUpgradeAmount { get { return StunUpgradeAmount; } }
+    public static float StunUpgradeAmount { get { return stunUpgradeAmount; } }
 
 
     public static void moveSpeedUpgrade()
