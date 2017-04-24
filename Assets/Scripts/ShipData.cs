@@ -132,7 +132,7 @@ public class ShipData : MonoBehaviour
 		startStunTime = Time.time;
 	}
 
-	public void dealDamage(int amt)
+	public virtual void dealDamage(int amt)
 	{
 		lastHitTime = Time.time;
 
