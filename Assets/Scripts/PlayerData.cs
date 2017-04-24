@@ -26,6 +26,12 @@ public class PlayerData : ShipData
 
 	public ParticleSystem lowHealthEffect;
 
+	public bool isAlive {
+		get {
+			return gameObject.activeSelf;
+		}
+	}
+
  	protected override void Awake()
 	{
 		DontDestroyOnLoad(this);
