@@ -243,6 +243,48 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 26dcb9f5ad8b6d34d8d692ace2a32a5a, type: 2}
   m_IsPrefabParent: 0
+--- !u!1001 &1513649509
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4479463204620102, guid: 81af9ce639a99da4690d1fd7aba206c1, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4479463204620102, guid: 81af9ce639a99da4690d1fd7aba206c1, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4479463204620102, guid: 81af9ce639a99da4690d1fd7aba206c1, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4479463204620102, guid: 81af9ce639a99da4690d1fd7aba206c1, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4479463204620102, guid: 81af9ce639a99da4690d1fd7aba206c1, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4479463204620102, guid: 81af9ce639a99da4690d1fd7aba206c1, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4479463204620102, guid: 81af9ce639a99da4690d1fd7aba206c1, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4479463204620102, guid: 81af9ce639a99da4690d1fd7aba206c1, type: 2}
+      propertyPath: m_RootOrder
+      value: 5
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 81af9ce639a99da4690d1fd7aba206c1, type: 2}
+  m_IsPrefabParent: 0
 --- !u!224 &1826628118 stripped
 RectTransform:
   m_PrefabParentObject: {fileID: 224085956035163722, guid: 9b601582d7eb9484fb87c99cee15789c,
