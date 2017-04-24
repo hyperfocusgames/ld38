@@ -7,6 +7,7 @@ public class WarpGate : TerrainProp {
 	public Color flashColor = Color.white;
 	public float flashDuration = 1;
 	public GameObject portalEffect;
+	public GameObject entranceEffectPrefab;
 
 	public bool isOpen { get; set; }
 
@@ -19,6 +20,9 @@ public class WarpGate : TerrainProp {
 			LevelManager.instance.NextPlanet();
 			if (ScreenFlash.instance) {
 				ScreenFlash.instance.Flash(flashColor, flashDuration);
+				if (entranceEffectPrefab != null) {
+					Instantiate(entranceEffectPrefab, transform.position, transform.rotation);
+				}
 			}
 		}
 	}

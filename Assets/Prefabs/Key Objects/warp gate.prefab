@@ -245,7 +245,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   radius: 2
+  flashColor: {r: 1, g: 1, b: 1, a: 1}
+  flashDuration: 1
   portalEffect: {fileID: 1994766310428236}
+  entranceEffectPrefab: {fileID: 1168589751357400, guid: 5bf9c652739c57e419a44889b5a714fe,
+    type: 2}
 --- !u!136 &136098559548461384
 CapsuleCollider:
   m_ObjectHideFlags: 1
