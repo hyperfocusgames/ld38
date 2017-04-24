@@ -10,6 +10,8 @@ public class Planet : MonoBehaviour {
 	public float radiusVariance = 0.5f;
 	public Gradient sky;
 
+	public WarpGate warpGate { get; set; }
+
 	void Awake() {
 		radius += Random.Range(-radiusVariance, radiusVariance);
 		surfaceModel.localScale = Vector3.one * radius * 2;

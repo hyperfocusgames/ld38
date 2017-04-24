@@ -16,7 +16,7 @@ public class PlanetGenerator : MonoBehaviour {
 		if (level != null) {
 			PlayerSpawn playerSpawn = EnsurePropSpawn(level.playerSpawnPrefab);
 			System.Func<Vector3> oppositePlayer = RandomOpposite(playerSpawn.transform.localPosition);
-			EnsurePropSpawn(level.warpGatePrefab, oppositePlayer);
+			planet.warpGate = EnsurePropSpawn(level.warpGatePrefab, oppositePlayer);
 			LevelManager.EnemySpawnInfo[] spawnInfos = level.enemySpawns;
 			float progress = (float) level.planetNumber / level.planetCount;
 			foreach (LevelManager.EnemySpawnInfo spawnInfo in spawnInfos) {

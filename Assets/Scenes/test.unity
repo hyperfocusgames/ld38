@@ -249,58 +249,48 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 26dcb9f5ad8b6d34d8d692ace2a32a5a, type: 2}
   m_IsPrefabParent: 0
---- !u!1001 &1077486373
+--- !u!1001 &1513649509
 Prefab:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 1163570125}
+    m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 4392362578152584, guid: 9a39704f4ef01b6498b30aa35b83bca0, type: 2}
+    - target: {fileID: 4479463204620102, guid: 81af9ce639a99da4690d1fd7aba206c1, type: 2}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4392362578152584, guid: 9a39704f4ef01b6498b30aa35b83bca0, type: 2}
+    - target: {fileID: 4479463204620102, guid: 81af9ce639a99da4690d1fd7aba206c1, type: 2}
       propertyPath: m_LocalPosition.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4392362578152584, guid: 9a39704f4ef01b6498b30aa35b83bca0, type: 2}
+    - target: {fileID: 4479463204620102, guid: 81af9ce639a99da4690d1fd7aba206c1, type: 2}
       propertyPath: m_LocalPosition.z
-      value: 0.104
+      value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4392362578152584, guid: 9a39704f4ef01b6498b30aa35b83bca0, type: 2}
+    - target: {fileID: 4479463204620102, guid: 81af9ce639a99da4690d1fd7aba206c1, type: 2}
       propertyPath: m_LocalRotation.x
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4392362578152584, guid: 9a39704f4ef01b6498b30aa35b83bca0, type: 2}
+    - target: {fileID: 4479463204620102, guid: 81af9ce639a99da4690d1fd7aba206c1, type: 2}
       propertyPath: m_LocalRotation.y
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4392362578152584, guid: 9a39704f4ef01b6498b30aa35b83bca0, type: 2}
+    - target: {fileID: 4479463204620102, guid: 81af9ce639a99da4690d1fd7aba206c1, type: 2}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4392362578152584, guid: 9a39704f4ef01b6498b30aa35b83bca0, type: 2}
+    - target: {fileID: 4479463204620102, guid: 81af9ce639a99da4690d1fd7aba206c1, type: 2}
       propertyPath: m_LocalRotation.w
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 4392362578152584, guid: 9a39704f4ef01b6498b30aa35b83bca0, type: 2}
+    - target: {fileID: 4479463204620102, guid: 81af9ce639a99da4690d1fd7aba206c1, type: 2}
       propertyPath: m_RootOrder
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
-    - target: {fileID: 1174944415637048, guid: 9a39704f4ef01b6498b30aa35b83bca0, type: 2}
-      propertyPath: m_TagString
-      value: Shield
-      objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 135422928816528680, guid: 9a39704f4ef01b6498b30aa35b83bca0, type: 2}
-  m_ParentPrefab: {fileID: 100100000, guid: 9a39704f4ef01b6498b30aa35b83bca0, type: 2}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 81af9ce639a99da4690d1fd7aba206c1, type: 2}
   m_IsPrefabParent: 0
---- !u!4 &1163570125 stripped
-Transform:
-  m_PrefabParentObject: {fileID: 4400658753276766, guid: 26dcb9f5ad8b6d34d8d692ace2a32a5a,
-    type: 2}
-  m_PrefabInternal: {fileID: 974614327}
 --- !u!224 &1826628118 stripped
 RectTransform:
   m_PrefabParentObject: {fileID: 224085956035163722, guid: 9b601582d7eb9484fb87c99cee15789c,
@@ -437,34 +427,13 @@ MonoBehaviour:
   - weight: 1
     value: {fileID: 114448947987373628, guid: 5cd696eb640be264eb8542a7fe742f84, type: 2}
   enemySpawns:
-  - prefab: {fileID: 114178264041090590, guid: 9e4a94d446b0ea94e944954da483cf97, type: 2}
+  - prefab: {fileID: 114488253990559428, guid: 0262133121deb7845b63590484ae4253, type: 2}
     spawnRate:
       serializedVersion: 2
       m_Curve:
       - serializedVersion: 2
         time: 0
-        value: 0.36809385
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-      - serializedVersion: 2
-        time: 1
-        value: 1.5
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 0
-    spawnFactor: 5
-    maxClusterSize: 3
-  - prefab: {fileID: 114432175952679874, guid: 449bbc73f3705aa4b8af1c42460abdce, type: 2}
-    spawnRate:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 2
-        time: 0
-        value: 0.0000037550926
+        value: 1
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -478,7 +447,28 @@ MonoBehaviour:
       m_PostInfinity: 2
       m_RotationOrder: 0
     spawnFactor: 5
-    maxClusterSize: 3
+    maxClusterSize: 2
+  - prefab: {fileID: 114245726034998026, guid: 85f46d4504f211c41b041c1db98d7817, type: 2}
+    spawnRate:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 2
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 0
+    spawnFactor: 3
+    maxClusterSize: 2
   planetCount: 5
 --- !u!4 &2006968448
 Transform:

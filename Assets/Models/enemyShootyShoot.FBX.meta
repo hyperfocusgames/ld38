@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: 71e21243ebacd7146837bc63fdbf5d99
-timeCreated: 1492977701
+guid: 0a1650db7e403ae41b901b26f74a9c99
+timeCreated: 1492996227
 licenseType: Free
 ModelImporter:
   serializedVersion: 19
@@ -9,7 +9,7 @@ ModelImporter:
     400000: //RootNode
     2300000: //RootNode
     3300000: //RootNode
-    4300000: Box001
+    4300000: ShootyShoot
     9500000: //RootNode
   materials:
     importMaterials: 0
@@ -75,7 +75,7 @@ ModelImporter:
     hasExtraRoot: 0
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
-  animationType: 2
+  animationType: 0
   humanoidOversampling: 1
   additionalBone: 0
   userData: 
