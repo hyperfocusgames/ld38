@@ -16,7 +16,7 @@ public class AI : MonoBehaviour
 	protected static Planet planet;
 	protected Vector3 patrolTarget;
 
-	private void setup()
+	protected void setup()
 	{
 		if(entity == null)
 		{
@@ -34,10 +34,9 @@ public class AI : MonoBehaviour
 		{
 			playerEntity = PlayerData.player.GetComponent<SurfaceEntity>();
 		}
-
 	}
 
-	void FixedUpdate ()
+	protected virtual void FixedUpdate ()
 	{
 		if(playerEntity == null || entity == null || ship == null || planet == null)
 		{
@@ -69,7 +68,7 @@ public class AI : MonoBehaviour
 		}
 	}
 
-	private void followTarget(Vector3 target, Vector3 toTarget)
+	protected void followTarget(Vector3 target, Vector3 toTarget)
 	{
 		// If player is further than stop distance, move closer
 		if(toTarget.magnitude >= stopDist )
@@ -88,7 +87,7 @@ public class AI : MonoBehaviour
 		ship.shoot();
 	}
 
-	private void patrol()
+	protected void patrol()
 	{
 		if(patrolTarget == null || Random.Range(0, 100) < patrolChangeChance)
 		{

@@ -95,7 +95,7 @@ public class ShipData : MonoBehaviour
 	public void shoot()
 	{
 		// Cooled down
-		if(CooledDown() && guns.Length > 0)
+		if(guns.Length > 0 && projectile != null && CooledDown())
 		{
 			guns[gunNum].activate(projectile, projectileSpeed + entity.body.velocity.magnitude, Damage, damPlayer, damEnemy);	// Shoot
 			gunNum = (gunNum + 1) % guns.Length;	// Go to next gun
@@ -159,7 +159,6 @@ public class ShipData : MonoBehaviour
 	{
 		if(MaxShield > shield && Time.time - lastHitTime > ShieldRechargeTime)
 		{
-			Debug.Log("recharge");
 			shield++;
 			lastHitTime = Time.time;	// Just set this to now so it resets recharge cooldown
 			if(shieldObject != null)
