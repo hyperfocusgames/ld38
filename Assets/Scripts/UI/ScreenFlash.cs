@@ -12,9 +12,15 @@ public class ScreenFlash : SingletonBehaviour<ScreenFlash> {
 	float t;
 
 	void Awake() {
-		image = GetComponent<Image>();
-		color = Color.clear;
-		t = 0;
+		if (instance != this) {
+			Destroy(gameObject);
+		}
+		else {
+			DontDestroyOnLoad(this);
+			image = GetComponent<Image>();
+			color = Color.clear;
+			t = 0;
+		}
 	}
 
 	public void Flash(Color color, float duration) {
