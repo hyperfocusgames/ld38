@@ -6,6 +6,7 @@ public class Planet : MonoBehaviour {
 
 	public Transform surfaceModel;
 	public float radius = 1;
+	public float enemySpawnFactor = 1;
 	public float radiusVariance = 0.5f;
 	public Gradient sky;
 

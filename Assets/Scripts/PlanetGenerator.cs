@@ -12,9 +12,24 @@ public class PlanetGenerator : MonoBehaviour {
 	void Awake() {
 		planet = GetComponent<Planet>();
 		props = new List<TerrainProp>();
-		if (LevelManager.instance != null) {
-			PlayerSpawn playerSpawn = EnsurePropSpawn(LevelManager.instance.playerSpawnPrefab);
-			EnsurePropSpawn(LevelManager.instance.warpGatePrefab, RandomOpposite(playerSpawn.transform.localPosition));
+		LevelManager level = LevelManager.instance;
+		if (level != null) {
+			PlayerSpawn playerSpawn = EnsurePropSpawn(level.playerSpawnPrefab);
+			System.Func<Vector3> oppositePlayer = RandomOpposite(playerSpawn.transform.localPosition);
+			EnsurePropSpawn(level.warpGatePrefab, oppositePlayer);
+			LevelManager.EnemySpawnInfo[] spawnInfos = level.enemySpawns;
+			float progress = (float) level.planetNumber / level.planetCount;
+			foreach (LevelManager.EnemySpawnInfo spawnInfo in spawnInfos) {
+				int count = (int) (spawnInfo.spawnRate.Evaluate(progress) * spawnInfo.spawnFactor * planet.enemySpawnFactor);
+				// Debug.LogFormat("Planet {0}: Spawned {1} of {2}", level.planetNumber, count, spawnInfo.prefab.name);
+				while (count > 0) {
+					int clusterSize = (count > spawnInfo.maxClusterSize) ? spawnInfo.maxClusterSize : count;
+					EnemySpawn spawn = EnsurePropSpawn(level.enemySpawnPrefab, oppositePlayer);
+					spawn.prefab = spawnInfo.prefab;
+					spawn.enemyCount = clusterSize;
+					count -= spawnInfo.maxClusterSize;
+				}
+			}
 		}
 		foreach (PropScatter propScatter in propScatter) {
 			propScatter.PlaceClusters(this);
