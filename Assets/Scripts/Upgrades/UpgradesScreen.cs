@@ -30,6 +30,9 @@ public class UpgradesScreen : SingletonBehaviour<UpgradesScreen>
 				b.GetComponent<UpgradeButton>().upgrade = u;
 			}
 		}
+	}
+	
+	void Update() {
 		MusicManager.instance.menuEffectEnabled = true;
 	}
 

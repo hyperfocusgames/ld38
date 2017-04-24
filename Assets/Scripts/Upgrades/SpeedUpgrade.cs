@@ -9,8 +9,15 @@ public class SpeedUpgrade : Upgrade
         PlayerData.moveSpeedUpgrade();
     }
 
-    public override string toString()
-    {
-        return "<b>Speed Upgrade:<\b> Upgrades your ship's speed by " + PlayerData.MoveSpeedUpgradeAmount;
-    }
+		public override string title {
+			get {
+					return "Speed";
+			}
+		}
+
+    public override string description {
+			get {
+					return "Upgrades your ship's speed by " + PlayerData.MoveSpeedUpgradeAmount;
+			}
+		}
 }

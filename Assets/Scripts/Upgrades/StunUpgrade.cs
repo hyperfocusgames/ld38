@@ -9,8 +9,15 @@ public class StunUpgrade : Upgrade
         PlayerData.stunUpgrade();
     }
 
-    public override string toString()
-    {
-        return "<b>Stun Upgrade:<\b> Increases the time you stun enemies on collision by " + PlayerData.StunUpgradeAmount;
-    }
+		public override string title {
+			get {
+					return "Stun Time";
+			}
+		}
+
+    public override string description {
+			get {
+					return "Increases the time you stun enemies on collision by " + PlayerData.StunUpgradeAmount;
+			}
+		}
 }

@@ -9,8 +9,15 @@ public class ROFUpgrade : Upgrade
         PlayerData.rofUpgrade();
     }
 
-    public override string toString()
-    {
-        return "<b>Rate of Fire Upgrade:<\b> Upgrades your ship's rate of fire by " + PlayerData.ROFUpgradeAmount;
-    }
+		public override string title {
+			get {
+					return "Rate of Fire";
+			}
+		}
+
+    public override string description {
+			get {
+					return "Upgrades your ship's rate of fire by " + PlayerData.ROFUpgradeAmount;
+			}
+		}
 }

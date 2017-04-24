@@ -12,6 +12,7 @@ public class Stats : MonoBehaviour
 
 	void Awake() {
 		Setup();
+		UpdateStats();
 	}
 
 	public void UpdateStats() {

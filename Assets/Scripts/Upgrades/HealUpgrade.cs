@@ -9,8 +9,15 @@ public class HealUpgrade : Upgrade
         PlayerData.player.heal();
     }
 
-    public override string toString()
-    {
-        return "<b>Heal:<\b> restores your ship to full health";
-    }
+		public override string title {
+			get {
+					return "Heal";
+			}
+		}
+
+    public override string description {
+			get {
+					return "Restore your ship to full health";
+			}
+		}
 }

@@ -15,8 +15,16 @@ public class GunUpgrade : Upgrade
         PlayerData.player.gunUpgrade();
     }
 
-    public override string toString()
-    {
-        return "<b>Multi-Shot:<\b> Gives you more guns, allowing you to shoot faster - <b>Only one chance for this!<\b>";
-    }
+		public override string title {
+			get {
+					return "Multi Shot";
+			}
+		}
+
+    public override string description {
+			get {
+					return "Gives you more guns, allowing you to shoot faster - <i>Only one chance for this!</i>";
+			}
+		}
+
 }

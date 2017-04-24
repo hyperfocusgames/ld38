@@ -9,8 +9,15 @@ public class ShieldUpgrade : Upgrade
         PlayerData.shieldUpgrade();
     }
 
-    public override string toString()
-    {
-        return "<b>Shield Upgrade:<\b> Upgrades your ship's max shields by " + PlayerData.ShieldUpgradeAmount;
-    }
+		public override string title {
+			get {
+					return "Max Shields";
+			}
+		}
+
+    public override string description {
+			get {
+					return "Upgrades your ship's max shields by " + PlayerData.ShieldUpgradeAmount;
+			}
+		}
 }

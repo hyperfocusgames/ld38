@@ -6,6 +6,11 @@ using UnityEngine.UI;
 
 public class UpgradeButton : MonoBehaviour
 {
+
+	public Text titleText;
+	public Text descriptionText;
+
+
     private Upgrade _upgrade;
 
     public Upgrade upgrade
@@ -13,7 +18,8 @@ public class UpgradeButton : MonoBehaviour
 		get{ return _upgrade; }
 		set
 		{
-			gameObject.GetComponentInChildren<Text>().text = value.toString();
+			titleText.text = value.title;
+			descriptionText.text = value.description;
 			_upgrade = value;
 		}
 	}
