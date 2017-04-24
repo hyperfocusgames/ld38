@@ -14,6 +14,7 @@ public static class UpgradesDeck
 
 		deck.Add(new GunUpgrade());
 		deck.Add(new MissileUpgrade());
+		
 		deck.Add(new ROFUpgrade());
 		deck.Add(new SpeedUpgrade());
 		deck.Add(new DamUpgrade());
@@ -21,7 +22,7 @@ public static class UpgradesDeck
 		deck.Add(new HealUpgrade());
 		deck.Add(new StunUpgrade());
 		deck.Add(new ShieldUpgrade());
-		
+
 		deck.Add(new ShieldRechargeUpgrade());
 		deck.Add(new ShieldRechargeUpgrade());
 		deck.Add(new ShieldRechargeUpgrade());
