@@ -582,7 +582,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &2006968447
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -604,10 +604,12 @@ MonoBehaviour:
     type: 2}
   planetCount: 3
   planetPrefabs:
-  - weight: 2
-    value: {fileID: 114448947987373628, guid: 5cd696eb640be264eb8542a7fe742f84, type: 2}
   - weight: 1
+    value: {fileID: 114448947987373628, guid: 5cd696eb640be264eb8542a7fe742f84, type: 2}
+  - weight: 0.99
     value: {fileID: 114448947987373628, guid: dd3bdb8cf8a9a394ab0f530cf29f97fb, type: 2}
+  - weight: 0.01
+    value: {fileID: 114448947987373628, guid: 7b8d4a693cfd5b0499fa67aaf2aeca0b, type: 2}
   enemySpawns:
   - prefab: {fileID: 114245726034998026, guid: 85f46d4504f211c41b041c1db98d7817, type: 2}
     spawnRate:
@@ -621,80 +623,17 @@ MonoBehaviour:
         tangentMode: 0
       - serializedVersion: 2
         time: 1
-        value: 4.000001
-        inSlope: 10.338122
-        outSlope: 10.338122
+        value: 4.895292
+        inSlope: 10.1763935
+        outSlope: 10.1763935
         tangentMode: 0
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 0
-    spawnFactor: 2
+    spawnFactor: 1
     maxClusterSize: 1
-  - prefab: {fileID: 114488253990559428, guid: 0262133121deb7845b63590484ae4253, type: 2}
-    spawnRate:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 2
-        time: 0
-        value: 1
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-      - serializedVersion: 2
-        time: 1
-        value: 2.000001
-        inSlope: 1.0876453
-        outSlope: 1.0876453
-        tangentMode: 0
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 0
-    spawnFactor: 0
-    maxClusterSize: 1
-  - prefab: {fileID: 114432175952679874, guid: 449bbc73f3705aa4b8af1c42460abdce, type: 2}
-    spawnRate:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 2
-        time: 0
-        value: 1
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-      - serializedVersion: 2
-        time: 1
-        value: 2.000001
-        inSlope: 1.0876453
-        outSlope: 1.0876453
-        tangentMode: 0
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 0
-    spawnFactor: 0
-    maxClusterSize: 3
-  - prefab: {fileID: 114376407332925960, guid: 876a906b60fe8304592cc7747dddf3aa, type: 2}
-    spawnRate:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 2
-        time: 0
-        value: 1
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-      - serializedVersion: 2
-        time: 1
-        value: 1
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 0
-    spawnFactor: 0
-    maxClusterSize: 3
   upgradesScene: Upgrades
-  nextLevel: test
+  nextLevel: level4
 --- !u!4 &2006968448
 Transform:
   m_ObjectHideFlags: 0
@@ -707,164 +646,4 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 7
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &2058407303
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 2058407305}
-  - component: {fileID: 2058407304}
-  m_Layer: 0
-  m_Name: level manager (boss)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &2058407304
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 2058407303}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 81fbcb62d26b1004ea0cc167ecd665ec, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerPrefab: {fileID: 114646118536445206, guid: 26dcb9f5ad8b6d34d8d692ace2a32a5a,
-    type: 2}
-  playerSpawnPrefab: {fileID: 114807969500106566, guid: 2c2f3024b4d15b448908b1d772f85f8a,
-    type: 2}
-  warpGatePrefab: {fileID: 114480790586819870, guid: d925f49e6a4b4ed4d9553b20c78ebc75,
-    type: 2}
-  enemySpawnPrefab: {fileID: 114572706232016490, guid: f2ad2d4fb7aa56347bdd952a19fd3b85,
-    type: 2}
-  planetCount: 1
-  planetPrefabs:
-  - weight: 2
-    value: {fileID: 114448947987373628, guid: eadc88d64c89ff54ba2207858a896ebc, type: 2}
-  enemySpawns:
-  - prefab: {fileID: 114245726034998026, guid: 85f46d4504f211c41b041c1db98d7817, type: 2}
-    spawnRate:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 2
-        time: 0
-        value: 0
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-      - serializedVersion: 2
-        time: 1
-        value: 4.000001
-        inSlope: 10.338122
-        outSlope: 10.338122
-        tangentMode: 0
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 0
-    spawnFactor: 0
-    maxClusterSize: 1
-  - prefab: {fileID: 114488253990559428, guid: 0262133121deb7845b63590484ae4253, type: 2}
-    spawnRate:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 2
-        time: 0
-        value: 1
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-      - serializedVersion: 2
-        time: 1
-        value: 2.000001
-        inSlope: 1.0876453
-        outSlope: 1.0876453
-        tangentMode: 0
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 0
-    spawnFactor: 1
-    maxClusterSize: 1
-  - prefab: {fileID: 114432175952679874, guid: 449bbc73f3705aa4b8af1c42460abdce, type: 2}
-    spawnRate:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 2
-        time: 0
-        value: 1
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-      - serializedVersion: 2
-        time: 1
-        value: 2.000001
-        inSlope: 1.0876453
-        outSlope: 1.0876453
-        tangentMode: 0
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 0
-    spawnFactor: 0
-    maxClusterSize: 3
-  - prefab: {fileID: 114376407332925960, guid: 876a906b60fe8304592cc7747dddf3aa, type: 2}
-    spawnRate:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 2
-        time: 0
-        value: 1
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-      - serializedVersion: 2
-        time: 1
-        value: 1
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 0
-    spawnFactor: 0
-    maxClusterSize: 3
-  - prefab: {fileID: 114178264041090590, guid: 9e4a94d446b0ea94e944954da483cf97, type: 2}
-    spawnRate:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 2
-        time: 0
-        value: 1
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-      - serializedVersion: 2
-        time: 1
-        value: 1
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 0
-    spawnFactor: 0
-    maxClusterSize: 1
-  upgradesScene: Upgrades
-  nextLevel: test
---- !u!4 &2058407305
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 2058407303}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -3.65}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

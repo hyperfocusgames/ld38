@@ -16,6 +16,9 @@ public class Planet : MonoBehaviour {
 	void Awake() {
 		radius += Random.Range(-radiusVariance, radiusVariance);
 		surfaceModel.localScale = Vector3.one * radius * 2;
+	}
+
+	void Start() {
 		if (customMusic != null) {
 			MusicManager.instance.SetCustomMusic(customMusic);
 		}

@@ -824,7 +824,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   music: {fileID: 8300000, guid: ef28ce3c509f7034faeac80b08344a9f, type: 3}
-  scene: test
+  scene: level1
   seconds: 70
 --- !u!1 &2126390367
 GameObject:

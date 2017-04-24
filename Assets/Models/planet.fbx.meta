@@ -8,17 +8,22 @@ ModelImporter:
     100000: //RootNode
     100002: planet1
     100004: Sphere
+    100006: tech planet
     400000: //RootNode
     400002: planet1
     400004: Sphere
+    400006: tech planet
     2300000: //RootNode
     2300002: planet1
     2300004: Sphere
+    2300006: tech planet
     3300000: //RootNode
     3300002: planet1
     3300004: Sphere
+    3300006: tech planet
     4300000: planet1
     4300002: Sphere
+    4300004: tech planet
   materials:
     importMaterials: 0
     materialName: 0

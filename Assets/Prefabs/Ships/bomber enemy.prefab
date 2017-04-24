@@ -43,7 +43,7 @@ GameObject:
   - component: {fileID: 65645139563618160}
   - component: {fileID: 82727114097020376}
   m_Layer: 0
-  m_Name: EnemyMachinegun
+  m_Name: bomber enemy
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -423,7 +423,7 @@ MonoBehaviour:
   shield: 0
   baseShieldRechargeTime: 5
   projectile: {fileID: 1550092016294892, guid: 96604501f1f815143b6fe08ad33bb801, type: 2}
-  rateOfFire: 1.5
+  rateOfFire: 4
   damage: 1
   damPlayer: 1
   damEnemy: 0

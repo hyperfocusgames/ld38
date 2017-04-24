@@ -25,6 +25,7 @@ public class TitleManager : MonoBehaviour {
 					Destroy(PlayerData.player.gameObject);
 				}
 				MusicManager.instance.menuEffectEnabled = true;
+				MusicManager.instance.ResetCustomMusic();
 	}
 
     void StartGame() {

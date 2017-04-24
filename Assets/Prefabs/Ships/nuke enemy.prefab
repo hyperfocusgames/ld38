@@ -79,7 +79,7 @@ GameObject:
   - component: {fileID: 114488253990559428}
   - component: {fileID: 114820037041959244}
   m_Layer: 0
-  m_Name: EnemyKamakaziSlow
+  m_Name: nuke enemy
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -349,6 +349,24 @@ MonoBehaviour:
   damage: 2
   damPlayer: 1
   damEnemy: 0
+  distanceFallOff:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
   radius: 1
   impulseStrength: 80
 --- !u!135 &135452495959381366
