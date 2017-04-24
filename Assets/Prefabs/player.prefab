@@ -950,8 +950,7 @@ MonoBehaviour:
   damPlayer: 0
   damEnemy: 1
   shootSound: {fileID: 8300000, guid: 68d17511c7db9fc4c843fd0640ecc083, type: 3}
-  explosion: {fileID: 0}
-  explosionTime: 1
+  explosion: {fileID: 1991683658510300, guid: e751e401fdf64674b852d360f890870f, type: 2}
   damageRecoveryTime: 0.5
   upgradeGuns:
   - {fileID: 114278536354800388}
@@ -959,6 +958,7 @@ MonoBehaviour:
   missile: {fileID: 1436498337013374, guid: 61656262cae2da9438456400eed44a27, type: 2}
   lowHealthEffect: {fileID: 198650703954674578}
   damageFlashColor: {r: 1, g: 0, b: 0, a: 0.484}
+  deathUI: {fileID: 0}
 --- !u!114 &114750712089488522
 MonoBehaviour:
   m_ObjectHideFlags: 1

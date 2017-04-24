@@ -45,7 +45,7 @@ public class Damagable : MonoBehaviour
 	{
 		if(ship.explosion != null)
 		{
-			Destroy(Instantiate(ship.explosion, transform.position, transform.rotation), ship.explosionTime);
+			Instantiate(ship.explosion, transform.position, transform.rotation);
 		}
 	}
 }

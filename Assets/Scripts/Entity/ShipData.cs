@@ -18,7 +18,6 @@ public class ShipData : MonoBehaviour
 	public bool damEnemy = true;						// Should enemies be damaged by this?
 	public AudioClip shootSound;
 	public GameObject explosion;						// Effect to play on death
-	public float explosionTime;							// Time to play effect
 
 	public float damageRecoveryTime = 0;
 
