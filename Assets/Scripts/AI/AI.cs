@@ -45,25 +45,28 @@ public class AI : MonoBehaviour
 		}
 		else if(!ship.isStunned())
 		{
-			Vector3 player = PlayerData.player.transform.position;
-
-			Vector3 toPlayer = player - transform.position;
-
-			// If player is within view range, try to attack player
-			if(toPlayer.magnitude < viewDist)
+			if(playerEntity != null && PlayerData.player.isAlive)
 			{
-				followTarget(player, toPlayer);
-			}
+				Vector3 player = PlayerData.player.transform.position;
 
+				Vector3 toPlayer = player - transform.position;
+
+				// If player is within view range, try to attack player
+				if(toPlayer.magnitude < viewDist)
+				{
+					followTarget(player, toPlayer);
+				}
+
+				else
+				{
+					patrol();
+				}
+			}
 			else
 			{
+				// If player is missing, just patrol. Use in menu screen?
 				patrol();
-			}		
-		}
-		if(playerEntity == null)
-		{
-			// If player is missing, just patrol. Use in menu screen?
-			patrol();
+			}
 		}
 	}
 
