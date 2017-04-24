@@ -146,6 +146,10 @@ public class ShipData : MonoBehaviour
 
 		rechargeShield();
 
+		if (shield > 0) {
+			shieldObject.Hit();
+		}
+
 		if(shield - amt < 0)
 		{
 			amt -= shield;

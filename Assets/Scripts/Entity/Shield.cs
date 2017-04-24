@@ -18,36 +18,37 @@ public class Shield : MonoBehaviour {
 		matAlpha = render.material.color.a;
 	}
 
+	public void Hit() {
+		breakEffect.Play();
+	}
+
 	public void Break() {
-		if (!isBroken) {
-			isBroken = true;
-			StopCoroutine("ReformRoutine");
-			model.gameObject.SetActive(false);
-			breakEffect.Play();
-			reformEffect.Stop();
-		}
+		isBroken = true;
+		StopCoroutine("ReformRoutine");
+		model.gameObject.SetActive(false);
+		reformEffect.Stop();
 	}
 
 	public void Reform() {
-		if (isBroken) {
-			isBroken = false;
-			StartCoroutine("ReformRoutine");
-		}
+		StartCoroutine("ReformRoutine");
 	}
 
 	IEnumerator ReformRoutine() {
-		model.gameObject.SetActive(true);
-		Material mat = render.material;
-		Color color = mat.color;
 		reformEffect.Play();
-		float duration = reformEffect.main.duration;
-		float t = 0;
-		while (t < duration) {
-			t += Time.deltaTime;
-			color.a = matAlpha * (t / duration);
-			mat.color = color;
-			render.material = mat;
-			yield return null;
+		if (isBroken) {
+			isBroken = false;
+			model.gameObject.SetActive(true);
+			Material mat = render.material;
+			Color color = mat.color;
+			float duration = reformEffect.main.duration;
+			float t = 0;
+			while (t < duration) {
+				t += Time.deltaTime;
+				color.a = matAlpha * (t / duration);
+				mat.color = color;
+				render.material = mat;
+				yield return null;
+			}
 		}
 	}
 
