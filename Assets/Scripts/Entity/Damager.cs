@@ -7,6 +7,13 @@ public class Damager : MonoBehaviour
 	public int damage = 1;
 	public bool damPlayer = true;
 	public bool damEnemy = false;
+	public AnimationCurve distanceFallOff = AnimationCurve.Linear(0, 1, 1, 1);
+
+	Projectile projectile;
+
+	void Awake() {
+		projectile = GetComponent<Projectile>();
+	}
 
 	void OnTriggerEnter(Collider col) {
 		if ((damPlayer && col.CompareTag("Player"))
@@ -14,9 +21,9 @@ public class Damager : MonoBehaviour
 			|| (!col.CompareTag("Player") && !col.CompareTag("Enemy"))
 			) {
 			Damagable dam = col.GetComponent<Damagable>();
-			if(dam != null)
-			{
-				dam.damage(damage);
+			if(dam != null) {
+				float damage = (float) this.damage * distanceFallOff.Evaluate(projectile.distance);
+				dam.damage((int) Mathf.Ceil(damage));
 			}
 			Destroy(gameObject);
 		}

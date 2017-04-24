@@ -201,6 +201,24 @@ MonoBehaviour:
   damage: 1
   damPlayer: 1
   damEnemy: 0
+  distanceFallOff:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 1
+      value: 0.000013768673
+      inSlope: -2.251483
+      outSlope: -2.251483
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
 --- !u!114 &114642940083301020
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -215,7 +233,7 @@ MonoBehaviour:
   hoverHeight: 0
   faceVelocity: 1
   accelerationRollFactor: 1
-  accelerationSmoothing: 5
+  accelerationSmoothTime: 1
 --- !u!114 &114692705059414452
 MonoBehaviour:
   m_ObjectHideFlags: 1

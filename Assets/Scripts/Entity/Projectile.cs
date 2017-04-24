@@ -15,6 +15,13 @@ public class Projectile : MonoBehaviour
 		startTime = Time.time;
 	}
 
+	// distance along its path from 0 to 1
+	public float distance {
+		get {
+			return (Time.time - startTime) / timeout;
+		}
+	}
+
 	void FixedUpdate()
 	{
 		if(Time.time - startTime > timeout)
