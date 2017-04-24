@@ -9,8 +9,15 @@ public class HPUpgrade : Upgrade
         PlayerData.hpUpgrade();
     }
 
-    public override string toString()
-    {
-        return "<b>HP Upgrade:<\b> Upgrades your ship's max HP by " + PlayerData.HpUpgradeAmount;
-    }
+    public override string title {
+			get {
+					return "Max Health";
+			}
+		}
+
+    public override string description {
+			get {
+					return "Upgrades your ship's max HP by " + PlayerData.HpUpgradeAmount;
+			}
+		}
 }

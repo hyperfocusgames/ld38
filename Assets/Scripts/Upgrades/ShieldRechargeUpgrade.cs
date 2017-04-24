@@ -13,8 +13,15 @@ public class ShieldRechargeUpgrade : Upgrade
         PlayerData.shieldRechargeUpgrade();
     }
 
-    public override string toString()
-    {
-        return "<b>Shield Recharge Upgrade:<\b> Upgrades your ship's shield recharge timer by " + PlayerData.ShieldRechargeUpgradeAmount + " - There are a limited number of these!";
-    }
+		public override string title {
+			get {
+					return "Shield Recharge";
+			}
+		}
+
+    public override string description {
+			get {
+					return "Upgrades your ship's shield recharge timer by " + PlayerData.ShieldRechargeUpgradeAmount + " - <i>There are a limited number of these!</i>";
+			}
+		}
 }

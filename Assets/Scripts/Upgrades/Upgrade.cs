@@ -7,8 +7,6 @@ public abstract class Upgrade
 	public bool limited = false;
 	public abstract void activate();
 
-	public abstract string toString();
-	/*{
-		return "Upgrades your ship";
-	}*/
+	public abstract string title { get; }
+	public abstract string description { get; }
 }
