@@ -190,6 +190,7 @@ MonoBehaviour:
     m_Mode: 0
     m_NumColorKeys: 2
     m_NumAlphaKeys: 2
+  customMusic: {fileID: 8300000, guid: 205bab5aaafeefb418b94bba7c6722fd, type: 3}
 --- !u!135 &135970715340878814
 SphereCollider:
   m_ObjectHideFlags: 1

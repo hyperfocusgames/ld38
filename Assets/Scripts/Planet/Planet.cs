@@ -9,12 +9,19 @@ public class Planet : MonoBehaviour {
 	public float enemySpawnFactor = 1;
 	public float radiusVariance = 0.5f;
 	public Gradient sky;
+	public AudioClip customMusic;
 
 	public WarpGate warpGate { get; set; }
 
 	void Awake() {
 		radius += Random.Range(-radiusVariance, radiusVariance);
 		surfaceModel.localScale = Vector3.one * radius * 2;
+		if (customMusic != null) {
+			MusicManager.instance.SetCustomMusic(customMusic);
+		}
+		else {
+			MusicManager.instance.ResetCustomMusic();
+		}
 	}
 
 	void OnValidate() {
