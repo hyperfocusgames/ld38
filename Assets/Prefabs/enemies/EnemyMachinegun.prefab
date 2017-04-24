@@ -284,7 +284,7 @@ MonoBehaviour:
   baseShield: 1
   shield: 0
   baseShieldRechargeTime: 5
-  projectile: {fileID: 1439116553215780, guid: 4e6b60191cac52949bf55c5a7354b5c1, type: 2}
+  projectile: {fileID: 1550092016294892, guid: 96604501f1f815143b6fe08ad33bb801, type: 2}
   rateOfFire: 0.5
   damPlayer: 1
   damEnemy: 0

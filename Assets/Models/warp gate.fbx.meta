@@ -1,15 +1,21 @@
 fileFormatVersion: 2
-guid: 1ddddf104733c5c4eaa06553b185c453
-timeCreated: 1492921292
+guid: 8a58ffad07603bf4891d259297a9ca9e
+timeCreated: 1492988323
 licenseType: Free
 ModelImporter:
   serializedVersion: 19
   fileIDToRecycleName:
-    100000: //RootNode
-    400000: //RootNode
-    2300000: //RootNode
-    3300000: //RootNode
-    4300000: ico
+    100000: Empty
+    100002: //RootNode
+    100004: warp_pad
+    400000: Empty
+    400002: //RootNode
+    400004: warp_pad
+    2300000: warp_pad
+    2300002: //RootNode
+    3300000: warp_pad
+    3300002: //RootNode
+    4300000: warp_pad
   materials:
     importMaterials: 0
     materialName: 0
