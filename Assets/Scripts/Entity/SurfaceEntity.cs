@@ -19,6 +19,16 @@ public class SurfaceEntity : MonoBehaviour {
 
 	Vector3 accelerationSmoothVelocity;
 
+	static HashSet<SurfaceEntity> _all;
+	public static HashSet<SurfaceEntity> all {
+		get {
+			if (_all == null) {
+				_all = new HashSet<SurfaceEntity>();
+			}
+			return _all;
+		}
+	}
+
 	void Awake() {
 		planet = FindObjectOfType<Planet>();
 		body = GetComponent<Rigidbody>();
@@ -48,5 +58,12 @@ public class SurfaceEntity : MonoBehaviour {
 		oldVelocity = body.velocity;
 	}
 
+	void OnEnable() {
+		all.Add(this);
+	}
+
+	void OnDisable() {
+		all.Remove(this);
+	}
 
 }

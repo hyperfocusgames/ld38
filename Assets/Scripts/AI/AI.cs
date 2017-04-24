@@ -75,7 +75,7 @@ public class AI : MonoBehaviour
 		{
 			Vector3 prediction = target + (playerEntity.body.velocity * aimAheadTime);	// Aim where player will be in the future
 			Vector3 toPrediction = prediction - transform.position;
-			entity.body.AddForce(toPrediction.normalized * ship.MoveSpeed);
+			entity.body.AddForce(toPrediction.normalized * ship.MoveSpeed, ForceMode.Acceleration);
 		}
 		// Stop and face target
 		else
@@ -94,6 +94,6 @@ public class AI : MonoBehaviour
 			patrolTarget = new Vector3(Random.Range(-planet.radius, planet.radius), Random.Range(-planet.radius, planet.radius), Random.Range(-planet.radius, planet.radius));
 		}
 		Vector3 toTarget = transform.position - patrolTarget;
-		entity.body.AddForce(toTarget.normalized * ship.MoveSpeed);
+		entity.body.AddForce(toTarget.normalized * ship.MoveSpeed, ForceMode.Acceleration);
 	}
 }

@@ -50,7 +50,7 @@ public class PlayerController : MonoBehaviour {
 			= up * Input.GetAxisRaw("Vertical")
 			+ right * Input.GetAxisRaw("Horizontal");
 		input.Normalize();
-		entity.body.AddForce(input * PlayerData.player.moveSpeed);
+		entity.body.AddForce(input * PlayerData.player.moveSpeed, ForceMode.Acceleration);
 		
 		if(Input.GetAxisRaw("Fire1") > 0)
 		{

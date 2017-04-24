@@ -6,6 +6,7 @@ public class Exploder : Damager
 {
 	public float radius = 1f;
 	Damagable dam;
+	public float impulseStrength = 50;
 
 	void Awake()
 	{
@@ -16,6 +17,12 @@ public class Exploder : Damager
 	{
 		// do death things
 		BroadcastMessage("OnDeath", SendMessageOptions.DontRequireReceiver);
+
+		if (impulseStrength > 0) {
+			foreach (SurfaceEntity entity in SurfaceEntity.all) {
+				entity.body.AddExplosionForce(impulseStrength, transform.position, radius, 0, ForceMode.Impulse);
+			}
+		}
 
 		Collider[] cols = Physics.OverlapSphere(transform.position, radius);
 		foreach(Collider col in cols)
