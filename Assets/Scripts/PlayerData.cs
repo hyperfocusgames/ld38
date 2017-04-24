@@ -25,6 +25,7 @@ public class PlayerData : ShipData
 	public GameObject missile;	// The projectile that will be fired after the missile upgrade
 
 	public ParticleSystem lowHealthEffect;
+	private bool godMode = false;
 
 	public bool isAlive {
 		get {
@@ -159,6 +160,19 @@ public class PlayerData : ShipData
 
 	public void OnDeath() {
 		gameObject.SetActive(false);
+	}
+
+	public void GodMode()
+	{
+		godMode = !godMode;
+	}
+	public override void dealDamage(int amt)
+	{
+		base.dealDamage(amt);
+		if(godMode && hp <= 0)
+		{
+			hp = 1;
+		}
 	}
 
 }

@@ -37,6 +37,10 @@ public class PlayerController : MonoBehaviour {
 				paused = !paused;
 			}
 		}
+		if(Input.GetButtonDown("GodMode"))
+		{
+			PlayerData.player.GodMode();
+		}
 	}
 
 	void FixedUpdate() {
