@@ -27,8 +27,7 @@ public class Exploder : Damager
 	void OnTriggerEnter(Collider col)
 	{
 		if((damPlayer && col.tag == "Player") ||
-		 	(damEnemy && col.tag == "Enemy") ||
-			 (col.tag != "Player" && col.tag != "Enemy"))
+		 	(damEnemy && col.tag == "Enemy"))
 		{
 			explode();
 		}
