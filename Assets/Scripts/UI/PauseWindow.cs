@@ -22,6 +22,10 @@ public class PauseWindow : SingletonBehaviour<PauseWindow> {
 		}
 	}
 
+	void Update() {
+		MusicManager.instance.menuEffectEnabled = isPaused;
+	}
+
 	void Awake() {
 		stats = GetComponentInChildren<Stats>();
 		instance.gameObject.SetActive(false);

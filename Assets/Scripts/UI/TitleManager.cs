@@ -24,6 +24,7 @@ public class TitleManager : MonoBehaviour {
 				if (PlayerData.player != null) {
 					Destroy(PlayerData.player.gameObject);
 				}
+				MusicManager.instance.menuEffectEnabled = true;
 	}
 
     void StartGame() {
