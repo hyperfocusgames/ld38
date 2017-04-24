@@ -10,12 +10,14 @@ public class SurfaceEntity : MonoBehaviour {
 	public float hoverHeight = 0;
 	public bool faceVelocity = true;
 	public float accelerationRollFactor = 1;
-	public float accelerationSmoothing = 5;
+	public float accelerationSmoothTime = 1;
 
 	public Rigidbody body { get; private set; }
 
 	Vector3 oldVelocity;
 	Vector3 smoothAcceleration;
+
+	Vector3 accelerationSmoothVelocity;
 
 	void Awake() {
 		planet = FindObjectOfType<Planet>();
@@ -25,7 +27,7 @@ public class SurfaceEntity : MonoBehaviour {
 
 	void FixedUpdate() {
 		Vector3 acceleration = (body.velocity - oldVelocity) / Time.fixedDeltaTime;
-		smoothAcceleration = Vector3.Lerp(smoothAcceleration, acceleration, Time.fixedDeltaTime * accelerationSmoothing);
+		smoothAcceleration = Vector3.SmoothDamp(smoothAcceleration, acceleration, ref accelerationSmoothVelocity, accelerationSmoothTime);
 		if (planet != null) {
 			Vector3 pos = transform.position - planet.transform.position;
 			// make sure velocity is tangent to planet surface

@@ -437,8 +437,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hoverHeight: 0.5
   faceVelocity: 1
-  accelerationRollFactor: 0.5
-  accelerationSmoothing: 5
+  accelerationRollFactor: 1
+  accelerationSmoothTime: 0.15
 --- !u!114 &114753266818608714
 MonoBehaviour:
   m_ObjectHideFlags: 1

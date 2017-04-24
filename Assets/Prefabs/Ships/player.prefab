@@ -258,7 +258,7 @@ GameObject:
   - component: {fileID: 114179095067647024}
   m_Layer: 0
   m_Name: Shield
-  m_TagString: Untagged
+  m_TagString: Shield
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -927,7 +927,7 @@ MonoBehaviour:
   hoverHeight: 0.5
   faceVelocity: 1
   accelerationRollFactor: 1
-  accelerationSmoothing: 5
+  accelerationSmoothTime: 0.15
 --- !u!114 &114646118536445206
 MonoBehaviour:
   m_ObjectHideFlags: 1

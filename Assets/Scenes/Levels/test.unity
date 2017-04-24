@@ -193,15 +193,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 5
       objectReference: {fileID: 0}
-    - target: {fileID: 114646118536445206, guid: 26dcb9f5ad8b6d34d8d692ace2a32a5a,
-        type: 2}
-      propertyPath: damageFlashColor.a
-      value: 0.484
-      objectReference: {fileID: 0}
-    - target: {fileID: 1808965708830744, guid: 26dcb9f5ad8b6d34d8d692ace2a32a5a, type: 2}
-      propertyPath: m_TagString
-      value: Shield
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 26dcb9f5ad8b6d34d8d692ace2a32a5a, type: 2}
   m_IsPrefabParent: 0
@@ -474,6 +465,7 @@ MonoBehaviour:
     type: 2}
   enemySpawnPrefab: {fileID: 114572706232016490, guid: f2ad2d4fb7aa56347bdd952a19fd3b85,
     type: 2}
+  planetCount: 3
   planetPrefabs:
   - weight: 1
     value: {fileID: 114448947987373628, guid: 5cd696eb640be264eb8542a7fe742f84, type: 2}
@@ -545,7 +537,7 @@ MonoBehaviour:
       m_RotationOrder: 0
     spawnFactor: 1
     maxClusterSize: 1
-  planetCount: 3
+  upgradesScene: Upgrades
 --- !u!4 &2006968448
 Transform:
   m_ObjectHideFlags: 0
