@@ -4,10 +4,10 @@ using System.Collections.Generic;
 
 public class PlayerSpawn : TerrainProp {
 
-	void OnPlanetStart() {
+	void OnPlanetStart(Planet planet) {
 		PlayerData player = PlayerData.player;
 		player.transform.position = transform.position;
-		player.Spawn();
+		player.Spawn(planet);
 	}
 
 }

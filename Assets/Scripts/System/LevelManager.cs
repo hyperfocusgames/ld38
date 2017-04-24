@@ -1,16 +1,18 @@
 using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 
 public class LevelManager : SingletonBehaviour<LevelManager> {
 
 	public PlayerSpawn playerSpawnPrefab;
 	public WarpGate warpGatePrefab;
 	public EnemySpawn enemySpawnPrefab;
+	public int planetCount = 5;
 	public WeightedPlanet[] planetPrefabs;
 	public EnemySpawnInfo[] enemySpawns;
+	public string upgradesScene = "Upgrades";
 
-	public int planetCount = 5;
 	public int planetNumber { get; private set; }
 
 	public Planet planet { get; private set; }
@@ -22,6 +24,8 @@ public class LevelManager : SingletonBehaviour<LevelManager> {
 	}
 
 	public void NextPlanet() {
+		PlayerData player = PlayerData.player;
+		player.BroadcastMessage("OnPlanetEnd", SendMessageOptions.DontRequireReceiver);
 		if (planetNumber < planetCount) {
 			planetNumber ++;
 			if (planet != null) {
@@ -41,8 +45,12 @@ public class LevelManager : SingletonBehaviour<LevelManager> {
 			}
 		}
 		else {
-			GameManager.levelFinished();
+			NextLevel();
 		}
+	}
+
+	public void NextLevel() {
+		SceneManager.LoadScene(upgradesScene);
 	}
 
 	public void OnEnemyDeath() {

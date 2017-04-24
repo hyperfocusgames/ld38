@@ -21,7 +21,7 @@ public class UpgradeButton : MonoBehaviour
 	{
 		Upgrade.activate();
 		gameObject.GetComponentInParent<UpgradesScreen>();
-		GameManager.upgradesFinished();
+		// GameManager.upgradesFinished();
 		Destroy(gameObject);
 	}
 }

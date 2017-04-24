@@ -11,6 +11,6 @@ public class NumEnemies : MonoBehaviour
 	void Awake ()
 	{
 		text = GetComponent<Text>();
-		text.text = str + GameManager.NumEnemies;
+		text.text = str + EnemyData.livingCount;
 	}
 }

@@ -156,8 +156,9 @@ public class PlayerData : ShipData
 		projectile = missile;
 	}
 
-	public void Spawn() {
+	public void Spawn(Planet planet) {
 		gameObject.SetActive(true);
+		entity.planet = planet;
 	}
 
 	void OnDeath() {
@@ -185,6 +186,10 @@ public class PlayerData : ShipData
 	}
 	void OnDamageTaken(int damage) {
 		ScreenFlash.instance.Flash(damageFlashColor, damageRecoveryTime);
+	}
+
+	void OnPlanetEnd() {
+		gameObject.SetActive(false);
 	}
 
 }
