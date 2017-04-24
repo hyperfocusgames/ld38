@@ -158,7 +158,7 @@ Prefab:
 MonoBehaviour:
   m_PrefabParentObject: {fileID: 114524546456349946, guid: 26dcb9f5ad8b6d34d8d692ace2a32a5a,
     type: 2}
-  m_PrefabInternal: {fileID: 974614327}
+  m_PrefabInternal: {fileID: 1092203701}
   m_Script: {fileID: 11500000, guid: 24775163dbe68644f9574cccfaddc7cb, type: 3}
 --- !u!1001 &870645998
 Prefab:
@@ -207,7 +207,7 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: abec7946d31a34f479d7ff6ffe4f09d3, type: 2}
   m_IsPrefabParent: 0
---- !u!1001 &974614327
+--- !u!1001 &1092203701
 Prefab:
   m_ObjectHideFlags: 0
   serializedVersion: 2

@@ -6,10 +6,19 @@ ModelImporter:
   serializedVersion: 19
   fileIDToRecycleName:
     100000: //RootNode
+    100002: shield
+    100004: shield shard
     400000: //RootNode
+    400002: shield
+    400004: shield shard
     2300000: //RootNode
+    2300002: shield
+    2300004: shield shard
     3300000: //RootNode
+    3300002: shield
+    3300004: shield shard
     4300000: shield
+    4300002: shield shard
   materials:
     importMaterials: 0
     materialName: 0

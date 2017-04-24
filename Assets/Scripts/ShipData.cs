@@ -143,7 +143,7 @@ public class ShipData : MonoBehaviour
 		{
 			if(shieldObject != null)
 			{
-				shieldObject.gameObject.SetActive(false);
+				shieldObject.Break();
 			}
 		}
 	}
@@ -157,7 +157,7 @@ public class ShipData : MonoBehaviour
 			lastHitTime = Time.time;	// Just set this to now so it resets recharge cooldown
 			if(shieldObject != null)
 			{
-				shieldObject.gameObject.SetActive(true);
+				shieldObject.Reform();
 			}
 		}
 	}
