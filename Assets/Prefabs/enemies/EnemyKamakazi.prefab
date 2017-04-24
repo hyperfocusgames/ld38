@@ -43,7 +43,6 @@ GameObject:
   - component: {fileID: 4322922232809592}
   - component: {fileID: 33787917683131094}
   - component: {fileID: 23464832507501470}
-  - component: {fileID: 95349657436975576}
   m_Layer: 0
   m_Name: Model
   m_TagString: Untagged
@@ -132,23 +131,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 1
---- !u!95 &95349657436975576
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1682046584921754}
-  m_Enabled: 1
-  m_Avatar: {fileID: 9000000, guid: a6b9e75338ed7704fa6abbf7f03d7dbb, type: 3}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
 --- !u!114 &114291016865927156
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -232,7 +214,7 @@ CapsuleCollider:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1660878539807530}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 9a68911bc8ae1a24e9a1002aa2c2b801, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: 0.08845326

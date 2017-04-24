@@ -89,7 +89,7 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 126
+  m_Constraints: 112
   m_CollisionDetection: 0
 --- !u!96 &96415303868074674
 TrailRenderer:
@@ -199,8 +199,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 1
-  damPlayer: 1
-  damEnemy: 0
+  damPlayer: 0
+  damEnemy: 1
 --- !u!114 &114642940083301020
 MonoBehaviour:
   m_ObjectHideFlags: 1
