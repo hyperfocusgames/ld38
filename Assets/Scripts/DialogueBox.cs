@@ -42,20 +42,21 @@ public class DialogueBox : MonoBehaviour {
 		TMP_TextInfo textInfo = textComponent.textInfo;
 		textComponent.text = dialogue[line].name + ": " + dialogue[line].dialogue;
 
-		int totalVisibleCharacters = textInfo.characterCount; // Get # of Visible Character in text object
+        int totalVisibleCharacters = dialogue[line].dialogue.Length + dialogue[line].name.Length+2;//textInfo.characterCount; // Get # of Visible Character in text object
+        Debug.Log(totalVisibleCharacters);
 		int visibleCount = 0;
-
 		while (line < dialogue.Length) {
-			if (hasTextChanged) {
+            totalVisibleCharacters = dialogue[line].dialogue.Length + dialogue[line].name.Length + 2;
+            if (hasTextChanged) {
 				totalVisibleCharacters = textInfo.characterCount; // Update visible character count.
 				hasTextChanged = false;
 			}
 
 			if (visibleCount > totalVisibleCharacters) {
-				yield return new WaitForSeconds(lineSpeedPerLetter);
+				yield return new WaitForSeconds(lineSpeedPerLetter*visibleCount);
 				visibleCount = 0;
 				line++;
-				if (line < dialogue.Length) {
+                if (line < dialogue.Length) {
 					textComponent.text = dialogue[line].name + ": " + dialogue[line].dialogue;
 				}else {
 					panel.SetActive(false);

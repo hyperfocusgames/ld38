@@ -103,6 +103,8 @@ MonoBehaviour:
     dialogue: This is some <b>bold</b> text.
   - name: Speaker2
     dialogue: Wow. That <i>is</i> some bold text.
+  - name: Speaker2
+    dialogue: Wow. That <i>is</i> some bold text.
   playOnAwake: 1
 --- !u!114 &114381402291375488
 MonoBehaviour:
