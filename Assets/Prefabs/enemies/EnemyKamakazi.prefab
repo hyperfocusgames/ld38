@@ -43,6 +43,7 @@ GameObject:
   - component: {fileID: 4322922232809592}
   - component: {fileID: 33787917683131094}
   - component: {fileID: 23464832507501470}
+  - component: {fileID: 114348509858413740}
   m_Layer: 0
   m_Name: Model
   m_TagString: Untagged
@@ -177,6 +178,18 @@ MonoBehaviour:
   faceVelocity: 1
   accelerationRollFactor: 0
   accelerationSmoothing: 5
+--- !u!114 &114348509858413740
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1682046584921754}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0a31972a26fcf346829edd048392741, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rollSpeed: 45
 --- !u!114 &114432175952679874
 MonoBehaviour:
   m_ObjectHideFlags: 1
