@@ -5,7 +5,7 @@ using UnityEngine;
 public class AI : MonoBehaviour
 {
 	private const int patrolChangeChance = 1;
-	public float aimAheadTime = 1f;
+	public float aimAheadTime = .5f;
 	public float stopDist = 3f;
 	public float viewDist = 5f;
 	public bool stunable = true;
@@ -56,7 +56,6 @@ public class AI : MonoBehaviour
 				{
 					followTarget(player, toPlayer);
 				}
-
 				else
 				{
 					patrol();
