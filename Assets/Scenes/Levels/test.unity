@@ -154,7 +154,7 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d79e89c2e6f304149aa9e1f839c51a63, type: 2}
   m_IsPrefabParent: 0
---- !u!1001 &436955821
+--- !u!1001 &408629047
 Prefab:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -192,6 +192,51 @@ Prefab:
     - target: {fileID: 4400658753276766, guid: 26dcb9f5ad8b6d34d8d692ace2a32a5a, type: 2}
       propertyPath: m_RootOrder
       value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 198263811862724182, guid: 26dcb9f5ad8b6d34d8d692ace2a32a5a,
+        type: 2}
+      propertyPath: looping
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 198263811862724182, guid: 26dcb9f5ad8b6d34d8d692ace2a32a5a,
+        type: 2}
+      propertyPath: randomSeed
+      value: 1000048896
+      objectReference: {fileID: 0}
+    - target: {fileID: 198263811862724182, guid: 26dcb9f5ad8b6d34d8d692ace2a32a5a,
+        type: 2}
+      propertyPath: ColorModule.gradient.maxGradient.key2.a
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 198263811862724182, guid: 26dcb9f5ad8b6d34d8d692ace2a32a5a,
+        type: 2}
+      propertyPath: ColorModule.gradient.maxGradient.atime1
+      value: 35659
+      objectReference: {fileID: 0}
+    - target: {fileID: 198263811862724182, guid: 26dcb9f5ad8b6d34d8d692ace2a32a5a,
+        type: 2}
+      propertyPath: InitialModule.startLifetime.scalar
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 198263811862724182, guid: 26dcb9f5ad8b6d34d8d692ace2a32a5a,
+        type: 2}
+      propertyPath: EmissionModule.m_Bursts.Array.data[0].minCount
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 198263811862724182, guid: 26dcb9f5ad8b6d34d8d692ace2a32a5a,
+        type: 2}
+      propertyPath: EmissionModule.m_Bursts.Array.data[0].maxCount
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 198263811862724182, guid: 26dcb9f5ad8b6d34d8d692ace2a32a5a,
+        type: 2}
+      propertyPath: ShapeModule.radius.value
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 198263811862724182, guid: 26dcb9f5ad8b6d34d8d692ace2a32a5a,
+        type: 2}
+      propertyPath: InitialModule.startSize.scalar
+      value: 0.25
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 26dcb9f5ad8b6d34d8d692ace2a32a5a, type: 2}
@@ -330,7 +375,7 @@ Prefab:
 MonoBehaviour:
   m_PrefabParentObject: {fileID: 114524546456349946, guid: 26dcb9f5ad8b6d34d8d692ace2a32a5a,
     type: 2}
-  m_PrefabInternal: {fileID: 436955821}
+  m_PrefabInternal: {fileID: 408629047}
   m_Script: {fileID: 11500000, guid: 24775163dbe68644f9574cccfaddc7cb, type: 3}
 --- !u!1001 &870645998
 Prefab:

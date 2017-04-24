@@ -10,6 +10,14 @@ public class Shield : MonoBehaviour {
 	
 	public bool isBroken { get; private set; }
 
+	Renderer render;
+	float matAlpha;
+
+	void Awake() {
+		render = model.GetComponent<Renderer>();
+		matAlpha = render.material.color.a;
+	}
+
 	public void Break() {
 		if (!isBroken) {
 			isBroken = true;
@@ -28,9 +36,19 @@ public class Shield : MonoBehaviour {
 	}
 
 	IEnumerator ReformRoutine() {
-		reformEffect.Play();
-		yield return new WaitForSeconds(reformEffect.main.duration);
 		model.gameObject.SetActive(true);
+		Material mat = render.material;
+		Color color = mat.color;
+		reformEffect.Play();
+		float duration = reformEffect.main.duration;
+		float t = 0;
+		while (t < duration) {
+			t += Time.deltaTime;
+			color.a = matAlpha * (t / duration);
+			mat.color = color;
+			render.material = mat;
+			yield return null;
+		}
 	}
 
 }
