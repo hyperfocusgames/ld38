@@ -27,6 +27,7 @@ public class PlayerData : ShipData
 	public ParticleSystem lowHealthEffect;
 	private bool godMode = false;
 	public Color damageFlashColor = Color.red;
+	public GameObject deathUI;
 
 	public bool isAlive {
 		get {
@@ -177,8 +178,11 @@ public class PlayerData : ShipData
 		{
 			hp = 1;
 		}
+		if(hp <= 0 && deathUI != null)
+		{
+			Instantiate(deathUI, Vector3.zero, Quaternion.identity);
+		}
 	}
-	
 	void OnDamageTaken(int damage) {
 		ScreenFlash.instance.Flash(damageFlashColor, damageRecoveryTime);
 	}
