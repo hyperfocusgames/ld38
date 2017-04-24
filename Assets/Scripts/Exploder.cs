@@ -5,8 +5,14 @@ using UnityEngine;
 public class Exploder : Damager
 {
 	public float radius = 1f;
+	Damagable dam;
 
-	private void explode()
+	void Awake()
+	{
+		dam = GetComponent<Damagable>();
+	}
+
+	public void explode()
 	{
 		Collider[] cols = Physics.OverlapSphere(transform.position, radius);
 		foreach(Collider col in cols)
@@ -21,7 +27,7 @@ public class Exploder : Damager
 				}
 			}
 		}
-		Destroy(gameObject);
+		dam.dieEffect();
 	}
 
 	void OnTriggerEnter(Collider col)
