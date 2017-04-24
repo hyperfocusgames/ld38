@@ -406,7 +406,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4831af31760d0b4ba8612c0aeea43fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  aimAheadTime: 1
+  aimAheadTime: 0.5
   stopDist: 2
   viewDist: 10
   stunable: 1

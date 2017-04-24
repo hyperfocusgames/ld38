@@ -26,6 +26,12 @@ public class PlayerData : ShipData
 
 	public ParticleSystem lowHealthEffect;
 
+	public bool isAlive {
+		get {
+			return gameObject.activeSelf;
+		}
+	}
+
  	protected override void Awake()
 	{
 		DontDestroyOnLoad(this);
@@ -145,6 +151,14 @@ public class PlayerData : ShipData
 	public void missileUpgrade()
 	{
 		projectile = missile;
+	}
+
+	public void Spawn() {
+		gameObject.SetActive(true);
+	}
+
+	public void OnDeath() {
+		gameObject.SetActive(false);
 	}
 
 }
