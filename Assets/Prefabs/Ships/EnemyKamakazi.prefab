@@ -258,7 +258,7 @@ MonoBehaviour:
   hoverHeight: 0.5
   faceVelocity: 1
   accelerationRollFactor: 0
-  accelerationSmoothing: 5
+  accelerationSmoothTime: 1
 --- !u!114 &114348509858413740
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -325,7 +325,7 @@ MonoBehaviour:
   damage: 1
   damPlayer: 1
   damEnemy: 0
-  radius: 0.2
+  radius: 1
 --- !u!114 &114995224521142800
 MonoBehaviour:
   m_ObjectHideFlags: 1
