@@ -15,6 +15,18 @@ public class ChangeSceneAfterX : MonoBehaviour {
 
 	IEnumerator Wait() {
 		yield return new WaitForSeconds(seconds);
+	}
+
+	protected void loadNextScene()
+	{
 		SceneManager.LoadScene(scene);
+	}
+
+	void Update()
+	{
+		if(Input.GetButtonDown("Cancel"))
+		{
+			loadNextScene();
+		}
 	}
 }
