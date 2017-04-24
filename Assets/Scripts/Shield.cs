@@ -13,15 +13,17 @@ public class Shield : MonoBehaviour {
 	public void Break() {
 		if (!isBroken) {
 			isBroken = true;
+			StopCoroutine("ReformRoutine");
 			model.gameObject.SetActive(false);
 			breakEffect.Play();
+			reformEffect.Stop();
 		}
 	}
 
 	public void Reform() {
 		if (isBroken) {
 			isBroken = false;
-			StartCoroutine(ReformRoutine());
+			StartCoroutine("ReformRoutine");
 		}
 	}
 
