@@ -9,53 +9,53 @@ Prefab:
     m_Modifications: []
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 1168589751357400}
+  m_RootGameObject: {fileID: 1485926770702530}
   m_IsPrefabParent: 1
---- !u!1 &1168589751357400
+--- !u!1 &1485926770702530
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 5
   m_Component:
-  - component: {fileID: 4881083694526374}
-  - component: {fileID: 82963255810834686}
-  - component: {fileID: 114195240109657900}
+  - component: {fileID: 4393406706435184}
+  - component: {fileID: 114187047407805592}
+  - component: {fileID: 82741761200942396}
   m_Layer: 0
-  m_Name: warp gate entrance effect
+  m_Name: music manager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4881083694526374
+--- !u!4 &4393406706435184
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1168589751357400}
+  m_GameObject: {fileID: 1485926770702530}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.50056744, y: 0.9998889, z: -3.7553158}
+  m_LocalPosition: {x: 0, y: 0.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!82 &82963255810834686
+--- !u!82 &82741761200942396
 AudioSource:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1168589751357400}
+  m_GameObject: {fileID: 1485926770702530}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 243105234065539370, guid: 7ac0b50172a011645a997deca59421a7,
+  OutputAudioMixerGroup: {fileID: 243065713977025064, guid: 7ac0b50172a011645a997deca59421a7,
     type: 2}
-  m_audioClip: {fileID: 8300000, guid: 86bd7792c89a6a64d959d4b59be69873, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 22a1dd25cb7d5134ab071826109b8dc3, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -122,15 +122,17 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
---- !u!114 &114195240109657900
+--- !u!114 &114187047407805592
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1168589751357400}
+  m_GameObject: {fileID: 1485926770702530}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 470c8b195d585564e90961b58b414ca5, type: 3}
+  m_Script: {fileID: 11500000, guid: fd63c5a7141895846a70609c47eeb1d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  time: 5
+  mainMusic: {fileID: 8300000, guid: 22a1dd25cb7d5134ab071826109b8dc3, type: 3}
+  mixer: {fileID: 24100000, guid: 7ac0b50172a011645a997deca59421a7, type: 2}
+  menuEffectTransitionTime: 0.5

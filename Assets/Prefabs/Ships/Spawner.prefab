@@ -228,7 +228,7 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
-    m_RotationOrder: 4
+    m_RotationOrder: 0
   reverbZoneMixCustomCurve:
     serializedVersion: 2
     m_Curve:
@@ -280,8 +280,9 @@ MonoBehaviour:
   damPlayer: 1
   damEnemy: 0
   shootSound: {fileID: 8300000, guid: a68f2eb4a58a7f64381e5893f44ccd4d, type: 3}
+  shootSoundPitchOffset: 0.05
   explosion: {fileID: 1628607057731358, guid: 2ddfb7bd49ab57945a0418d96516eee9, type: 2}
-  explosionTime: 1
+  damageRecoveryTime: 0
 --- !u!114 &114638710235145328
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -322,7 +323,7 @@ MonoBehaviour:
   hoverHeight: 0.5
   faceVelocity: 1
   accelerationRollFactor: 0
-  accelerationSmoothing: 0
+  accelerationSmoothTime: 1
 --- !u!135 &135069278354240058
 SphereCollider:
   m_ObjectHideFlags: 1

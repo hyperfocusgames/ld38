@@ -30,11 +30,13 @@ public class UpgradesScreen : SingletonBehaviour<UpgradesScreen>
 				b.GetComponent<UpgradeButton>().upgrade = u;
 			}
 		}
+		MusicManager.instance.menuEffectEnabled = true;
 	}
 
 	public void Finish() {
 		SceneManager.LoadScene(LevelManager.nextLevelAfterUpgrades);
 		group.interactable = false;
+		MusicManager.instance.menuEffectEnabled = false;
 	}
 
 }
