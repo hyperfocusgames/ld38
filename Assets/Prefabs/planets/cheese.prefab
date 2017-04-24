@@ -159,6 +159,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   surfaceModel: {fileID: 4080898546710430}
   radius: 4.5
+  enemySpawnFactor: 0.7
   radiusVariance: 1.5
   sky:
     serializedVersion: 2

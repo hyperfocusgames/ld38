@@ -285,7 +285,7 @@ MonoBehaviour:
   moveSpeed: 20
   baseHP: 1
   hp: 0
-  baseShield: 1
+  baseShield: 0
   shield: 0
   baseShieldRechargeTime: 5
   projectile: {fileID: 0}
@@ -293,6 +293,9 @@ MonoBehaviour:
   damPlayer: 1
   damEnemy: 0
   shootSound: {fileID: 8300000, guid: 68d17511c7db9fc4c843fd0640ecc083, type: 3}
+  explosion: {fileID: 0}
+  explosionTime: 0
+  damageRecoveryTime: 0
 --- !u!114 &114443164540418828
 MonoBehaviour:
   m_ObjectHideFlags: 1

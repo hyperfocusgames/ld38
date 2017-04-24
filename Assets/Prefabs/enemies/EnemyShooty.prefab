@@ -387,7 +387,7 @@ MonoBehaviour:
   moveSpeed: 15
   baseHP: 1
   hp: 0
-  baseShield: 1
+  baseShield: 0
   shield: 0
   baseShieldRechargeTime: 5
   projectile: {fileID: 1550092016294892, guid: 96604501f1f815143b6fe08ad33bb801, type: 2}
@@ -395,6 +395,9 @@ MonoBehaviour:
   damPlayer: 1
   damEnemy: 0
   shootSound: {fileID: 8300000, guid: 68d17511c7db9fc4c843fd0640ecc083, type: 3}
+  explosion: {fileID: 0}
+  explosionTime: 0
+  damageRecoveryTime: 0
 --- !u!114 &114517608231931302
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -458,7 +461,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 20488e688e1c12841af4dfa37a2f284b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  recoveryTime: 0
 --- !u!198 &198074150897676838
 ParticleSystem:
   m_ObjectHideFlags: 1
