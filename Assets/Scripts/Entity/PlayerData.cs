@@ -8,19 +8,20 @@ public class PlayerData : ShipData
 	public static PlayerData player;
 
 	private static float 	moveSpeedUpgradeAmount = 10f;
-    private static int 		hpUpgradeAmount = 1;
+	private static int 		hpUpgradeAmount = 1;
 	private static int		shieldUpgradeAmount = 1;
 	private static float	shieldRechargeUpgradeAmount = .5f;
-    private static float 	rofUpgradeAmount = .1f;
+	private static float 	rofUpgradeAmount = .1f;
 	private static int 		damUpgradeAmount = 1;
 	private static float	stunUpgradeAmount = .1f;
-	private static int 		numMoveSpeedUpgrades = 0;
-	private static int 		numHPUpgrades = 0;
-	private static int 		numShieldUpgrades = 0;
-	private static int 		numShieldRechargeUpgrades = 0;
-	private static int 		numROFUpgrades = 0;
-	private static int 		numDamUpgrades = 0;
-	private static int		numStunUpgrades = 0;
+	
+	private static int numMoveSpeedUpgrades = 0;
+	private static int numHPUpgrades = 0;
+	private static int numShieldUpgrades = 0;
+	private static int numShieldRechargeUpgrades = 0;
+	private static int numROFUpgrades = 0;
+	private static int numDamUpgrades = 0;
+	private static int numStunUpgrades = 0;
 	public Gun[] upgradeGuns;	// Guns that will be enabled after the gun upgrade
 	public GameObject missile;	// The projectile that will be fired after the missile upgrade
 
@@ -38,8 +39,15 @@ public class PlayerData : ShipData
  	protected override void Awake()
 	{
 		DontDestroyOnLoad(this);
-
 		player = this;
+
+		numMoveSpeedUpgrades = 0;
+		numHPUpgrades = 0;
+		numShieldUpgrades = 0;
+		numShieldRechargeUpgrades = 0;
+		numROFUpgrades = 0;
+		numDamUpgrades = 0;
+		numStunUpgrades = 0;
 
 		foreach(Gun g in upgradeGuns)
 		{
@@ -113,7 +121,7 @@ public class PlayerData : ShipData
 
     public static void moveSpeedUpgrade()
 	{
-		numDamUpgrades++;
+		numMoveSpeedUpgrades++;
 	}
 	public static void hpUpgrade()
 	{
@@ -166,8 +174,8 @@ public class PlayerData : ShipData
 			lowHealthEffect.transform.SetParent(null, true);
 			lowHealthEffect.Stop();
 		}
-		gameObject.SetActive(false);
 		UI.instance.ShowDeathScreen();
+		gameObject.SetActive(false);
 	}
 
 	public void GodMode()

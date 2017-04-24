@@ -8,123 +8,75 @@ public class Stats : MonoBehaviour
 	private const int numStats = 7;
 	private enum stats{ speed = 0, hp, shield, shieldRecharge, rof, dam, stun };
 	public GameObject panel;
-	List<GameObject> statsBoxes = new List<GameObject>(numStats);
+	GameObject[] statsBoxes = new GameObject[numStats];
 
-	void Awake()
-	{
-		setup();
+	void Awake() {
+		Setup();
 	}
 
-	protected void setup()
-	{
-		for(int i = 0; i < numStats; i++)
-		{
+	public void UpdateStats() {
+		for(int i = 0; i < numStats; i++) {
+			Text[] texts = statsBoxes[i].GetComponentsInChildren<Text>();
+			foreach(Text t in texts) {
+				if (!t.CompareTag("StatPanel")) {
+					switch ((stats) i) {
+						case stats.speed:
+							t.text = PlayerData.NumMoveSpeedUpgrades.ToString();
+							break;
+						case stats.hp:
+							t.text = PlayerData.NumHPUpgrades.ToString();
+							break;
+						case stats.shield:
+							t.text = PlayerData.NumShieldUpgrades.ToString();
+							break;
+						case stats.shieldRecharge:
+							t.text = PlayerData.NumShieldRechargeUpgrades.ToString();
+							break;
+						case stats.rof:
+							t.text = PlayerData.NumROFUpgrades.ToString();
+							break;
+						case stats.dam:
+							t.text = PlayerData.NumDamUpgrades.ToString();
+							break;
+						case stats.stun:
+							t.text = PlayerData.NumStunUpgrades.ToString();
+							break;
+					}
+				}
+			}
+		}
+	}
+
+	void Setup() {
+		for(int i = 0; i < numStats; i++) {
 			GameObject go = Instantiate(panel, Vector3.zero, Quaternion.identity);
 			go.transform.SetParent(transform);
-			statsBoxes.Add(go);
-
-			if(i == (int)stats.speed)
-			{
-				Text[] texts = go.GetComponentsInChildren<Text>();
-				foreach(Text t in texts)
-				{
-					if(t.tag == "StatPanel")
-					{
-						t.text = "Speed:";
-					}
-					else
-					{
-						t.text = PlayerData.NumMoveSpeedUpgrades.ToString();
-					}
-				}
-			}
-			else if(i == (int)stats.hp)
-			{
-				Text[] texts = go.GetComponentsInChildren<Text>();
-				foreach(Text t in texts)
-				{
-					if(t.tag == "StatPanel")
-					{
-						t.text = "HP:";
-					}
-					else
-					{
-						t.text = PlayerData.NumHPUpgrades.ToString();
-					}
-				}
-			}
-			else if(i == (int)stats.shield)
-			{
-				Text[] texts = go.GetComponentsInChildren<Text>();
-				foreach(Text t in texts)
-				{
-					if(t.tag == "StatPanel")
-					{
-						t.text = "Shield:";
-					}
-					else
-					{
-						t.text = PlayerData.NumShieldUpgrades.ToString();
-					}
-				}
-			}
-			else if(i == (int)stats.shieldRecharge)
-			{
-				Text[] texts = go.GetComponentsInChildren<Text>();
-				foreach(Text t in texts)
-				{
-					if(t.tag == "StatPanel")
-					{
-						t.text = "Shield Recharge:";
-					}
-					else
-					{
-						t.text = PlayerData.NumShieldRechargeUpgrades.ToString();
-					}
-				}
-			}
-			else if(i == (int)stats.rof)
-			{
-				Text[] texts = go.GetComponentsInChildren<Text>();
-				foreach(Text t in texts)
-				{
-					if(t.tag == "StatPanel")
-					{
-						t.text = "Rate of Fire:";
-					}
-					else
-					{
-						t.text = PlayerData.NumROFUpgrades.ToString();
-					}
-				}
-			}
-			else if(i == (int)stats.dam)
-			{
-				Text[] texts = go.GetComponentsInChildren<Text>();
-				foreach(Text t in texts)
-				{
-					if(t.tag == "StatPanel")
-					{
-						t.text = "Damage:";
-					}
-					else
-					{
-						t.text = PlayerData.NumDamUpgrades.ToString();
-					}
-				}
-			}
-			else if(i == (int)stats.stun)
-			{
-				Text[] texts = go.GetComponentsInChildren<Text>();
-				foreach(Text t in texts)
-				{
-					if(t.tag == "StatPanel")
-					{
-						t.text = "Stun:";
-					}
-					else
-					{
-						t.text = PlayerData.NumStunUpgrades.ToString();
+			statsBoxes[i] = go;
+			Text[] texts = go.GetComponentsInChildren<Text>();
+			foreach(Text t in texts) {
+				if (t.CompareTag("StatPanel")) {
+					switch ((stats) i) {
+						case stats.speed:
+							t.text = "Speed:";
+							break;
+						case stats.hp:
+							t.text = "HP:";
+							break;
+						case stats.shield:
+							t.text = "Shields:";
+							break;
+						case stats.shieldRecharge:
+							t.text = "Shield Recharge:";
+							break;
+						case stats.rof:
+							t.text = "Rate of Fire:";
+							break;
+						case stats.dam:
+							t.text = "Damage:";
+							break;
+						case stats.stun:
+							t.text = "Stun:";
+							break;
 					}
 				}
 			}

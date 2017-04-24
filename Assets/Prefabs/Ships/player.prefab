@@ -928,7 +928,7 @@ MonoBehaviour:
   hoverHeight: 0.5
   faceVelocity: 1
   accelerationRollFactor: 1
-  accelerationSmoothTime: 0.15
+  accelerationSmoothTime: 0.25
 --- !u!114 &114646118536445206
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -972,8 +972,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be41864d2888afb4e800827028f43255, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pauseWindow: {fileID: 1133569863730940, guid: 9b277efdbe1847f47b3ecbe88b40ec3b,
-    type: 2}
 --- !u!114 &114889924043973736
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4416,7 +4414,7 @@ ParticleSystem:
     boxY: 1
     boxZ: 1
     radius:
-      value: 0.7615912
+      value: 0.8
       mode: 0
       spread: 0
       speed:
@@ -4853,7 +4851,7 @@ ParticleSystem:
         ctime6: 0
         ctime7: 0
         atime0: 0
-        atime1: 27371
+        atime1: 35659
         atime2: 65535
         atime3: 0
         atime4: 0

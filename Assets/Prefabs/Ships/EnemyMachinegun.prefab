@@ -481,7 +481,7 @@ MonoBehaviour:
   hoverHeight: 0.5
   faceVelocity: 1
   accelerationRollFactor: 1
-  accelerationSmoothTime: 0.15
+  accelerationSmoothTime: 0.25
 --- !u!114 &114852920533784826
 MonoBehaviour:
   m_ObjectHideFlags: 1

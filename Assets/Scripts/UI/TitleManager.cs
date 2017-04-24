@@ -20,6 +20,10 @@ public class TitleManager : MonoBehaviour {
         startButton.onClick.AddListener(StartGame);
         quitButton.onClick.AddListener(QuitGame);
         creditsButton.onClick.AddListener(Credits);
+				// clean up any old player object
+				if (PlayerData.player != null) {
+					Destroy(PlayerData.player.gameObject);
+				}
 	}
 
     void StartGame() {

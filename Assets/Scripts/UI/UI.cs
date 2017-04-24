@@ -4,6 +4,8 @@ using System.Collections.Generic;
 
 public class UI : SingletonBehaviour<UI> {
 
+	PauseWindow pauseWindowPrefab;
+
 	public void ShowDeathScreen() {
 		DeathMenu.instance.Show();
 	}

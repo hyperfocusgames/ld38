@@ -18,11 +18,11 @@ public class DeathMenu : SingletonBehaviour<DeathMenu> {
 		group = GetComponent<CanvasGroup>();
 	}
 
-	void ReturnToMenu() {
+	public void ReturnToMenu() {
 		SceneManager.LoadScene("Title");
 	}
 
-	void QuitGame() {
+	public void QuitGame() {
 		Debug.Log("game quit!");
 		Application.Quit();
 	}
