@@ -5,20 +5,19 @@ using UnityEngine;
 public class Damagable : MonoBehaviour
 {
 
-	public float recoveryTime;
 	ShipData ship;
 
 	float lastHitTime;
 
 	void Awake()
 	{
-		lastHitTime = -recoveryTime;
 		ship = GetComponent<ShipData>();
+		lastHitTime = -ship.damageRecoveryTime;
 	}
 
 	public void damage(int dam)
 	{
-		if ((Time.time - lastHitTime) > recoveryTime) {
+		if ((Time.time - lastHitTime) > ship.damageRecoveryTime) {
 			lastHitTime = Time.time;
 			ship.dealDamage(dam);
 			if(ship.hp <= 0)

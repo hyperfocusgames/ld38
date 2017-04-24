@@ -25,6 +25,7 @@ public class PlayerData : ShipData
 	public GameObject missile;	// The projectile that will be fired after the missile upgrade
 
 	public ParticleSystem lowHealthEffect;
+	public Color damageFlashColor = Color.red;
 
 	public bool isAlive {
 		get {
@@ -157,12 +158,16 @@ public class PlayerData : ShipData
 		gameObject.SetActive(true);
 	}
 
-	public void OnDeath() {
+	void OnDeath() {
 		if (lowHealthEffect != null) {
 			lowHealthEffect.transform.SetParent(null, true);
 			lowHealthEffect.Stop();
 		}
 		gameObject.SetActive(false);
+	}
+
+	void OnDamageTaken(int damage) {
+		ScreenFlash.instance.Flash(damageFlashColor, damageRecoveryTime);
 	}
 
 }

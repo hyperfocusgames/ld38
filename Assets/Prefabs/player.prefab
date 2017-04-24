@@ -794,7 +794,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 20488e688e1c12841af4dfa37a2f284b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  recoveryTime: 1
 --- !u!114 &114524546456349946
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -831,9 +830,11 @@ MonoBehaviour:
   rateOfFire: 0.5
   damPlayer: 0
   damEnemy: 1
+  damageRecoveryTime: 1
   upgradeGuns: []
   missile: {fileID: 1436498337013374, guid: 61656262cae2da9438456400eed44a27, type: 2}
   lowHealthEffect: {fileID: 198650703954674578}
+  damageFlashColor: {r: 1, g: 0, b: 0, a: 0.334}
 --- !u!114 &114728288576735340
 MonoBehaviour:
   m_ObjectHideFlags: 1

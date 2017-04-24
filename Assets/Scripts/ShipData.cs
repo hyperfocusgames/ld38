@@ -17,6 +17,9 @@ public class ShipData : MonoBehaviour
     public bool damPlayer = false;						// Should the player be damaged by this?
 	public bool damEnemy = true;						// Should enemies be damaged by this?
 
+	public float damageRecoveryTime = 0;
+
+
 	protected Gun[] guns;								// Array of all guns
 	protected float lastShot = float.MinValue;			// Time of last shot
 	protected bool cooledDown = true;					// Can this shoot again?
@@ -133,6 +136,7 @@ public class ShipData : MonoBehaviour
 			amt -= shield;
 			shield = 0;
 			hp -= amt;
+			BroadcastMessage("OnDamageTaken", amt, SendMessageOptions.DontRequireReceiver);
 		}
 		else
 		{
