@@ -417,19 +417,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 15
-  baseHP: 1
+  baseHP: 12
   hp: 0
   baseShield: 0
   shield: 0
   baseShieldRechargeTime: 5
   projectile: {fileID: 1550092016294892, guid: 96604501f1f815143b6fe08ad33bb801, type: 2}
-  rateOfFire: 0.5
+  rateOfFire: 1.5
+  damage: 1
   damPlayer: 1
   damEnemy: 0
   shootSound: {fileID: 8300000, guid: 68d17511c7db9fc4c843fd0640ecc083, type: 3}
   shootSoundPitchOffset: 0.15
   explosion: {fileID: 1628607057731358, guid: 2ddfb7bd49ab57945a0418d96516eee9, type: 2}
-  damageRecoveryTime: 0
+  damageRecoveryTime: 0.25
 --- !u!114 &114235984165463976
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -454,7 +455,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   aimAheadTime: 0.5
   stopDist: 4
-  viewDist: 5
+  viewDist: 8
   stunable: 1
 --- !u!114 &114379391224092910
 MonoBehaviour:

@@ -13,7 +13,7 @@ public class ShipData : MonoBehaviour
     public GameObject projectile;               		// Projectile to fire
     public float rateOfFire = .5f;             			// Base rate of fire (This is divided by the number of guns to get effective ROF)
     private float projectileSpeed = 10f;        		// Speed of projectile when fired
-    private int damage = 1;                     		// Damage to be done by projectile
+    public int damage = 1;                     		// Damage to be done by projectile
     public bool damPlayer = false;						// Should the player be damaged by this?
 	public bool damEnemy = true;						// Should enemies be damaged by this?
 	public AudioClip shootSound;
@@ -86,6 +86,7 @@ public class ShipData : MonoBehaviour
 		if (audioSource != null) {
 			baseAudioPitch = audioSource.pitch;
 		}
+		lastShot = Time.time - Random.value * RateOfFire;
 	}
 
 	void FixedUpdate()

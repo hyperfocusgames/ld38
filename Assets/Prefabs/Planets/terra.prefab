@@ -54,7 +54,7 @@ Transform:
   m_GameObject: {fileID: 1670951566169252}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 14, y: 14, z: 14}
+  m_LocalScale: {x: 12, y: 12, z: 12}
   m_Children: []
   m_Father: {fileID: 4617393792644500}
   m_RootOrder: 0
@@ -202,8 +202,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   surfaceModel: {fileID: 4080898546710430}
-  radius: 7
-  radiusVariance: 2
+  radius: 6
+  enemySpawnFactor: 1
+  radiusVariance: 1.5
   sky:
     serializedVersion: 2
     key0: {r: 0.16322559, g: 0.038116343, b: 0.3455882, a: 1}
@@ -233,6 +234,7 @@ MonoBehaviour:
     m_Mode: 0
     m_NumColorKeys: 2
     m_NumAlphaKeys: 2
+  customMusic: {fileID: 0}
 --- !u!135 &135970715340878814
 SphereCollider:
   m_ObjectHideFlags: 1

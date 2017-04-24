@@ -602,10 +602,10 @@ MonoBehaviour:
     type: 2}
   enemySpawnPrefab: {fileID: 114572706232016490, guid: f2ad2d4fb7aa56347bdd952a19fd3b85,
     type: 2}
-  planetCount: 5
+  planetCount: 3
   planetPrefabs:
   - weight: 2
-    value: {fileID: 114448947987373628, guid: 7b8d4a693cfd5b0499fa67aaf2aeca0b, type: 2}
+    value: {fileID: 114448947987373628, guid: 5cd696eb640be264eb8542a7fe742f84, type: 2}
   - weight: 1
     value: {fileID: 114448947987373628, guid: dd3bdb8cf8a9a394ab0f530cf29f97fb, type: 2}
   enemySpawns:
@@ -615,20 +615,20 @@ MonoBehaviour:
       m_Curve:
       - serializedVersion: 2
         time: 0
-        value: 1
+        value: 0
         inSlope: 0
         outSlope: 0
         tangentMode: 0
       - serializedVersion: 2
         time: 1
-        value: 2.000001
-        inSlope: 1.0876453
-        outSlope: 1.0876453
+        value: 4.000001
+        inSlope: 10.338122
+        outSlope: 10.338122
         tangentMode: 0
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 0
-    spawnFactor: 0
+    spawnFactor: 2
     maxClusterSize: 1
   - prefab: {fileID: 114488253990559428, guid: 0262133121deb7845b63590484ae4253, type: 2}
     spawnRate:

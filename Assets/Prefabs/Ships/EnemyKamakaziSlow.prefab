@@ -280,7 +280,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   aimAheadTime: 0
   stopDist: 0
-  viewDist: 5
+  viewDist: 15
   stunable: 1
 --- !u!114 &114488253990559428
 MonoBehaviour:
@@ -294,19 +294,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 10
-  baseHP: 1
+  baseHP: 15
   hp: 0
   baseShield: 0
   shield: 0
   baseShieldRechargeTime: 5
   projectile: {fileID: 0}
   rateOfFire: Infinity
+  damage: 1
   damPlayer: 1
   damEnemy: 0
   shootSound: {fileID: 0}
   shootSoundPitchOffset: 0.15
   explosion: {fileID: 1820137755216622, guid: 2b19b00b094de2c4eb541f1f96d21397, type: 2}
-  damageRecoveryTime: 0
+  damageRecoveryTime: 0.25
 --- !u!114 &114564492335528442
 MonoBehaviour:
   m_ObjectHideFlags: 1

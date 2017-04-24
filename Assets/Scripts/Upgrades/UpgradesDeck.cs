@@ -17,14 +17,14 @@ public static class UpgradesDeck
 	public static void InitializeDeck() {
 		deck = new List<Upgrade>();
 		
-		AddToDeck(new DamUpgrade(), 2);		
-		AddToDeck(new ShieldUpgrade(), 2);		
-		AddToDeck(new SpeedUpgrade(), 3);		
-		AddToDeck(new HPUpgrade(), 4);		
-		AddToDeck(new GunUpgrade(), 1);		
+		// AddToDeck(new DamUpgrade(), 2);
+		// AddToDeck(new ShieldUpgrade(), 2);
+		// AddToDeck(new SpeedUpgrade(), 3);
+		// AddToDeck(new HPUpgrade(), 4);
+		AddToDeck(new GunUpgrade(), 1);
 		AddToDeck(new ROFUpgrade(), 5);
-		AddToDeck(new MissileUpgrade(), 1);		
-		AddToDeck(new ShieldRechargeUpgrade(), 4);		
+		// AddToDeck(new MissileUpgrade(), 1);
+		// AddToDeck(new ShieldRechargeUpgrade(), 4);
 
 		AddToDeck(new HealUpgrade(), 1);
 	}

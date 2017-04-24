@@ -20,7 +20,7 @@ public class PlanetGenerator : MonoBehaviour {
 			LevelManager.EnemySpawnInfo[] spawnInfos = level.enemySpawns;
 			float progress = (float) level.planetNumber / level.planetCount;
 			foreach (LevelManager.EnemySpawnInfo spawnInfo in spawnInfos) {
-				int count = (int) (spawnInfo.spawnRate.Evaluate(progress) * spawnInfo.spawnFactor * planet.enemySpawnFactor);
+				int count = (int) Mathf.Ceil(spawnInfo.spawnRate.Evaluate(progress) * spawnInfo.spawnFactor * planet.enemySpawnFactor);
 				// Debug.LogFormat("Planet {0}: Spawned {1} of {2}", level.planetNumber, count, spawnInfo.prefab.name);
 				while (count > 0) {
 					int clusterSize = (count > spawnInfo.maxClusterSize) ? spawnInfo.maxClusterSize : count;

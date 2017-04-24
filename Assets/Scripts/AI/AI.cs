@@ -89,7 +89,7 @@ public class AI : MonoBehaviour
 
 	protected void patrol()
 	{
-		if(patrolTarget == null || Random.Range(0, 100) < patrolChangeChance)
+		if(Random.Range(0, 100) < patrolChangeChance)
 		{
 			patrolTarget = new Vector3(Random.Range(-planet.radius, planet.radius), Random.Range(-planet.radius, planet.radius), Random.Range(-planet.radius, planet.radius));
 		}

@@ -12,7 +12,7 @@ public class PlayerData : ShipData
 	private static int		shieldUpgradeAmount = 1;
 	private static float	shieldRechargeUpgradeAmount = .25f;
 	private static float 	rofUpgradeAmount = .05f;
-	private static int 		damUpgradeAmount = 1;
+	private static int 		damUpgradeAmount = 2;
 	private static float	stunUpgradeAmount = .1f;
 	
 	private static int numMoveSpeedUpgrades = 0;
@@ -23,6 +23,7 @@ public class PlayerData : ShipData
 	private static int numDamUpgrades = 0;
 	private static int numStunUpgrades = 0;
 	public Gun[] upgradeGuns;	// Guns that will be enabled after the gun upgrade
+	public float gunUpgradeROFPenalty = 0.8f;
 	public GameObject missile;	// The projectile that will be fired after the missile upgrade
 
 	public ParticleSystem lowHealthEffect;
@@ -49,6 +50,8 @@ public class PlayerData : ShipData
 		numDamUpgrades = 0;
 		numStunUpgrades = 0;
 
+		HasGunUpgrade = false;
+
 		foreach(Gun g in upgradeGuns)
 		{
 			if(g != null)
@@ -73,6 +76,8 @@ public class PlayerData : ShipData
 		}
 	}
 	
+
+	public static bool HasGunUpgrade { get; private set; }
 	public static int NumMoveSpeedUpgrades { get { return numMoveSpeedUpgrades; } }
     public static int NumHPUpgrades { get { return numHPUpgrades; } }
     public static int NumShieldUpgrades { get { return numShieldUpgrades; } }
@@ -99,7 +104,7 @@ public class PlayerData : ShipData
 	}
 	public override float RateOfFire
 	{
-		get{ return base.RateOfFire - (rofUpgradeAmount * numROFUpgrades); }
+		get{ return (base.RateOfFire - (rofUpgradeAmount * numROFUpgrades) * (HasGunUpgrade ? gunUpgradeROFPenalty : 1)); }
 	}
 	public override int Damage
 	{
@@ -126,6 +131,7 @@ public class PlayerData : ShipData
 	public static void hpUpgrade()
 	{
 		numHPUpgrades++;
+		player.hp ++;
 	}
 	public static void shieldUpgrade()
 	{
@@ -158,6 +164,7 @@ public class PlayerData : ShipData
 			g.gameObject.SetActive(true);
 		}
 		findGuns();
+		HasGunUpgrade = true;
 	}
 	public void missileUpgrade()
 	{
