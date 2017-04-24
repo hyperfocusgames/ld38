@@ -940,14 +940,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0b1f847c70a1351408be6e5530a93509, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 25
+  moveSpeed: 30
   baseHP: 3
   hp: 0
   baseShield: 1
   shield: 0
-  baseShieldRechargeTime: 1.5
+  baseShieldRechargeTime: 2
   projectile: {fileID: 1550092016294892, guid: e3f9e85a26d1b5549b560bc1b767f25d, type: 2}
-  rateOfFire: 0.25
+  rateOfFire: 0.5
   damPlayer: 0
   damEnemy: 1
   shootSound: {fileID: 8300000, guid: 68d17511c7db9fc4c843fd0640ecc083, type: 3}

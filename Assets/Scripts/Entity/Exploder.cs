@@ -37,8 +37,9 @@ public class Exploder : Damager
 				}
 			}
 		}
-		
-		dam.dieEffect();
+		if (dam != null) {
+			dam.dieEffect();
+		}
 	}
 
 	void OnTriggerEnter(Collider col)

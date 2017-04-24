@@ -4,6 +4,11 @@ using UnityEngine;
 
 public class DamUpgrade : Upgrade
 {
+
+		public DamUpgrade() {
+			limited = true;
+		}
+
     public override void activate()
     {
         PlayerData.damUpgrade();
@@ -17,7 +22,7 @@ public class DamUpgrade : Upgrade
 
     public override string description {
 			get {
-					return "Upgrades your ship's damage by " + PlayerData.DamUpgradeAmount;
+					return "What's yours?\n- <i>Increase damage dealt by " + PlayerData.DamUpgradeAmount + "</i>";
 			}
 		}
 }

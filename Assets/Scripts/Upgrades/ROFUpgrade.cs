@@ -4,6 +4,11 @@ using UnityEngine;
 
 public class ROFUpgrade : Upgrade
 {
+
+		public ROFUpgrade() {
+			limited = true;
+		}
+
     public override void activate()
     {
         PlayerData.rofUpgrade();
@@ -17,7 +22,7 @@ public class ROFUpgrade : Upgrade
 
     public override string description {
 			get {
-					return "Upgrades your ship's rate of fire by " + PlayerData.ROFUpgradeAmount;
+					return "Seriously, don't hurt yourself\n- <i>Decrease time between shots by " + PlayerData.ROFUpgradeAmount + " seconds</i>";
 			}
 		}
 }

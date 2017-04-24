@@ -28,6 +28,7 @@ public class TitleManager : MonoBehaviour {
 	}
 
     void StartGame() {
+				UpgradesDeck.InitializeDeck();
         SceneManager.LoadScene(1);
     }
 

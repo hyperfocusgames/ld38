@@ -4,6 +4,11 @@ using UnityEngine;
 
 public class ShieldUpgrade : Upgrade
 {
+
+		public ShieldUpgrade() {
+			limited = true;
+		}
+
     public override void activate()
     {
         PlayerData.shieldUpgrade();
@@ -17,7 +22,7 @@ public class ShieldUpgrade : Upgrade
 
     public override string description {
 			get {
-					return "Upgrades your ship's max shields by " + PlayerData.ShieldUpgradeAmount;
+					return "Remember, always use convection\n- <i>Increase max shields by " + PlayerData.ShieldUpgradeAmount + "</i>";
 			}
 		}
 }

@@ -7,11 +7,11 @@ public class PlayerData : ShipData
 {
 	public static PlayerData player;
 
-	private static float 	moveSpeedUpgradeAmount = 10f;
+	private static float 	moveSpeedUpgradeAmount = 3f;
 	private static int 		hpUpgradeAmount = 1;
 	private static int		shieldUpgradeAmount = 1;
-	private static float	shieldRechargeUpgradeAmount = .5f;
-	private static float 	rofUpgradeAmount = .1f;
+	private static float	shieldRechargeUpgradeAmount = .25f;
+	private static float 	rofUpgradeAmount = .05f;
 	private static int 		damUpgradeAmount = 1;
 	private static float	stunUpgradeAmount = .1f;
 	
@@ -81,7 +81,7 @@ public class PlayerData : ShipData
     public static int NumDamUpgrades { get { return numDamUpgrades; } }
     public static int NumStunUpgrades { get { return numStunUpgrades; } }
 
-	new protected float MoveSpeed
+	new public float MoveSpeed
 	{
 		get{ return moveSpeed + (moveSpeedUpgradeAmount * numMoveSpeedUpgrades); }
 	}

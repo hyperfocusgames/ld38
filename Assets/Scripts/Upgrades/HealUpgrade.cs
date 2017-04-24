@@ -17,7 +17,7 @@ public class HealUpgrade : Upgrade
 
     public override string description {
 			get {
-					return "Restore your ship to full health";
+					return "There's nothing a little tape can't fix\n- <i>Heal to full</i>";
 			}
 		}
 }

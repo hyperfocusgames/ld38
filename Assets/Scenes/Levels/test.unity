@@ -528,7 +528,7 @@ MonoBehaviour:
     type: 2}
   enemySpawnPrefab: {fileID: 114572706232016490, guid: f2ad2d4fb7aa56347bdd952a19fd3b85,
     type: 2}
-  planetCount: 2
+  planetCount: 1
   planetPrefabs:
   - weight: 1
     value: {fileID: 114448947987373628, guid: 5cd696eb640be264eb8542a7fe742f84, type: 2}
@@ -556,7 +556,7 @@ MonoBehaviour:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 0
-    spawnFactor: 1
+    spawnFactor: 0
     maxClusterSize: 1
   - prefab: {fileID: 114488253990559428, guid: 0262133121deb7845b63590484ae4253, type: 2}
     spawnRate:
@@ -598,7 +598,7 @@ MonoBehaviour:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 0
-    spawnFactor: 0
+    spawnFactor: 1
     maxClusterSize: 3
   upgradesScene: Upgrades
   nextLevel: test

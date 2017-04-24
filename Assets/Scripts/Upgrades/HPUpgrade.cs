@@ -4,6 +4,11 @@ using UnityEngine;
 
 public class HPUpgrade : Upgrade
 {
+
+		public HPUpgrade() {
+			limited = true;
+		}
+
     public override void activate()
     {
         PlayerData.hpUpgrade();
@@ -17,7 +22,7 @@ public class HPUpgrade : Upgrade
 
     public override string description {
 			get {
-					return "Upgrades your ship's max HP by " + PlayerData.HpUpgradeAmount;
+					return "Who says I don't have heart?\n- <i> Increase max health by " + PlayerData.HpUpgradeAmount + "</i>";
 			}
 		}
 }

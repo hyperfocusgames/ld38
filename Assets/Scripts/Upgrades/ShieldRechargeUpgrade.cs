@@ -21,7 +21,7 @@ public class ShieldRechargeUpgrade : Upgrade
 
     public override string description {
 			get {
-					return "Upgrades your ship's shield recharge timer by " + PlayerData.ShieldRechargeUpgradeAmount + " - <i>There are a limited number of these!</i>";
+					return "Overclocking? Sounds pretty safe to me\n- <i>Decrease shield recharge time by " + PlayerData.ShieldRechargeUpgradeAmount + " seconds</i>";
 			}
 		}
 }

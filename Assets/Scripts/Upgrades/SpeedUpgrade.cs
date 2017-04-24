@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class SpeedUpgrade : Upgrade
 {
+		public SpeedUpgrade() {
+			limited = true;
+		}
+
     public override void activate()
     {
         PlayerData.moveSpeedUpgrade();
@@ -17,7 +21,7 @@ public class SpeedUpgrade : Upgrade
 
     public override string description {
 			get {
-					return "Upgrades your ship's speed by " + PlayerData.MoveSpeedUpgradeAmount;
+					return "Now were cooking with glass!\n- <i>Increase flight speed by " + PlayerData.MoveSpeedUpgradeAmount + " ...speed units?</i>";
 			}
 		}
 }

@@ -27,6 +27,6 @@ public class UpgradeButton : MonoBehaviour
     public void activate()
 	{
 		upgrade.activate();
-		UpgradesScreen.instance.Finish();
+		UpgradesScreen.instance.Finish(upgrade);
 	}
 }

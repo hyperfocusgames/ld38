@@ -23,7 +23,7 @@ public class GunUpgrade : Upgrade
 
     public override string description {
 			get {
-					return "Gives you more guns, allowing you to shoot faster - <i>Only one chance for this!</i>";
+					return "Sometimes you just need a little more... pun";
 			}
 		}
 
