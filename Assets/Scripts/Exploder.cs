@@ -14,6 +14,9 @@ public class Exploder : Damager
 
 	public void explode()
 	{
+		// do death things
+		BroadcastMessage("OnDeath", SendMessageOptions.DontRequireReceiver);
+
 		Collider[] cols = Physics.OverlapSphere(transform.position, radius);
 		foreach(Collider col in cols)
 		{
@@ -27,6 +30,7 @@ public class Exploder : Damager
 				}
 			}
 		}
+		
 		dam.dieEffect();
 	}
 

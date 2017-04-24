@@ -16,8 +16,12 @@ public class ShipData : MonoBehaviour
     private int damage = 1;                     		// Damage to be done by projectile
     public bool damPlayer = false;						// Should the player be damaged by this?
 	public bool damEnemy = true;						// Should enemies be damaged by this?
+	public AudioClip shootSound;
 	public GameObject explosion;						// Effect to play on death
 	public float explosionTime;							// Time to play effect
+
+	public float damageRecoveryTime = 0;
+
 
 	protected Gun[] guns;								// Array of all guns
 	protected float lastShot = float.MinValue;			// Time of last shot
@@ -28,6 +32,7 @@ public class ShipData : MonoBehaviour
 	protected bool stunned = false;						// Is this stunned?
 	private float lastHitTime = float.MinValue;			// Time of last damage taken
 	protected SurfaceEntity entity;						// Surface entity attached to this
+	protected AudioSource _audioSource;					// Audio Source attached to this
 	protected Shield shieldObject;						// Shield attatched to this
 
     public virtual float MoveSpeed {
@@ -73,7 +78,9 @@ public class ShipData : MonoBehaviour
 		hp = MaxHP;
 		shield = MaxShield;
 		entity = GetComponent<SurfaceEntity>();
+
 		shieldObject = GetComponentInChildren<Shield>();
+		_audioSource = GetComponent<AudioSource> ();
 	}
 
 	void FixedUpdate()
@@ -91,12 +98,13 @@ public class ShipData : MonoBehaviour
 	public void shoot()
 	{
 		// Cooled down
-		if(CooledDown() && guns.Length > 0)
+		if(guns.Length > 0 && projectile != null && CooledDown())
 		{
 			guns[gunNum].activate(projectile, projectileSpeed + entity.body.velocity.magnitude, Damage, damPlayer, damEnemy);	// Shoot
 			gunNum = (gunNum + 1) % guns.Length;	// Go to next gun
 			lastShot = Time.time;					// Set last shot to now
 			cooledDown = false;
+			_audioSource.PlayOneShot(shootSound);
 		}
 	}
 
@@ -124,7 +132,7 @@ public class ShipData : MonoBehaviour
 		startStunTime = Time.time;
 	}
 
-	public void dealDamage(int amt)
+	public virtual void dealDamage(int amt)
 	{
 		lastHitTime = Time.time;
 
@@ -135,6 +143,7 @@ public class ShipData : MonoBehaviour
 			amt -= shield;
 			shield = 0;
 			hp -= amt;
+			BroadcastMessage("OnDamageTaken", amt, SendMessageOptions.DontRequireReceiver);
 		}
 		else
 		{
@@ -145,7 +154,7 @@ public class ShipData : MonoBehaviour
 		{
 			if(shieldObject != null)
 			{
-				shieldObject.gameObject.SetActive(false);
+				shieldObject.Break();
 			}
 		}
 	}
@@ -154,12 +163,11 @@ public class ShipData : MonoBehaviour
 	{
 		if(MaxShield > shield && Time.time - lastHitTime > ShieldRechargeTime)
 		{
-			Debug.Log("recharge");
 			shield++;
 			lastHitTime = Time.time;	// Just set this to now so it resets recharge cooldown
 			if(shieldObject != null)
 			{
-				shieldObject.gameObject.SetActive(true);
+				shieldObject.Reform();
 			}
 		}
 	}
