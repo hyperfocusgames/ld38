@@ -147,4 +147,12 @@ public class PlayerData : ShipData
 		projectile = missile;
 	}
 
+	public void Spawn() {
+		gameObject.SetActive(true);
+	}
+
+	public void OnDeath() {
+		gameObject.SetActive(false);
+	}
+
 }
