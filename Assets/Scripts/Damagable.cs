@@ -23,6 +23,5 @@ public class Damagable : MonoBehaviour
 	public void Die() {
 		// do death things
 		BroadcastMessage("OnDeath", SendMessageOptions.DontRequireReceiver);
-		Destroy(gameObject);
 	}
 }

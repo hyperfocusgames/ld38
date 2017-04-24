@@ -13,4 +13,8 @@ public class EnemyData : ShipData {
 	void OnDisable() {
 		livingCount --;
 	}
+
+	void OnDeath() {
+		Destroy(gameObject);
+	}
 }
