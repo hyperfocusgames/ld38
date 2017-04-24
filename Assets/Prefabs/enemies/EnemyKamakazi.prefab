@@ -20,12 +20,12 @@ GameObject:
   m_Component:
   - component: {fileID: 4821372029662042}
   - component: {fileID: 54909302715962610}
-  - component: {fileID: 135277704981277026}
   - component: {fileID: 114995224521142800}
   - component: {fileID: 114443164540418828}
   - component: {fileID: 114291016865927156}
   - component: {fileID: 114432175952679874}
   - component: {fileID: 114700284088008908}
+  - component: {fileID: 136315425095756322}
   m_Layer: 0
   m_Name: EnemyKamakazi
   m_TagString: Enemy
@@ -58,8 +58,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1682046584921754}
   m_LocalRotation: {x: 0, y: 0, z: -1, w: 0}
-  m_LocalPosition: {x: 0.0037514982, y: -0.096, z: 0.022}
-  m_LocalScale: {x: 0.25, y: 0.25, z: 0.25}
+  m_LocalPosition: {x: 0, y: 0, z: -0.405}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4821372029662042}
   m_RootOrder: 0
@@ -70,14 +70,14 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1660878539807530}
-  m_LocalRotation: {x: 0.70710695, y: 0, z: 0, w: -0.70710665}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 1, z: 0}
-  m_LocalScale: {x: 0.8, y: 0.8, z: 0.8}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4322922232809592}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: -89.99999, y: 180, z: 180}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!23 &23464832507501470
 MeshRenderer:
   m_ObjectHideFlags: 1
@@ -226,15 +226,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 20488e688e1c12841af4dfa37a2f284b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!135 &135277704981277026
-SphereCollider:
+--- !u!136 &136315425095756322
+CapsuleCollider:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1660878539807530}
-  m_Material: {fileID: 13400000, guid: 9a68911bc8ae1a24e9a1002aa2c2b801, type: 2}
+  m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.28
-  m_Center: {x: 0, y: 0.25, z: 0}
+  m_Radius: 0.08845326
+  m_Height: 0.9089012
+  m_Direction: 2
+  m_Center: {x: 0, y: 0, z: 0.04}
