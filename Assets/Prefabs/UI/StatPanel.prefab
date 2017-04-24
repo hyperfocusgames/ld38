@@ -24,7 +24,7 @@ GameObject:
   - component: {fileID: 114493595595455196}
   m_Layer: 5
   m_Name: Stat
-  m_TagString: Untagged
+  m_TagString: StatPanel
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -42,7 +42,7 @@ GameObject:
   - component: {fileID: 114474295664513854}
   m_Layer: 5
   m_Name: Amount
-  m_TagString: Untagged
+  m_TagString: ValuePanel
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -98,14 +98,14 @@ MonoBehaviour:
   m_Padding:
     m_Left: 5
     m_Right: 5
-    m_Top: 0
-    m_Bottom: 0
+    m_Top: 5
+    m_Bottom: 5
   m_ChildAlignment: 4
   m_Spacing: 0
   m_ChildForceExpandWidth: 1
-  m_ChildForceExpandHeight: 0
+  m_ChildForceExpandHeight: 1
   m_ChildControlWidth: 1
-  m_ChildControlHeight: 0
+  m_ChildControlHeight: 1
 --- !u!114 &114406453189508466
 MonoBehaviour:
   m_ObjectHideFlags: 1
