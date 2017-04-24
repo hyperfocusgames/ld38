@@ -446,7 +446,7 @@ MonoBehaviour:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 0
-    spawnFactor: 5
+    spawnFactor: 0
     maxClusterSize: 2
   - prefab: {fileID: 114245726034998026, guid: 85f46d4504f211c41b041c1db98d7817, type: 2}
     spawnRate:
@@ -467,8 +467,8 @@ MonoBehaviour:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 0
-    spawnFactor: 0
-    maxClusterSize: 2
+    spawnFactor: 3
+    maxClusterSize: 1
   planetCount: 5
 --- !u!4 &2006968448
 Transform:

@@ -7,15 +7,22 @@ public class Shield : MonoBehaviour {
 	public Transform model;
 	public ParticleSystem breakEffect;
 	public ParticleSystem reformEffect;
-
+	
+	public bool isBroken { get; private set; }
 
 	public void Break() {
-		model.gameObject.SetActive(false);
-		breakEffect.Play();
+		if (!isBroken) {
+			isBroken = true;
+			model.gameObject.SetActive(false);
+			breakEffect.Play();
+		}
 	}
 
 	public void Reform() {
-		StartCoroutine(ReformRoutine());
+		if (isBroken) {
+			isBroken = false;
+			StartCoroutine(ReformRoutine());
+		}
 	}
 
 	IEnumerator ReformRoutine() {

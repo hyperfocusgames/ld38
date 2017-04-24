@@ -158,6 +158,10 @@ public class PlayerData : ShipData
 	}
 
 	public void OnDeath() {
+		if (lowHealthEffect != null) {
+			lowHealthEffect.transform.SetParent(null, true);
+			lowHealthEffect.Stop();
+		}
 		gameObject.SetActive(false);
 	}
 
