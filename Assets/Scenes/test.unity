@@ -198,6 +198,10 @@ Prefab:
       propertyPath: damageFlashColor.a
       value: 0.484
       objectReference: {fileID: 0}
+    - target: {fileID: 1808965708830744, guid: 26dcb9f5ad8b6d34d8d692ace2a32a5a, type: 2}
+      propertyPath: m_TagString
+      value: Shield
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 26dcb9f5ad8b6d34d8d692ace2a32a5a, type: 2}
   m_IsPrefabParent: 0

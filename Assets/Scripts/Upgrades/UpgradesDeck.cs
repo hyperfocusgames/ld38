@@ -21,11 +21,7 @@ public static class UpgradesDeck
 		deck.Add(new HealUpgrade());
 		deck.Add(new StunUpgrade());
 		deck.Add(new ShieldUpgrade());
-		// 8 Recharge time reductions - Reduces to minimum of 1 sec
-		deck.Add(new ShieldRechargeUpgrade());
-		deck.Add(new ShieldRechargeUpgrade());
-		deck.Add(new ShieldRechargeUpgrade());
-		deck.Add(new ShieldRechargeUpgrade());
+		
 		deck.Add(new ShieldRechargeUpgrade());
 		deck.Add(new ShieldRechargeUpgrade());
 		deck.Add(new ShieldRechargeUpgrade());
