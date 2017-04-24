@@ -167,11 +167,14 @@ public class PlayerData : ShipData
 			lowHealthEffect.Stop();
 		}
 		gameObject.SetActive(false);
+		UI.instance.ShowDeathScreen();
 	}
+
 	public void GodMode()
 	{
 		godMode = !godMode;
 	}
+
 	public override void dealDamage(int amt)
 	{
 		base.dealDamage(amt);
@@ -184,6 +187,7 @@ public class PlayerData : ShipData
 			Instantiate(deathUI, Vector3.zero, Quaternion.identity);
 		}
 	}
+
 	void OnDamageTaken(int damage) {
 		ScreenFlash.instance.Flash(damageFlashColor, damageRecoveryTime);
 	}

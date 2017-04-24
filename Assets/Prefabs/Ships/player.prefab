@@ -944,7 +944,7 @@ MonoBehaviour:
   hp: 0
   baseShield: 1
   shield: 0
-  baseShieldRechargeTime: 1
+  baseShieldRechargeTime: 1.5
   projectile: {fileID: 1550092016294892, guid: e3f9e85a26d1b5549b560bc1b767f25d, type: 2}
   rateOfFire: 0.25
   damPlayer: 0
@@ -952,7 +952,7 @@ MonoBehaviour:
   shootSound: {fileID: 8300000, guid: 68d17511c7db9fc4c843fd0640ecc083, type: 3}
   shootSoundPitchOffset: 0.15
   explosion: {fileID: 1991683658510300, guid: e751e401fdf64674b852d360f890870f, type: 2}
-  damageRecoveryTime: 0.5
+  damageRecoveryTime: 0.25
   upgradeGuns:
   - {fileID: 114278536354800388}
   - {fileID: 114889924043973736}

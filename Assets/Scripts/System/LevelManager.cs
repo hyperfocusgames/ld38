@@ -53,10 +53,6 @@ public class LevelManager : SingletonBehaviour<LevelManager> {
 		SceneManager.LoadScene(upgradesScene);
 	}
 
-	public void OnEnemyDeath() {
-
-	}
-
 	[System.Serializable]
 	public class WeightedPlanet : WeightedElement<Planet> {}
 
