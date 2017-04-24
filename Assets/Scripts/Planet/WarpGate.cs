@@ -21,7 +21,7 @@ public class WarpGate : TerrainProp {
 			if (ScreenFlash.instance) {
 				ScreenFlash.instance.Flash(flashColor, flashDuration);
 				if (entranceEffectPrefab != null) {
-					Instantiate(entranceEffectPrefab, transform.position, transform.rotation);
+					DontDestroyOnLoad(Instantiate(entranceEffectPrefab, transform.position, transform.rotation));
 				}
 			}
 		}

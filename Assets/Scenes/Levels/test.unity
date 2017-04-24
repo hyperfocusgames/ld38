@@ -545,7 +545,7 @@ MonoBehaviour:
       m_RotationOrder: 0
     spawnFactor: 1
     maxClusterSize: 1
-  planetCount: 5
+  planetCount: 3
 --- !u!4 &2006968448
 Transform:
   m_ObjectHideFlags: 0
