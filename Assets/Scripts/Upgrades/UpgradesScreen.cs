@@ -32,7 +32,7 @@ public class UpgradesScreen : SingletonBehaviour<UpgradesScreen>
 		}
 	}
 	
-	void Update() {
+	void Start() {
 		MusicManager.instance.menuEffectEnabled = true;
 	}
 
