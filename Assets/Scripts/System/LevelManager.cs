@@ -12,11 +12,13 @@ public class LevelManager : SingletonBehaviour<LevelManager> {
 	public WeightedPlanet[] planetPrefabs;
 	public EnemySpawnInfo[] enemySpawns;
 	public string upgradesScene = "Upgrades";
+	public string nextLevel = "";
 
 	public int planetNumber { get; private set; }
 
 	public Planet planet { get; private set; }
 
+	public static string nextLevelAfterUpgrades { get; private set; }
 
 	void Awake() {
 		planetNumber = 0;
@@ -50,6 +52,7 @@ public class LevelManager : SingletonBehaviour<LevelManager> {
 	}
 
 	public void NextLevel() {
+		nextLevelAfterUpgrades = nextLevel;
 		SceneManager.LoadScene(upgradesScene);
 	}
 

@@ -1,18 +1,22 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using UnityEngine.Events;
 
-public class UpgradesScreen : MonoBehaviour
+public class UpgradesScreen : SingletonBehaviour<UpgradesScreen>
 {
 	public Button button;
 
 	private Upgrade[] upgrades;
 	private UnityEngine.EventSystems.EventSystem eventSystem;
 
+	CanvasGroup group;
+
 	void Awake ()
 	{
+		group = GetComponent<CanvasGroup>();
 		upgrades = new Upgrade[UpgradesDeck.numUpgradesToDraw];
 		eventSystem = GameObject.Find ("EventSystem").GetComponent<UnityEngine.EventSystems.EventSystem> ();
 		if(button != null)
@@ -23,13 +27,14 @@ public class UpgradesScreen : MonoBehaviour
 				if(i == 0) eventSystem.SetSelectedGameObject(b.gameObject);
 				b.transform.SetParent(transform);
 				Upgrade u = UpgradesDeck.draw();
-				b.GetComponent<UpgradeButton>().Upgrade = u;
+				b.GetComponent<UpgradeButton>().upgrade = u;
 			}
 		}
 	}
 
-	public void restore()
-	{
-
+	public void Finish() {
+		SceneManager.LoadScene(LevelManager.nextLevelAfterUpgrades);
+		group.interactable = false;
 	}
+
 }

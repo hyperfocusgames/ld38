@@ -1,27 +1,26 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class UpgradeButton : MonoBehaviour
 {
-    private Upgrade upgrade;
+    private Upgrade _upgrade;
 
-    public Upgrade Upgrade
+    public Upgrade upgrade
 	{
-		get{ return upgrade; }
+		get{ return _upgrade; }
 		set
 		{
 			gameObject.GetComponentInChildren<Text>().text = value.toString();
-			upgrade = value;
+			_upgrade = value;
 		}
 	}
 
     public void activate()
 	{
-		Upgrade.activate();
-		gameObject.GetComponentInParent<UpgradesScreen>();
-		// GameManager.upgradesFinished();
-		Destroy(gameObject);
+		upgrade.activate();
+		UpgradesScreen.instance.Finish();
 	}
 }

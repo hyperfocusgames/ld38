@@ -569,7 +569,7 @@ MonoBehaviour:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 0
-    spawnFactor: 0
+    spawnFactor: 1
     maxClusterSize: 1
   - prefab: {fileID: 114488253990559428, guid: 0262133121deb7845b63590484ae4253, type: 2}
     spawnRate:
@@ -590,7 +590,7 @@ MonoBehaviour:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 0
-    spawnFactor: 3
+    spawnFactor: 0
     maxClusterSize: 1
   - prefab: {fileID: 114432175952679874, guid: 449bbc73f3705aa4b8af1c42460abdce, type: 2}
     spawnRate:
@@ -611,9 +611,10 @@ MonoBehaviour:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 0
-    spawnFactor: 10
+    spawnFactor: 0
     maxClusterSize: 3
   upgradesScene: Upgrades
+  nextLevel: test
 --- !u!4 &2006968448
 Transform:
   m_ObjectHideFlags: 0
