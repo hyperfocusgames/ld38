@@ -193,7 +193,7 @@ Transform:
   m_GameObject: {fileID: 1430707539268272}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -1, y: 1, z: 0}
-  m_LocalScale: {x: 0.8, y: 0.8, z: 0.8}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_Children:
   - {fileID: 4543762744628906}
   - {fileID: 4733984780741444}
@@ -394,7 +394,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hoverHeight: 0.5
   faceVelocity: 1
-  accelerationRollFactor: 1
+  accelerationRollFactor: 0.5
   accelerationSmoothing: 5
 --- !u!114 &114852920533784826
 MonoBehaviour:
@@ -462,7 +462,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: 1773388421
+  randomSeed: 1657050831
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -806,7 +806,7 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 0
     randomizeRotationDirection: 0
-    maxNumParticles: 1000
+    maxNumParticles: 10
     size3D: 0
     rotation3D: 1
     gravityModifier:
@@ -3430,7 +3430,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: 1423185014
+  randomSeed: -857132009
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -3774,7 +3774,7 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 0
     randomizeRotationDirection: 0
-    maxNumParticles: 1000
+    maxNumParticles: 10
     size3D: 0
     rotation3D: 1
     gravityModifier:
