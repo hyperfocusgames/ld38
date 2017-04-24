@@ -946,7 +946,7 @@ MonoBehaviour:
   shield: 0
   baseShieldRechargeTime: 1
   projectile: {fileID: 1550092016294892, guid: e3f9e85a26d1b5549b560bc1b767f25d, type: 2}
-  rateOfFire: 0.5
+  rateOfFire: 0.25
   damPlayer: 0
   damEnemy: 1
   shootSound: {fileID: 8300000, guid: 68d17511c7db9fc4c843fd0640ecc083, type: 3}
