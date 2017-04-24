@@ -75,6 +75,8 @@ GameObject:
   - component: {fileID: 135485211778871642}
   - component: {fileID: 114646118536445206}
   - component: {fileID: 114406455365169634}
+  - component: {fileID: 114168155345959104}
+  - component: {fileID: 114059622766761812}
   m_Layer: 0
   m_Name: player
   m_TagString: Player
@@ -107,7 +109,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4632583442477252}
   - component: {fileID: 33934820085878964}
-  - component: {fileID: 135006272535465678}
   - component: {fileID: 23622427582144210}
   - component: {fileID: 114505727851867716}
   m_Layer: 0
@@ -671,6 +672,28 @@ TrailRenderer:
     textureMode: 0
   m_MinVertexDistance: 0.1
   m_Autodestruct: 0
+--- !u!114 &114059622766761812
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1071274734614496}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 20488e688e1c12841af4dfa37a2f284b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &114168155345959104
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1071274734614496}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 20488e688e1c12841af4dfa37a2f284b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114278536354800388
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -746,11 +769,13 @@ MonoBehaviour:
   hp: 0
   baseShield: 1
   shield: 0
-  baseShieldRechargeTime: 5
+  baseShieldRechargeTime: 1
   projectile: {fileID: 1550092016294892, guid: e3f9e85a26d1b5549b560bc1b767f25d, type: 2}
   rateOfFire: 0.5
   damPlayer: 0
   damEnemy: 1
+  explosion: {fileID: 0}
+  explosionTime: 1
   upgradeGuns: []
   missile: {fileID: 1436498337013374, guid: 61656262cae2da9438456400eed44a27, type: 2}
   lowHealthEffect: {fileID: 198650703954674578}
@@ -778,18 +803,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 27092cc0afaecf941b8606cfaa3c265a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!135 &135006272535465678
-SphereCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1187945903382062}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!135 &135485211778871642
 SphereCollider:
   m_ObjectHideFlags: 1

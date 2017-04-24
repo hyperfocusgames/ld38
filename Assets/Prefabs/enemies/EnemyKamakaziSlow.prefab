@@ -303,6 +303,8 @@ MonoBehaviour:
   rateOfFire: Infinity
   damPlayer: 1
   damEnemy: 0
+  explosion: {fileID: 1628607057731358, guid: 2ddfb7bd49ab57945a0418d96516eee9, type: 2}
+  explosionTime: 1
 --- !u!114 &114564492335528442
 MonoBehaviour:
   m_ObjectHideFlags: 1

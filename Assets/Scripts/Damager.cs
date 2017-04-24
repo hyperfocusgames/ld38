@@ -9,10 +9,9 @@ public class Damager : MonoBehaviour
 	public bool damEnemy = false;
 
 	void OnTriggerEnter(Collider col) {
-		if (
-				   (damPlayer && col.CompareTag("Player"))
-				|| (damEnemy && col.CompareTag("Enemy"))
-				|| (!col.CompareTag("Player") && !col.CompareTag("Enemy"))
+		if ((damPlayer && col.CompareTag("Player"))
+			|| (damEnemy && col.CompareTag("Enemy"))
+			|| (!col.CompareTag("Player") && !col.CompareTag("Enemy"))
 			) {
 			Damagable dam = col.GetComponent<Damagable>();
 			if(dam != null)

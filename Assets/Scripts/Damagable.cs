@@ -23,5 +23,22 @@ public class Damagable : MonoBehaviour
 	public void Die() {
 		// do death things
 		BroadcastMessage("OnDeath", SendMessageOptions.DontRequireReceiver);
+		Exploder exploder = GetComponent<Exploder>();
+		if(exploder != null)
+		{
+			exploder.explode();
+		}
+		else
+		{
+			dieEffect();
+		}
+	}
+
+	public void dieEffect()
+	{
+		if(ship.explosion != null)
+		{
+			Destroy(Instantiate(ship.explosion, transform.position, transform.rotation), ship.explosionTime);
+		}
 	}
 }

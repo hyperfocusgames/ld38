@@ -16,6 +16,8 @@ public class ShipData : MonoBehaviour
     private int damage = 1;                     		// Damage to be done by projectile
     public bool damPlayer = false;						// Should the player be damaged by this?
 	public bool damEnemy = true;						// Should enemies be damaged by this?
+	public GameObject explosion;						// Effect to play on death
+	public float explosionTime;							// Time to play effect
 
 	protected Gun[] guns;								// Array of all guns
 	protected float lastShot = float.MinValue;			// Time of last shot
@@ -24,9 +26,9 @@ public class ShipData : MonoBehaviour
 	protected float startStunTime = float.MinValue;		// Time when stun was started
 	protected float stunTime = 0f;						// Amount of time to stun for
 	protected bool stunned = false;						// Is this stunned?
-	private float lastHitTime = float.MinValue;		// Time of last damage taken
+	private float lastHitTime = float.MinValue;			// Time of last damage taken
 	protected SurfaceEntity entity;						// Surface entity attached to this
-	protected Shield shieldObject;					// Shield attatched to this
+	protected Shield shieldObject;						// Shield attatched to this
 
     public virtual float MoveSpeed {
 		get{ return moveSpeed; }
