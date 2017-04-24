@@ -12,24 +12,49 @@ public class PlanetGenerator : MonoBehaviour {
 	void Awake() {
 		planet = GetComponent<Planet>();
 		props = new List<TerrainProp>();
-		if (LevelManager.instance != null) {
-			EnsurePropSpawn(LevelManager.instance.warpGatePrefab);
-			EnsurePropSpawn(LevelManager.instance.playerSpawnPrefab);
+		LevelManager level = LevelManager.instance;
+		if (level != null) {
+			PlayerSpawn playerSpawn = EnsurePropSpawn(level.playerSpawnPrefab);
+			System.Func<Vector3> oppositePlayer = RandomOpposite(playerSpawn.transform.localPosition);
+			EnsurePropSpawn(level.warpGatePrefab, oppositePlayer);
+			LevelManager.EnemySpawnInfo[] spawnInfos = level.enemySpawns;
+			float progress = (float) level.planetNumber / level.planetCount;
+			foreach (LevelManager.EnemySpawnInfo spawnInfo in spawnInfos) {
+				int count = (int) (spawnInfo.spawnRate.Evaluate(progress) * spawnInfo.spawnFactor * planet.enemySpawnFactor);
+				// Debug.LogFormat("Planet {0}: Spawned {1} of {2}", level.planetNumber, count, spawnInfo.prefab.name);
+				while (count > 0) {
+					int clusterSize = (count > spawnInfo.maxClusterSize) ? spawnInfo.maxClusterSize : count;
+					EnemySpawn spawn = EnsurePropSpawn(level.enemySpawnPrefab, oppositePlayer);
+					spawn.prefab = spawnInfo.prefab;
+					spawn.enemyCount = clusterSize;
+					count -= spawnInfo.maxClusterSize;
+				}
+			}
 		}
 		foreach (PropScatter propScatter in propScatter) {
 			propScatter.PlaceClusters(this);
 		}
 	}
 
+	// return a random position on the opposite hemisphere from a given point
+	System.Func<Vector3> RandomOpposite(Vector3 position) {
+		return () => {
+			Vector3 p = Random.onUnitSphere;
+			p *= - Vector3.Dot(p, position);
+			return p;
+		};
+	}
+
 	// try to spawn and place a prop, make sure it happens
-	T EnsurePropSpawn<T>(T prefab) where T : TerrainProp {
+	T EnsurePropSpawn<T>(T prefab, System.Func<Vector3> position) where T : TerrainProp {
 			T prop;
 			do {
 				prop = Instantiate(prefab);
 				prop.name = prefab.name;
-			} while(!PlaceProp(prop, Random.onUnitSphere));
+			} while(!PlaceProp(prop, position()));
 			return prop;
 	}
+	T EnsurePropSpawn<T>(T prefab) where T : TerrainProp { return EnsurePropSpawn(prefab, () => Random.onUnitSphere); }
 
 	// try to place a prop at a position on the planet (position in planetary local space)
 	// if there is not enough space, destroy the prop and return false
@@ -54,12 +79,16 @@ public class PlanetGenerator : MonoBehaviour {
 
 	[System.Serializable]
 	public class PropScatter {
+
 		public TerrainProp prefab;
+		public AnimationCurve spawnRate = AnimationCurve.Linear(0, 1, 1, 1);
 		public int clusterCount = 5;
+
 		public int clusterSize = 10;
 		public float clusterRadius = 1;
 
 		public void PlaceClusters(PlanetGenerator generator) {
+			int clusterCount = (int) spawnRate.Evaluate(Random.value) * this.clusterCount;
 			for (int i = 0; i < clusterCount; i ++) {
 				Vector3 clusterCenter = Random.onUnitSphere * generator.planet.radius;
 				Transform cluster = new GameObject(string.Format("{0} cluster {1}", prefab.name, i)).transform;

@@ -4,13 +4,13 @@ using UnityEngine;
 
 public class Gun : MonoBehaviour
 {
-	SurfaceEntity parentEntity;
+	protected SurfaceEntity parentEntity;
 	void Awake()
 	{
 		parentEntity = GetComponentInParent<SurfaceEntity>();
 	}
 
-	public void activate(GameObject projectile, float speed, int damage, bool damPlayer, bool damEnemy)
+	public virtual void activate(GameObject projectile, float speed, int damage, bool damPlayer, bool damEnemy)
 	{
 		GameObject go = Instantiate(projectile, transform.position, transform.rotation);
 

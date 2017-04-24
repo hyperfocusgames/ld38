@@ -4,51 +4,72 @@ using UnityEngine;
 
 public class ShipData : MonoBehaviour
 {
-    public float moveSpeed = 50f;             	// Force to be applied in movement
-	public int baseHP = 1;						// Starting HP
-	public int hp;								// Current HP
-    public GameObject projectile;               // Projectile to fire
-    private float rateOfFire = .5f;             // Base rate of fire (This is divided by the number of guns to get effective ROF)
-    private float projectileSpeed = 10f;         // Speed of projectile when fired
-    private int damage = 1;                     // Damage to be done by projectile
-    public bool damPlayer = false;				// Should the player be damaged by this?
-	public bool damEnemy = true;				// Should enemies be damaged by this?
+    public float moveSpeed = 50f;             			// Force to be applied in movement
+	public int baseHP = 1;								// Starting HP
+	public int hp;										// Current HP
+	public int baseShield = 1;							// Starting shield	
+	public int shield;									// Current shield
+	public float baseShieldRechargeTime = 5f;			// Time for shield to recharge
+    public GameObject projectile;               		// Projectile to fire
+    public float rateOfFire = .5f;             			// Base rate of fire (This is divided by the number of guns to get effective ROF)
+    private float projectileSpeed = 10f;        		// Speed of projectile when fired
+    private int damage = 1;                     		// Damage to be done by projectile
+    public bool damPlayer = false;						// Should the player be damaged by this?
+	public bool damEnemy = true;						// Should enemies be damaged by this?
 
-	protected Gun[] guns;						// Array of all guns
-	protected float lastShot = float.MinValue;	// Time of last shot
-	protected int gunNum = 0;                   // Next gun to shoot
+	protected Gun[] guns;								// Array of all guns
+	protected float lastShot = float.MinValue;			// Time of last shot
+	protected bool cooledDown = true;					// Can this shoot again?
+	protected int gunNum = 0;                   		// Next gun to shoot
+	protected float startStunTime = float.MinValue;		// Time when stun was started
+	protected float stunTime = 0f;						// Amount of time to stun for
+	protected bool stunned = false;						// Is this stunned?
+	protected float lastHitTime = float.MinValue;		// Time of last damage taken
+	protected SurfaceEntity entity;				// Surface entity attached to this
 
-    public float MoveSpeed {
+    public virtual float MoveSpeed {
 		get{ return moveSpeed; }
 		set{ moveSpeed = value; }
 	}
 
-    public float RateOfFire {
+    public virtual float RateOfFire {
 		get{ return rateOfFire; }
 		set{ rateOfFire = value; }
 	}
 
-    public float ProjectileSpeed {
+    public virtual float ProjectileSpeed {
 		get{ return projectileSpeed; }
 		set{ projectileSpeed = value; }
 	}
 
-    public int Damage {
+    public virtual int Damage {
 		get{ return damage; }
 		set{ damage = value; }
 	}
 
-	public int MaxHP {
+	public virtual int MaxHP {
 		get { return baseHP; }
 		set { baseHP = value; }
+	}
+	public virtual int MaxShield {
+		get { return baseShield; }
+		set { baseHP = value; }
+	}
+	public virtual float ShieldRechargeTime {
+		get { return baseShieldRechargeTime; }
+		set { baseShieldRechargeTime = value; }
+	}
+	public virtual float StunTime {
+		get { return stunTime; }
+		set { stunTime = value; }
 	}
 
   protected virtual void Awake()
 	{
-		Debug.Log("Awake");
-
 		findGuns();
 		hp = MaxHP;
+		shield = MaxShield;
+		entity = GetComponent<SurfaceEntity>();
 	}
 
 	// Find all active guns and store them in guns
@@ -61,16 +82,60 @@ public class ShipData : MonoBehaviour
 	public void shoot()
 	{
 		// Cooled down
-		if(cooledDown())
+		if(CooledDown() && guns.Length > 0)
 		{
-			guns[gunNum].activate(projectile, projectileSpeed, Damage, damPlayer, damEnemy);	// Shoot
+			guns[gunNum].activate(projectile, projectileSpeed + entity.body.velocity.magnitude, Damage, damPlayer, damEnemy);	// Shoot
 			gunNum = (gunNum + 1) % guns.Length;	// Go to next gun
 			lastShot = Time.time;					// Set last shot to now
+			cooledDown = false;
 		}
 	}
 
-	protected bool cooledDown()
+	protected bool CooledDown()
 	{
-		return Time.time - lastShot > RateOfFire / guns.Length;
+		if(!cooledDown)
+		{
+			cooledDown = Time.time - lastShot > RateOfFire / guns.Length;
+		}
+		return cooledDown;
+	}
+
+	public bool isStunned()
+	{
+		if(stunned)
+		{
+			stunned = (Time.time - startStunTime) <= stunTime;
+		}
+		return stunned;
+	}
+
+	public void stun(float time)
+	{
+		stunTime = time;
+		startStunTime = Time.time;
+	}
+
+	public void dealDamage(int amt)
+	{
+		if(shield - amt < 0)
+		{
+			amt -= shield;
+			shield = 0;
+			hp -= amt;
+		}
+		else
+		{
+			shield -= amt;
+		}
+		lastHitTime = Time.time;
+	}
+
+	public void rechargeShield()
+	{
+		if(MaxShield > 0 && Time.time - lastHitTime > ShieldRechargeTime)
+		{
+			shield++;
+			lastHitTime = Time.time;	// Just set this to now so it resets recharge cooldown
+		}
 	}
 }
