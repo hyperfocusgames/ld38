@@ -8,13 +8,17 @@ public class Damager : MonoBehaviour
 	public bool damPlayer = true;
 	public bool damEnemy = false;
 
-	void OnTriggerEnter(Collider col)
-	{
-		Debug.Log("Collision : " + col.gameObject.name);
-		if((damPlayer && col.tag == "Player") ||
-		 	(damEnemy && col.tag == "Enemy"))
-		{
-			col.GetComponent<Damagable>().damage(damage);
+	void OnTriggerEnter(Collider col) {
+		if ((damPlayer && col.CompareTag("Player"))
+			|| (damEnemy && col.CompareTag("Enemy"))
+			|| (!col.CompareTag("Player") && !col.CompareTag("Enemy"))
+			) {
+			Damagable dam = col.GetComponent<Damagable>();
+			if(dam != null)
+			{
+				dam.damage(damage);
+			}
+			Destroy(gameObject);
 		}
 	}
 }

@@ -6,7 +6,10 @@ TagManager:
   tags:
   - Gun
   - Enemy
-  - UI Camera
+  - StatPanel
+  - ValuePanel
+  - PauseWindow
+  - Shield
   layers:
   - Default
   - TransparentFX
@@ -16,8 +19,8 @@ TagManager:
   - UI
   - 
   - 
-  - Hearts
-  - 
+  - Projectiles
+  - 3D UI
   - 
   - 
   - 

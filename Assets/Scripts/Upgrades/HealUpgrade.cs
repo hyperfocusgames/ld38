@@ -11,6 +11,6 @@ public class HealUpgrade : Upgrade
 
     public override string toString()
     {
-        return "Heals your ship to full health";
+        return "<b>Heal:<\b> restores your ship to full health";
     }
 }

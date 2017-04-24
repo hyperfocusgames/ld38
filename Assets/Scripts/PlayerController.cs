@@ -6,12 +6,41 @@ public class PlayerController : MonoBehaviour {
 
 	SurfaceEntity entity;
 
+	private bool paused = false;
+	private float minPauseTime = 1f;
+	private float lastPauseTime = float.MinValue;
+	public GameObject pauseWindow;
+
 	void Awake() {
 		entity = GetComponent<SurfaceEntity>();
 	}
 	
 	void Start() {
 		entity.body.velocity = transform.forward; // give it a tiny push to fix the camera shit (this is a game jam ok)
+	}
+
+	void Update() {
+		if(Input.GetButtonDown("Pause"))
+		{
+			if(Time.time - lastPauseTime > minPauseTime)
+			{
+				if(paused)
+				{
+					Destroy(GameObject.FindGameObjectWithTag("PauseWindow"));
+					Time.timeScale = 1;
+				}
+				else
+				{
+					Instantiate(pauseWindow, Vector3.zero, Quaternion.identity);
+					Time.timeScale = 0;
+				}
+				paused = !paused;
+			}
+		}
+		if(Input.GetButtonDown("GodMode"))
+		{
+			PlayerData.player.GodMode();
+		}
 	}
 
 	void FixedUpdate() {
