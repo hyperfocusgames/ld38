@@ -20,6 +20,9 @@ public class ShipData : MonoBehaviour
 	public GameObject explosion;						// Effect to play on death
 	public float explosionTime;							// Time to play effect
 
+	public float damageRecoveryTime = 0;
+
+
 	protected Gun[] guns;								// Array of all guns
 	protected float lastShot = float.MinValue;			// Time of last shot
 	protected bool cooledDown = true;					// Can this shoot again?
@@ -140,6 +143,7 @@ public class ShipData : MonoBehaviour
 			amt -= shield;
 			shield = 0;
 			hp -= amt;
+			BroadcastMessage("OnDamageTaken", amt, SendMessageOptions.DontRequireReceiver);
 		}
 		else
 		{
@@ -150,7 +154,7 @@ public class ShipData : MonoBehaviour
 		{
 			if(shieldObject != null)
 			{
-				shieldObject.gameObject.SetActive(false);
+				shieldObject.Break();
 			}
 		}
 	}
@@ -163,7 +167,7 @@ public class ShipData : MonoBehaviour
 			lastHitTime = Time.time;	// Just set this to now so it resets recharge cooldown
 			if(shieldObject != null)
 			{
-				shieldObject.gameObject.SetActive(true);
+				shieldObject.Reform();
 			}
 		}
 	}

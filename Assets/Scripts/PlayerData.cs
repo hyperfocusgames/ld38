@@ -26,6 +26,7 @@ public class PlayerData : ShipData
 
 	public ParticleSystem lowHealthEffect;
 	private bool godMode = false;
+	public Color damageFlashColor = Color.red;
 
 	public bool isAlive {
 		get {
@@ -158,10 +159,13 @@ public class PlayerData : ShipData
 		gameObject.SetActive(true);
 	}
 
-	public void OnDeath() {
+	void OnDeath() {
+		if (lowHealthEffect != null) {
+			lowHealthEffect.transform.SetParent(null, true);
+			lowHealthEffect.Stop();
+		}
 		gameObject.SetActive(false);
 	}
-
 	public void GodMode()
 	{
 		godMode = !godMode;
@@ -173,6 +177,8 @@ public class PlayerData : ShipData
 		{
 			hp = 1;
 		}
+	void OnDamageTaken(int damage) {
+		ScreenFlash.instance.Flash(damageFlashColor, damageRecoveryTime);
 	}
 
 }
