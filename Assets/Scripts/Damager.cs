@@ -14,6 +14,7 @@ public class Damager : MonoBehaviour
 		 	(damEnemy && col.tag == "Enemy") ||
 			 (col.tag != "Player" && col.tag != "Enemy"))
 		{
+			Debug.Log(col.name);
 			Damagable dam = col.GetComponent<Damagable>();
 			if(dam != null)
 			{
