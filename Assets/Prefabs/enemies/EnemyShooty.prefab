@@ -310,7 +310,7 @@ MonoBehaviour:
   shield: 0
   baseShieldRechargeTime: 5
   projectile: {fileID: 1550092016294892, guid: 96604501f1f815143b6fe08ad33bb801, type: 2}
-  rateOfFire: 0.5
+  rateOfFire: 1.5
   damPlayer: 1
   damEnemy: 0
 --- !u!114 &114517608231931302
@@ -376,6 +376,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 20488e688e1c12841af4dfa37a2f284b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  recoveryTime: 0
 --- !u!198 &198074150897676838
 ParticleSystem:
   m_ObjectHideFlags: 1
