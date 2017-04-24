@@ -40,6 +40,7 @@ GameObject:
   - component: {fileID: 114195399240190828}
   - component: {fileID: 114636142761919626}
   - component: {fileID: 223272296492536868}
+  - component: {fileID: 114808723189692040}
   m_Layer: 5
   m_Name: PauseWindow
   m_TagString: PauseWindow
@@ -244,6 +245,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_AspectMode: 0
   m_AspectRatio: 2.3068593
+--- !u!114 &114808723189692040
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1133569863730940}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 04255e806af94ef45a8640a357e2476a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!222 &222032407922551370
 CanvasRenderer:
   m_ObjectHideFlags: 1

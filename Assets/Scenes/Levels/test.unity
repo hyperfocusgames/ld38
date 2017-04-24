@@ -617,6 +617,11 @@ Prefab:
       propertyPath: m_RootOrder
       value: 7
       objectReference: {fileID: 0}
+    - target: {fileID: 114187047407805592, guid: b884f726ab9ece34db5853eb52a11303,
+        type: 2}
+      propertyPath: menuEffectTransitionTime
+      value: 0.1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b884f726ab9ece34db5853eb52a11303, type: 2}
   m_IsPrefabParent: 0

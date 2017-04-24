@@ -134,5 +134,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mainMusic: {fileID: 8300000, guid: 22a1dd25cb7d5134ab071826109b8dc3, type: 3}
-  mixer: {fileID: 24100000, guid: 7ac0b50172a011645a997deca59421a7, type: 2}
   menuEffectTransitionTime: 0.5
+  defaultSnapshot: {fileID: 24500006, guid: 7ac0b50172a011645a997deca59421a7, type: 2}
+  menuEffectSnapshot: {fileID: 245596031990961692, guid: 7ac0b50172a011645a997deca59421a7,
+    type: 2}

@@ -30,6 +30,7 @@ public class DeathMenu : SingletonBehaviour<DeathMenu> {
 	public void Show() {
 		gameObject.SetActive(true);
 		StartCoroutine(ShowRoutine());
+		MusicManager.instance.menuEffectEnabled = true;
 	}
 
 	IEnumerator ShowRoutine() {

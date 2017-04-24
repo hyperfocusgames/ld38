@@ -8,4 +8,11 @@ public class UI : SingletonBehaviour<UI> {
 		DeathMenu.instance.Show();
 	}
 
+	void Update() {
+		if (Input.GetButtonDown("Pause")) {
+			PauseWindow pause = PauseWindow.instance;
+			pause.isPaused = !pause.isPaused;
+		}
+	}
+
 }

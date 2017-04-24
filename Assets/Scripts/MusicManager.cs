@@ -6,20 +6,12 @@ using System.Collections.Generic;
 public class MusicManager : SingletonBehaviour<MusicManager> {
 
 	public AudioClip mainMusic;
-	public AudioMixer mixer;
 	public float menuEffectTransitionTime = 0.5f;
 
 	AudioSource source;
 
-	AudioMixerSnapshot _menuEffectSnapshot;
-	AudioMixerSnapshot menuEffectSnapshot {
-		get {
-			if (_menuEffectSnapshot == null) {
-				_menuEffectSnapshot = mixer.FindSnapshot("Menu");
-			}
-			return _menuEffectSnapshot;
-		}
-	}
+	public AudioMixerSnapshot defaultSnapshot;
+	public AudioMixerSnapshot menuEffectSnapshot;
 
 	bool _menuEffectEnabled;
 	public bool menuEffectEnabled {
@@ -29,7 +21,7 @@ public class MusicManager : SingletonBehaviour<MusicManager> {
 		set {
 			if (value != _menuEffectEnabled) {
 				_menuEffectEnabled = value;
-				menuEffectSnapshot.TransitionTo(menuEffectTransitionTime);
+				(value ? menuEffectSnapshot : defaultSnapshot).TransitionTo(menuEffectTransitionTime);
 			}
 		}
 	}
