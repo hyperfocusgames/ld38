@@ -763,7 +763,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 81fbcb62d26b1004ea0cc167ecd665ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levelName: L7
+  levelName: LVL 7
+  menuBackground: 0
   playerPrefab: {fileID: 114646118536445206, guid: 26dcb9f5ad8b6d34d8d692ace2a32a5a,
     type: 2}
   playerSpawnPrefab: {fileID: 114807969500106566, guid: 2c2f3024b4d15b448908b1d772f85f8a,
@@ -774,7 +775,7 @@ MonoBehaviour:
     type: 2}
   planetCount: 3
   planetPrefabs:
-  - weight: 1
+  - weight: 0.1
     value: {fileID: 114448947987373628, guid: 5cd696eb640be264eb8542a7fe742f84, type: 2}
   - weight: 0.99
     value: {fileID: 114448947987373628, guid: dd3bdb8cf8a9a394ab0f530cf29f97fb, type: 2}
@@ -786,16 +787,58 @@ MonoBehaviour:
       serializedVersion: 2
       m_Curve:
       - serializedVersion: 2
+        time: -0.0055935364
+        value: -0.5
+        inSlope: -1.2546852
+        outSlope: -1.2546852
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 1
+        value: 2.3000007
+        inSlope: 6.1481037
+        outSlope: 6.1481037
+        tangentMode: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 0
+    spawnFactor: 1
+    maxClusterSize: 1
+  - prefab: {fileID: 114432175952679874, guid: 449bbc73f3705aa4b8af1c42460abdce, type: 2}
+    spawnRate:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 2
         time: 0
-        value: 0
+        value: -1.8303102
         inSlope: 0
         outSlope: 0
         tangentMode: 0
       - serializedVersion: 2
         time: 1
-        value: 4.895292
-        inSlope: 10.1763935
-        outSlope: 10.1763935
+        value: 1.6000004
+        inSlope: 4.5239024
+        outSlope: 4.5239024
+        tangentMode: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 0
+    spawnFactor: 1
+    maxClusterSize: 1
+  - prefab: {fileID: 114178264041090590, guid: 9e4a94d446b0ea94e944954da483cf97, type: 2}
+    spawnRate:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 2
+        time: 0
+        value: 0.5
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 1
+        value: 1.837215
+        inSlope: 2.124223
+        outSlope: 2.124223
         tangentMode: 0
       m_PreInfinity: 2
       m_PostInfinity: 2

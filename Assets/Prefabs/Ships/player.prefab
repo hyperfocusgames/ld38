@@ -945,7 +945,7 @@ MonoBehaviour:
   hp: 0
   baseShield: 1
   shield: 0
-  baseShieldRechargeTime: 3
+  baseShieldRechargeTime: 2.5
   projectile: {fileID: 1550092016294892, guid: e3f9e85a26d1b5549b560bc1b767f25d, type: 2}
   rateOfFire: 0.5
   damage: 10

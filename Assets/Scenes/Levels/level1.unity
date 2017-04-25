@@ -766,7 +766,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 81fbcb62d26b1004ea0cc167ecd665ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levelName: L1
+  levelName: LVL 1
+  menuBackground: 0
   playerPrefab: {fileID: 114646118536445206, guid: 26dcb9f5ad8b6d34d8d692ace2a32a5a,
     type: 2}
   playerSpawnPrefab: {fileID: 114807969500106566, guid: 2c2f3024b4d15b448908b1d772f85f8a,
@@ -796,9 +797,9 @@ MonoBehaviour:
         tangentMode: 0
       - serializedVersion: 2
         time: 1
-        value: 4.895292
-        inSlope: 10.1763935
-        outSlope: 10.1763935
+        value: 2.8999991
+        inSlope: 6.3323984
+        outSlope: 6.3323984
         tangentMode: 0
       m_PreInfinity: 2
       m_PostInfinity: 2

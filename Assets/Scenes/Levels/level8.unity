@@ -594,7 +594,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 81fbcb62d26b1004ea0cc167ecd665ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levelName: L9
+  levelName: LVL 8
+  menuBackground: 0
   playerPrefab: {fileID: 114646118536445206, guid: 26dcb9f5ad8b6d34d8d692ace2a32a5a,
     type: 2}
   playerSpawnPrefab: {fileID: 114807969500106566, guid: 2c2f3024b4d15b448908b1d772f85f8a,
@@ -605,28 +606,49 @@ MonoBehaviour:
     type: 2}
   planetCount: 3
   planetPrefabs:
-  - weight: 1
-    value: {fileID: 114448947987373628, guid: 5cd696eb640be264eb8542a7fe742f84, type: 2}
+  - weight: 3
+    value: {fileID: 114448947987373628, guid: eadc88d64c89ff54ba2207858a896ebc, type: 2}
   - weight: 0.99
     value: {fileID: 114448947987373628, guid: dd3bdb8cf8a9a394ab0f530cf29f97fb, type: 2}
   - weight: 0.01
     value: {fileID: 114448947987373628, guid: 7b8d4a693cfd5b0499fa67aaf2aeca0b, type: 2}
   enemySpawns:
-  - prefab: {fileID: 114245726034998026, guid: 85f46d4504f211c41b041c1db98d7817, type: 2}
+  - prefab: {fileID: 114432175952679874, guid: 449bbc73f3705aa4b8af1c42460abdce, type: 2}
     spawnRate:
       serializedVersion: 2
       m_Curve:
       - serializedVersion: 2
         time: 0
-        value: 0
+        value: 0.7999878
         inSlope: 0
         outSlope: 0
         tangentMode: 0
       - serializedVersion: 2
+        time: 1.005
+        value: 2.6999946
+        inSlope: 1.4942036
+        outSlope: 1.4942036
+        tangentMode: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 0
+    spawnFactor: 1
+    maxClusterSize: 1
+  - prefab: {fileID: 114488253990559428, guid: 0262133121deb7845b63590484ae4253, type: 2}
+    spawnRate:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 2
+        time: 0
+        value: -1
+        inSlope: -2.0158427
+        outSlope: -2.0158427
+        tangentMode: 0
+      - serializedVersion: 2
         time: 1
-        value: 4.895292
-        inSlope: 10.1763935
-        outSlope: 10.1763935
+        value: 1.8572414
+        inSlope: 0.46485013
+        outSlope: 0.46485013
         tangentMode: 0
       m_PreInfinity: 2
       m_PostInfinity: 2

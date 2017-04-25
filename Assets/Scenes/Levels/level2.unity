@@ -594,7 +594,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 81fbcb62d26b1004ea0cc167ecd665ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levelName: L2
+  levelName: LVL 2
+  menuBackground: 0
   playerPrefab: {fileID: 114646118536445206, guid: 26dcb9f5ad8b6d34d8d692ace2a32a5a,
     type: 2}
   playerSpawnPrefab: {fileID: 114807969500106566, guid: 2c2f3024b4d15b448908b1d772f85f8a,
@@ -618,15 +619,36 @@ MonoBehaviour:
       m_Curve:
       - serializedVersion: 2
         time: 0
-        value: 0
-        inSlope: 0
-        outSlope: 0
+        value: 1.6238708
+        inSlope: 0.678334
+        outSlope: 0.678334
         tangentMode: 0
       - serializedVersion: 2
         time: 1
-        value: 4.895292
-        inSlope: 10.1763935
-        outSlope: 10.1763935
+        value: 2.4500017
+        inSlope: 1.5301768
+        outSlope: 1.5301768
+        tangentMode: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 0
+    spawnFactor: 1
+    maxClusterSize: 1
+  - prefab: {fileID: 114178264041090590, guid: 9e4a94d446b0ea94e944954da483cf97, type: 2}
+    spawnRate:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 2
+        time: 0.0014857436
+        value: -0.5994491
+        inSlope: 1.6791738
+        outSlope: 1.6791738
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 1
+        value: 0.8500016
+        inSlope: 3.0827124
+        outSlope: 3.0827124
         tangentMode: 0
       m_PreInfinity: 2
       m_PostInfinity: 2

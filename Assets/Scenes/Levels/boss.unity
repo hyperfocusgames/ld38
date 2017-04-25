@@ -771,6 +771,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   levelName: ODHA
+  menuBackground: 0
   playerPrefab: {fileID: 114646118536445206, guid: 26dcb9f5ad8b6d34d8d692ace2a32a5a,
     type: 2}
   playerSpawnPrefab: {fileID: 114807969500106566, guid: 2c2f3024b4d15b448908b1d772f85f8a,
@@ -781,8 +782,10 @@ MonoBehaviour:
     type: 2}
   planetCount: 5
   planetPrefabs:
-  - weight: 2
+  - weight: 10
     value: {fileID: 114448947987373628, guid: eadc88d64c89ff54ba2207858a896ebc, type: 2}
+  - weight: 0.01
+    value: {fileID: 114448947987373628, guid: 7b8d4a693cfd5b0499fa67aaf2aeca0b, type: 2}
   enemySpawns:
   - prefab: {fileID: 114245726034998026, guid: 85f46d4504f211c41b041c1db98d7817, type: 2}
     spawnRate:
@@ -790,20 +793,20 @@ MonoBehaviour:
       m_Curve:
       - serializedVersion: 2
         time: 0
-        value: 0
+        value: 0.7000122
         inSlope: 0
         outSlope: 0
         tangentMode: 0
       - serializedVersion: 2
         time: 1
-        value: 4.000001
-        inSlope: 10.338122
-        outSlope: 10.338122
+        value: 0.6999979
+        inSlope: 0.7087891
+        outSlope: 0.7087891
         tangentMode: 0
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 0
-    spawnFactor: 0
+    spawnFactor: 1
     maxClusterSize: 1
   - prefab: {fileID: 114488253990559428, guid: 0262133121deb7845b63590484ae4253, type: 2}
     spawnRate:
@@ -811,13 +814,13 @@ MonoBehaviour:
       m_Curve:
       - serializedVersion: 2
         time: 0
-        value: 1
+        value: 0.55000305
         inSlope: 0
         outSlope: 0
         tangentMode: 0
       - serializedVersion: 2
         time: 1
-        value: 2.000001
+        value: 1.850007
         inSlope: 1.0876453
         outSlope: 1.0876453
         tangentMode: 0
@@ -832,62 +835,80 @@ MonoBehaviour:
       m_Curve:
       - serializedVersion: 2
         time: 0
-        value: 1
-        inSlope: 0
-        outSlope: 0
+        value: -0.085607946
+        inSlope: -1.4157912
+        outSlope: -1.4157912
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 0.71
+        value: 1.2162724
+        inSlope: -0.33333898
+        outSlope: -0.33333898
         tangentMode: 0
       - serializedVersion: 2
         time: 1
-        value: 2.000001
-        inSlope: 1.0876453
-        outSlope: 1.0876453
+        value: -0.056227684
+        inSlope: -0.90153545
+        outSlope: -0.90153545
         tangentMode: 0
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 0
-    spawnFactor: 0
-    maxClusterSize: 3
+    spawnFactor: 1
+    maxClusterSize: 1
   - prefab: {fileID: 114376407332925960, guid: 876a906b60fe8304592cc7747dddf3aa, type: 2}
     spawnRate:
       serializedVersion: 2
       m_Curve:
       - serializedVersion: 2
         time: 0
-        value: 1
-        inSlope: 0
-        outSlope: 0
+        value: -0.1499939
+        inSlope: -0.8561802
+        outSlope: -0.8561802
         tangentMode: 0
       - serializedVersion: 2
         time: 1
-        value: 1
-        inSlope: 0
-        outSlope: 0
+        value: 1.6500015
+        inSlope: 2.811251
+        outSlope: 2.811251
         tangentMode: 0
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 0
-    spawnFactor: 0
-    maxClusterSize: 3
+    spawnFactor: 1
+    maxClusterSize: 1
   - prefab: {fileID: 114178264041090590, guid: 9e4a94d446b0ea94e944954da483cf97, type: 2}
     spawnRate:
       serializedVersion: 2
       m_Curve:
       - serializedVersion: 2
         time: 0
-        value: 1
+        value: 0.049987793
         inSlope: 0
         outSlope: 0
         tangentMode: 0
       - serializedVersion: 2
+        time: 0.2485761
+        value: 2.6976957
+        inSlope: 1.0225177
+        outSlope: 1.0225177
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 0.50527906
+        value: 0.9842619
+        inSlope: -1.4705174
+        outSlope: -1.4705174
+        tangentMode: 0
+      - serializedVersion: 2
         time: 1
-        value: 1
+        value: 0.75
         inSlope: 0
         outSlope: 0
         tangentMode: 0
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 0
-    spawnFactor: 0
+    spawnFactor: 1
     maxClusterSize: 1
   upgradesScene: Upgrades
   nextLevel: level1
