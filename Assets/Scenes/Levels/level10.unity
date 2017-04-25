@@ -421,6 +421,176 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b884f726ab9ece34db5853eb52a11303, type: 2}
   m_IsPrefabParent: 0
+--- !u!1001 &1387257332
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 114324051255439788, guid: 3d1d1d8d643fee549a67c4afec63be5a,
+        type: 2}
+      propertyPath: dialogue.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 224865660033486334, guid: 3d1d1d8d643fee549a67c4afec63be5a,
+        type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224865660033486334, guid: 3d1d1d8d643fee549a67c4afec63be5a,
+        type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224865660033486334, guid: 3d1d1d8d643fee549a67c4afec63be5a,
+        type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224865660033486334, guid: 3d1d1d8d643fee549a67c4afec63be5a,
+        type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224865660033486334, guid: 3d1d1d8d643fee549a67c4afec63be5a,
+        type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224865660033486334, guid: 3d1d1d8d643fee549a67c4afec63be5a,
+        type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224865660033486334, guid: 3d1d1d8d643fee549a67c4afec63be5a,
+        type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 224865660033486334, guid: 3d1d1d8d643fee549a67c4afec63be5a,
+        type: 2}
+      propertyPath: m_RootOrder
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 224865660033486334, guid: 3d1d1d8d643fee549a67c4afec63be5a,
+        type: 2}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224865660033486334, guid: 3d1d1d8d643fee549a67c4afec63be5a,
+        type: 2}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224865660033486334, guid: 3d1d1d8d643fee549a67c4afec63be5a,
+        type: 2}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224865660033486334, guid: 3d1d1d8d643fee549a67c4afec63be5a,
+        type: 2}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224865660033486334, guid: 3d1d1d8d643fee549a67c4afec63be5a,
+        type: 2}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224865660033486334, guid: 3d1d1d8d643fee549a67c4afec63be5a,
+        type: 2}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224865660033486334, guid: 3d1d1d8d643fee549a67c4afec63be5a,
+        type: 2}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224865660033486334, guid: 3d1d1d8d643fee549a67c4afec63be5a,
+        type: 2}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224865660033486334, guid: 3d1d1d8d643fee549a67c4afec63be5a,
+        type: 2}
+      propertyPath: m_Pivot.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224865660033486334, guid: 3d1d1d8d643fee549a67c4afec63be5a,
+        type: 2}
+      propertyPath: m_Pivot.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114381402291375488, guid: 3d1d1d8d643fee549a67c4afec63be5a,
+        type: 2}
+      propertyPath: m_havePropertiesChanged
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114381402291375488, guid: 3d1d1d8d643fee549a67c4afec63be5a,
+        type: 2}
+      propertyPath: m_isInputParsingRequired
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114324051255439788, guid: 3d1d1d8d643fee549a67c4afec63be5a,
+        type: 2}
+      propertyPath: dialogue.Array.data[0].name
+      value: Message from SCIENTIST
+      objectReference: {fileID: 0}
+    - target: {fileID: 114324051255439788, guid: 3d1d1d8d643fee549a67c4afec63be5a,
+        type: 2}
+      propertyPath: dialogue.Array.data[1].name
+      value: Message from SCIENTIST
+      objectReference: {fileID: 0}
+    - target: {fileID: 114324051255439788, guid: 3d1d1d8d643fee549a67c4afec63be5a,
+        type: 2}
+      propertyPath: dialogue.Array.data[2].name
+      value: Message from SCIENTIST
+      objectReference: {fileID: 0}
+    - target: {fileID: 114324051255439788, guid: 3d1d1d8d643fee549a67c4afec63be5a,
+        type: 2}
+      propertyPath: dialogue.Array.data[0].dialogue
+      value: Read this very carefully. I think you have a shot at winning this, which
+        means we only have One. Chance.
+      objectReference: {fileID: 0}
+    - target: {fileID: 114324051255439788, guid: 3d1d1d8d643fee549a67c4afec63be5a,
+        type: 2}
+      propertyPath: dialogue.Array.data[1].dialogue
+      value: When you win I need you to approach the core with radiation sensors set
+        to a narrow frequency and
+      objectReference: {fileID: 0}
+    - target: {fileID: 114324051255439788, guid: 3d1d1d8d643fee549a67c4afec63be5a,
+        type: 2}
+      propertyPath: dialogue.Array.data[2].dialogue
+      value: '[The rest of the message is missing due to the word limit]'
+      objectReference: {fileID: 0}
+    - target: {fileID: 114381402291375488, guid: 3d1d1d8d643fee549a67c4afec63be5a,
+        type: 2}
+      propertyPath: m_firstOverflowCharacterIndex
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114381402291375488, guid: 3d1d1d8d643fee549a67c4afec63be5a,
+        type: 2}
+      propertyPath: m_textInfo.lineCount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114381402291375488, guid: 3d1d1d8d643fee549a67c4afec63be5a,
+        type: 2}
+      propertyPath: m_textAlignment
+      value: 257
+      objectReference: {fileID: 0}
+    - target: {fileID: 1649126086885820, guid: 3d1d1d8d643fee549a67c4afec63be5a, type: 2}
+      propertyPath: m_Name
+      value: Level5DialogueBox
+      objectReference: {fileID: 0}
+    - target: {fileID: 1649126086885820, guid: 3d1d1d8d643fee549a67c4afec63be5a, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 3d1d1d8d643fee549a67c4afec63be5a, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1001 &1456193502
 Prefab:
   m_ObjectHideFlags: 0
@@ -594,6 +764,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 81fbcb62d26b1004ea0cc167ecd665ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  levelName: L10
   playerPrefab: {fileID: 114646118536445206, guid: 26dcb9f5ad8b6d34d8d692ace2a32a5a,
     type: 2}
   playerSpawnPrefab: {fileID: 114807969500106566, guid: 2c2f3024b4d15b448908b1d772f85f8a,

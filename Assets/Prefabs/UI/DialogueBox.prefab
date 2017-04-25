@@ -97,7 +97,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   letterSpeed: 0.01
-  lineSpeedPerLetter: 1
+  lineSpeedPerLetter: 0.02
   dialogue:
   - name: Speaker1
     dialogue: This is some <b>bold</b> text.
@@ -310,8 +310,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 377.5}
-  m_SizeDelta: {x: -600, y: -785}
+  m_AnchoredPosition: {x: 0, y: -384}
+  m_SizeDelta: {x: -600, y: -832}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224865660033486334
 RectTransform:

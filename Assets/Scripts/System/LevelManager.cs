@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class LevelManager : SingletonBehaviour<LevelManager> {
 
+	public string levelName;
 	public PlayerData playerPrefab;
 	public PlayerSpawn playerSpawnPrefab;
 	public WarpGate warpGatePrefab;
@@ -49,6 +50,7 @@ public class LevelManager : SingletonBehaviour<LevelManager> {
 			foreach (Projectile projectile in FindObjectsOfType<Projectile>()) {
 				Destroy(projectile.gameObject);
 			}
+			UI.instance.UpdateLevelText();
 		}
 		else {
 			NextLevel();
