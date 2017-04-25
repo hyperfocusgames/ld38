@@ -16,8 +16,7 @@ public class WarpArrow : MonoBehaviour {
 		Vector3 direction = (warpGate.position - planet.transform.position) - (player.position - planet.transform.position);
 		direction = Vector3.ProjectOnPlane(direction, up);
 		transform.LookAt(transform.position + direction, up);
-		// show the arrow when the player isnt dead and the warp gate is open
-		model.gameObject.SetActive(planet.warpGate.isOpen && PlayerData.player.isAlive);
+		model.gameObject.SetActive(PlayerData.player.isAlive);
 		Vector3 euler = model.localEulerAngles;
 		euler.z = Time.time * spinSpeed;
 		model.localEulerAngles = euler;
