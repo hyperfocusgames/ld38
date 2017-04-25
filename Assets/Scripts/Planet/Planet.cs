@@ -19,11 +19,16 @@ public class Planet : MonoBehaviour {
 	}
 
 	void Start() {
-		if (customMusic != null) {
-			MusicManager.instance.SetCustomMusic(customMusic);
+		if (LevelManager.instance.menuBackground) {
+
 		}
 		else {
-			MusicManager.instance.ResetCustomMusic();
+			if (customMusic != null) {
+				MusicManager.instance.SetCustomMusic(customMusic);
+			}
+			else {
+				MusicManager.instance.ResetCustomMusic();
+			}
 		}
 	}
 
@@ -34,11 +39,16 @@ public class Planet : MonoBehaviour {
 	}
 
 	void Update() {
-		CameraRig rig = CameraRig.instance;
-		Sun sun = Sun.instance;
-		float day = Vector3.Dot(rig.transform.forward.normalized, sun.transform.forward.normalized);
-		day = (day + 1) / 2;
-		rig.skyColor = sky.Evaluate(day);
+		if (LevelManager.instance.menuBackground) {
+
+		}
+		else {
+			CameraRig rig = CameraRig.instance;
+			Sun sun = Sun.instance;
+			float day = Vector3.Dot(rig.transform.forward.normalized, sun.transform.forward.normalized);
+			day = (day + 1) / 2;
+			rig.skyColor = sky.Evaluate(day);
+		}
 	}
 
 }

@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class LevelManager : SingletonBehaviour<LevelManager> {
 
 	public string levelName;
+	public bool menuBackground;
 	public PlayerData playerPrefab;
 	public PlayerSpawn playerSpawnPrefab;
 	public WarpGate warpGatePrefab;
@@ -23,11 +24,26 @@ public class LevelManager : SingletonBehaviour<LevelManager> {
 	public static string nextLevelAfterUpgrades { get; private set; }
 
 	void Awake() {
-		planetNumber = 0;
-		if (PlayerData.player == null) {
-			Instantiate(playerPrefab);
+		if (menuBackground) {
+			Planet planet = GeneratePlanet();
 		}
-		NextPlanet();
+		else {
+			planetNumber = 0;
+			if (PlayerData.player == null) {
+				Instantiate(playerPrefab);
+			}
+			NextPlanet();
+		}
+	}
+
+	Planet GeneratePlanet() {
+		Planet prefab = planetPrefabs.WeightedChoice();
+		Planet planet = Instantiate(prefab);
+		planet.name = prefab.name;
+		foreach (SurfaceEntity entity in FindObjectsOfType<SurfaceEntity>()) {
+			entity.planet = planet;
+		}
+		return planet;
 	}
 
 	public void NextPlanet() {
@@ -38,12 +54,7 @@ public class LevelManager : SingletonBehaviour<LevelManager> {
 			if (planet != null) {
 				Destroy(planet.gameObject);
 			}
-			Planet prefab = planetPrefabs.WeightedChoice();
-			planet = Instantiate(prefab);
-			planet.name = prefab.name;
-			foreach (SurfaceEntity entity in FindObjectsOfType<SurfaceEntity>()) {
-				entity.planet = planet;
-			}
+			planet = GeneratePlanet();
 			CameraRig rig = CameraRig.instance;
 			rig.ZoomToFitPlanet(planet);
 			planet.BroadcastMessage("OnPlanetStart", planet, SendMessageOptions.DontRequireReceiver);
