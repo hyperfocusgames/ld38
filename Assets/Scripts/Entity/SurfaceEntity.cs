@@ -30,7 +30,7 @@ public class SurfaceEntity : MonoBehaviour {
 	}
 
 	void Awake() {
-		planet = FindObjectOfType<Planet>();
+		planet = LevelManager.instance.planet;
 		body = GetComponent<Rigidbody>();
 		oldVelocity = body.velocity;
 	}

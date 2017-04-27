@@ -6,11 +6,7 @@ public class SpawnerAI : AI
 {
 	protected override void FixedUpdate()
 	{
-		if(playerEntity == null || entity == null || ship == null || planet == null)
-		{
-			setup();
-		}
-		else if(!ship.isStunned())
+		if(setup() && !ship.isStunned())
 		{
 			patrol();
 			ship.shoot();

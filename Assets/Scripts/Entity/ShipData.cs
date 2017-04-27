@@ -73,6 +73,9 @@ public class ShipData : MonoBehaviour
 		get { return stunTime; }
 		set { stunTime = value; }
 	}
+	public virtual SurfaceEntity Entity {
+		get { return entity; }
+	}
 
   	protected virtual void Awake()
 	{

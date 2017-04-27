@@ -7,27 +7,28 @@ public class PlayerData : ShipData
 {
 	public static PlayerData player;
 
-	private static float 	moveSpeedUpgradeAmount = 3f;
-	private static int 		hpUpgradeAmount = 1;
-	private static int		shieldUpgradeAmount = 1;
-	private static float	shieldRechargeUpgradeAmount = .25f;
-	private static float 	rofUpgradeAmount = .05f;
-	private static int 		damUpgradeAmount = 2;
-	private static float	stunUpgradeAmount = .1f;
+	protected static float 	moveSpeedUpgradeAmount = 3f;
+	protected static int 	hpUpgradeAmount = 1;
+	protected static int	shieldUpgradeAmount = 1;
+	protected static float	shieldRechargeUpgradeAmount = .25f;
+	protected static float 	rofUpgradeAmount = .05f;
+	protected static int 	damUpgradeAmount = 2;
+	protected static float	stunUpgradeAmount = .1f;
 	
-	private static int numMoveSpeedUpgrades = 0;
-	private static int numHPUpgrades = 0;
-	private static int numShieldUpgrades = 0;
-	private static int numShieldRechargeUpgrades = 0;
-	private static int numROFUpgrades = 0;
-	private static int numDamUpgrades = 0;
-	private static int numStunUpgrades = 0;
+	protected static int numMoveSpeedUpgrades = 0;
+	protected static int numHPUpgrades = 0;
+	protected static int numShieldUpgrades = 0;
+	protected static int numShieldRechargeUpgrades = 0;
+	protected static int numROFUpgrades = 0;
+	protected static int numDamUpgrades = 0;
+	protected static int numStunUpgrades = 0;
+	
+	protected bool godMode = false;
 	public Gun[] upgradeGuns;	// Guns that will be enabled after the gun upgrade
 	public float gunUpgradeROFPenalty = 0.8f;
 	public GameObject missile;	// The projectile that will be fired after the missile upgrade
 
 	public ParticleSystem lowHealthEffect;
-	private bool godMode = false;
 	public Color damageFlashColor = Color.red;
 	public GameObject deathUI;
 

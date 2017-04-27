@@ -1,0 +1,206 @@
+Initialize engine version: 5.6.0f3 (497a0f351392)
+GfxDevice: creating device client; threaded=1
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.1]
+    Renderer: AMD Radeon R9 200 Series (ID=0x67b0)
+    Vendor:   ATI
+    VRAM:     3072 MB
+    Driver:   21.19.407.0
+Begin MonoManager ReloadAssembly
+Platform assembly: D:\Dev\ld38\RoguelikeOne_Data\Managed\UnityEngine.dll (this message is harmless)
+Loading D:\Dev\ld38\RoguelikeOne_Data\Managed\UnityEngine.dll into Unity Child Domain
+Platform assembly: D:\Dev\ld38\RoguelikeOne_Data\Managed\Assembly-CSharp.dll (this message is harmless)
+Loading D:\Dev\ld38\RoguelikeOne_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
+Platform assembly: D:\Dev\ld38\RoguelikeOne_Data\Managed\UnityEngine.UI.dll (this message is harmless)
+Loading D:\Dev\ld38\RoguelikeOne_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
+Platform assembly: D:\Dev\ld38\RoguelikeOne_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
+Loading D:\Dev\ld38\RoguelikeOne_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
+Platform assembly: D:\Dev\ld38\RoguelikeOne_Data\Managed\UnityEngine.Analytics.dll (this message is harmless)
+Loading D:\Dev\ld38\RoguelikeOne_Data\Managed\UnityEngine.Analytics.dll into Unity Child Domain
+Platform assembly: D:\Dev\ld38\RoguelikeOne_Data\Managed\TextMeshPro.dll (this message is harmless)
+Loading D:\Dev\ld38\RoguelikeOne_Data\Managed\TextMeshPro.dll into Unity Child Domain
+- Completed reload, in  0.018 seconds
+Platform assembly: D:\Dev\ld38\RoguelikeOne_Data\Managed\System.Core.dll (this message is harmless)
+Platform assembly: D:\Dev\ld38\RoguelikeOne_Data\Managed\System.dll (this message is harmless)
+desktop: 1920x1080 60Hz; virtual: 5760x1080 at -1920,0
+<RI> Initializing input.
+<RI> Input initialized.
+<RI> Initialized touch support.
+UnloadTime: 0.987995 ms
+Setting up 4 worker threads for Enlighten.
+  Thread -> id: 4b48 -> priority: 1 
+  Thread -> id: 31d4 -> priority: 1 
+  Thread -> id: 3b00 -> priority: 1 
+  Thread -> id: 395c -> priority: 1 
+Unloading 6 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 4.533984 ms
+
+Unloading 24 unused Assets to reduce memory usage. Loaded Objects now: 630.
+Total: 0.691596 ms (FindLiveObjects: 0.037361 ms CreateObjectMapping: 0.022139 ms MarkObjects: 0.458020 ms  DeleteObjects: 0.173798 ms)
+
+Unloading 6 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 2.997472 ms
+110
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+
+Unloading 79 unused Assets to reduce memory usage. Loaded Objects now: 1407.
+Total: 2.474415 ms (FindLiveObjects: 0.112083 ms CreateObjectMapping: 0.047600 ms MarkObjects: 0.995190 ms  DeleteObjects: 1.318987 ms)
+
+Unloading 4 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 1.141314 ms
+
+Unloading 133 unused Assets to reduce memory usage. Loaded Objects now: 3113.
+Total: 2.030233 ms (FindLiveObjects: 0.156363 ms CreateObjectMapping: 0.043172 ms MarkObjects: 1.256165 ms  DeleteObjects: 0.573424 ms)
+
+Initialize engine version: 5.6.0f3 (497a0f351392)
+GfxDevice: creating device client; threaded=1
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.1]
+    Renderer: AMD Radeon R9 200 Series (ID=0x67b0)
+    Vendor:   ATI
+    VRAM:     3072 MB
+    Driver:   21.19.407.0
+Begin MonoManager ReloadAssembly
+Platform assembly: D:\Dev\ld38\RoguelikeOne_Data\Managed\UnityEngine.dll (this message is harmless)
+Loading D:\Dev\ld38\RoguelikeOne_Data\Managed\UnityEngine.dll into Unity Child Domain
+Platform assembly: D:\Dev\ld38\RoguelikeOne_Data\Managed\Assembly-CSharp.dll (this message is harmless)
+Loading D:\Dev\ld38\RoguelikeOne_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
+Platform assembly: D:\Dev\ld38\RoguelikeOne_Data\Managed\UnityEngine.UI.dll (this message is harmless)
+Loading D:\Dev\ld38\RoguelikeOne_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
+Platform assembly: D:\Dev\ld38\RoguelikeOne_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
+Loading D:\Dev\ld38\RoguelikeOne_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
+Platform assembly: D:\Dev\ld38\RoguelikeOne_Data\Managed\UnityEngine.Analytics.dll (this message is harmless)
+Loading D:\Dev\ld38\RoguelikeOne_Data\Managed\UnityEngine.Analytics.dll into Unity Child Domain
+Platform assembly: D:\Dev\ld38\RoguelikeOne_Data\Managed\TextMeshPro.dll (this message is harmless)
+Loading D:\Dev\ld38\RoguelikeOne_Data\Managed\TextMeshPro.dll into Unity Child Domain
+- Completed reload, in  0.018 seconds
+Platform assembly: D:\Dev\ld38\RoguelikeOne_Data\Managed\System.Core.dll (this message is harmless)
+Platform assembly: D:\Dev\ld38\RoguelikeOne_Data\Managed\System.dll (this message is harmless)
+desktop: 1920x1080 60Hz; virtual: 5760x1080 at -1920,0
+<RI> Initializing input.
+<RI> Input initialized.
+<RI> Initialized touch support.
+UnloadTime: 0.938457 ms
+Setting up 4 worker threads for Enlighten.
+  Thread -> id: 4ac4 -> priority: 1 
+  Thread -> id: 44dc -> priority: 1 
+  Thread -> id: 116c -> priority: 1 
+  Thread -> id: 370c -> priority: 1 
+Unloading 6 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 4.473653 ms
+
+Unloading 24 unused Assets to reduce memory usage. Loaded Objects now: 630.
+Total: 0.668903 ms (FindLiveObjects: 0.020756 ms CreateObjectMapping: 0.021586 ms MarkObjects: 0.387449 ms  DeleteObjects: 0.238557 ms)
+
+Unloading 6 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 2.846367 ms
+110
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+
+Unloading 79 unused Assets to reduce memory usage. Loaded Objects now: 4737.
+Total: 2.771644 ms (FindLiveObjects: 0.198152 ms CreateObjectMapping: 0.060608 ms MarkObjects: 1.176738 ms  DeleteObjects: 1.335315 ms)
+
+Unloading 3 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 1.745181 ms
+
+Unloading 128 unused Assets to reduce memory usage. Loaded Objects now: 2990.
+Total: 2.250248 ms (FindLiveObjects: 0.142249 ms CreateObjectMapping: 0.043172 ms MarkObjects: 1.505793 ms  DeleteObjects: 0.557926 ms)
+
+Unloading 4 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 1.024802 ms
+
+Unloading 28 unused Assets to reduce memory usage. Loaded Objects now: 739.
+Total: 1.223232 ms (FindLiveObjects: 0.027121 ms CreateObjectMapping: 0.027121 ms MarkObjects: 0.869546 ms  DeleteObjects: 0.298889 ms)
+
+Unloading 6 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 0.428684 ms
+110
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+
+Unloading 79 unused Assets to reduce memory usage. Loaded Objects now: 1415.
+Total: 2.363992 ms (FindLiveObjects: 0.075275 ms CreateObjectMapping: 0.040405 ms MarkObjects: 0.961427 ms  DeleteObjects: 1.285777 ms)
+
+Unloading 4 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 1.350260 ms
+
+Unloading 133 unused Assets to reduce memory usage. Loaded Objects now: 3113.
+Total: 1.988167 ms (FindLiveObjects: 0.148060 ms CreateObjectMapping: 0.040128 ms MarkObjects: 1.147679 ms  DeleteObjects: 0.651744 ms)
+
+Unloading 6 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 1.173140 ms
+
+Unloading 16 unused Assets to reduce memory usage. Loaded Objects now: 1476.
+Total: 1.478118 ms (FindLiveObjects: 0.072785 ms CreateObjectMapping: 0.039298 ms MarkObjects: 1.262253 ms  DeleteObjects: 0.102674 ms)
+
+Unloading 4 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 1.310408 ms
+
+Unloading 158 unused Assets to reduce memory usage. Loaded Objects now: 3113.
+Total: 1.755974 ms (FindLiveObjects: 0.203134 ms CreateObjectMapping: 0.060884 ms MarkObjects: 1.175631 ms  DeleteObjects: 0.314940 ms)
+
+Unloading 7 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 2.233920 ms
+154
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+
+Unloading 16 unused Assets to reduce memory usage. Loaded Objects now: 1384.
+Total: 1.373507 ms (FindLiveObjects: 0.081917 ms CreateObjectMapping: 0.039021 ms MarkObjects: 1.116406 ms  DeleteObjects: 0.135883 ms)
+
+Unloading 4 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 0.615490 ms
+
+Unloading 160 unused Assets to reduce memory usage. Loaded Objects now: 3113.
+Total: 1.648319 ms (FindLiveObjects: 0.134223 ms CreateObjectMapping: 0.068357 ms MarkObjects: 1.159303 ms  DeleteObjects: 0.285882 ms)
+
+Unloading 7 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 1.032828 ms
+
+Unloading 43 unused Assets to reduce memory usage. Loaded Objects now: 1526.
+Total: 1.484483 ms (FindLiveObjects: 0.094371 ms CreateObjectMapping: 0.040128 ms MarkObjects: 1.226829 ms  DeleteObjects: 0.122046 ms)
+
+Unloading 4 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 1.268619 ms
+
+Unloading 206 unused Assets to reduce memory usage. Loaded Objects now: 3113.
+Total: 2.406335 ms (FindLiveObjects: 0.151935 ms CreateObjectMapping: 0.068080 ms MarkObjects: 1.180612 ms  DeleteObjects: 1.004876 ms)
+
+Unloading 7 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 1.036703 ms
+152
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+
+Unloading 16 unused Assets to reduce memory usage. Loaded Objects now: 4762.
+Total: 1.592692 ms (FindLiveObjects: 0.190680 ms CreateObjectMapping: 0.062268 ms MarkObjects: 1.181719 ms  DeleteObjects: 0.157470 ms)
+
+Unloading 4 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 1.180889 ms
+
+Unloading 165 unused Assets to reduce memory usage. Loaded Objects now: 3113.
+Total: 1.683189 ms (FindLiveObjects: 0.154702 ms CreateObjectMapping: 0.061991 ms MarkObjects: 1.149063 ms  DeleteObjects: 0.316601 ms)
+
+Unloading 8 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 1.133842 ms
+
+Unloading 43 unused Assets to reduce memory usage. Loaded Objects now: 4923.
+Total: 2.616941 ms (FindLiveObjects: 0.327947 ms CreateObjectMapping: 0.097692 ms MarkObjects: 1.973776 ms  DeleteObjects: 0.216971 ms)
+
+Unloading 3 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 2.080601 ms
+
+Unloading 189 unused Assets to reduce memory usage. Loaded Objects now: 3006.
+Total: 2.079771 ms (FindLiveObjects: 0.141418 ms CreateObjectMapping: 0.046493 ms MarkObjects: 1.610127 ms  DeleteObjects: 0.280623 ms)
+
+game quit!
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+

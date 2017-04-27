@@ -13,38 +13,66 @@ public class AI : MonoBehaviour
 	protected SurfaceEntity entity;
 	protected static SurfaceEntity playerEntity;
 	protected ShipData ship;
-	protected static Planet planet;
+	protected Planet planet;
 	protected Vector3 patrolTarget;
+	protected bool ready = false;
 
-	protected void setup()
+	protected bool setup()
 	{
-		if(entity == null)
+		// Only run if not ready
+		if(!ready)
 		{
-			entity = GetComponent<SurfaceEntity>();
+			bool wasReady = true;
+			if(entity == null)
+			{
+				setupEntity();
+				wasReady = false;
+			}
+			if(ship == null)
+			{
+				setupShip();
+				wasReady = false;
+			}
+			if(playerEntity == null)
+			{
+				setupPlayerEntity();
+				wasReady = false;
+			}
+			if(planet == null)
+			{
+				setupPlanet();
+				wasReady = false;
+			}
+
+			ready = wasReady;
 		}
-		if(ship == null)
+		return ready;
+	}
+	protected void setupEntity()
+	{
+		entity = GetComponent<SurfaceEntity>();
+	}
+	protected void setupShip()
+	{
+		ship = GetComponent<ShipData>();
+	}
+	protected void setupPlayerEntity()
+	{
+		if(PlayerData.player != null)
 		{
-			ship = GetComponent<ShipData>();
+			playerEntity = PlayerData.player.Entity;
 		}
-		if(planet == null)
-		{
-			planet = GameObject.FindObjectOfType<Planet>();
-		}
-		if(playerEntity == null && PlayerData.player != null)
-		{
-			playerEntity = PlayerData.player.GetComponent<SurfaceEntity>();
-		}
+	}
+	protected void setupPlanet()
+	{
+		planet = LevelManager.instance.planet;
 	}
 
 	protected virtual void FixedUpdate ()
 	{
-		if(playerEntity == null || entity == null || ship == null || planet == null)
+		if(setup() && !ship.isStunned() && PlayerData.player.isAlive)
 		{
-			setup();
-		}
-		else if(!ship.isStunned())
-		{
-			if(playerEntity != null && PlayerData.player.isAlive)
+			if(PlayerData.player.isAlive)
 			{
 				Vector3 player = PlayerData.player.transform.position;
 
@@ -57,18 +85,18 @@ public class AI : MonoBehaviour
 				}
 				else
 				{
-					patrol();
+					defaultBehavior();
 				}
 			}
 			else
 			{
-				// If player is missing, just patrol. Use in menu screen?
-				patrol();
+				defaultBehavior();
 			}
 		}
+
 	}
 
-	protected void followTarget(Vector3 target, Vector3 toTarget)
+	protected virtual void followTarget(Vector3 target, Vector3 toTarget)
 	{
 		// If player is further than stop distance, move closer
 		if(toTarget.magnitude >= stopDist )
@@ -87,13 +115,22 @@ public class AI : MonoBehaviour
 		ship.shoot();
 	}
 
-	protected void patrol()
+	protected virtual void patrol()
 	{
 		if(patrolTarget == Vector3.zero || Random.Range(0, 100) < patrolChangeChance)
 		{
-			patrolTarget = new Vector3(Random.Range(-planet.radius, planet.radius), Random.Range(-planet.radius, planet.radius), Random.Range(-planet.radius, planet.radius));
+			float r = planet.radius;
+			patrolTarget = new Vector3(Random.Range(-r, r), Random.Range(-r, r), Random.Range(-r, r));
 		}
 		Vector3 toTarget = transform.position - patrolTarget;
 		entity.body.AddForce(toTarget.normalized * ship.MoveSpeed, ForceMode.Acceleration);
+	}
+
+	protected virtual void defaultBehavior()
+	{
+		if(entity != null && ship != null && planet != null)
+		{
+			patrol();
+		}
 	}
 }
