@@ -11,6 +11,7 @@ public class PlanetGenerator : MonoBehaviour {
 	public WarpGate warpGatePrefab;
 	public EnemySpawn enemySpawnPrefab;
 	public PropScatter[] propScatter;
+	public LayerMask propMaskLayers = 0; //	layers to check against when placing props (cannot place props in spaces in these layers) 
 
 	Planet planet;
 	List<TerrainProp> props;
@@ -88,8 +89,12 @@ public class PlanetGenerator : MonoBehaviour {
 	// if there is not enough space, destroy the prop and return false
 	// return true if prop is succesfully placed
 	bool PlaceProp(TerrainProp prop, Vector3 position) {
-			prop.transform.parent = generationRoot;
 			position = position.normalized * planet.radius;
+			if (Physics.CheckSphere(planet.transform.position + position, prop.radius, propMaskLayers)) {
+				Destroy(prop.gameObject);
+				return false;
+			}
+			prop.transform.parent = generationRoot;
 			prop.transform.localPosition = position;
 			prop.planet = planet;
 			foreach (TerrainProp p in props) {

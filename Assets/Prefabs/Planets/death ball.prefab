@@ -133,6 +133,9 @@ MonoBehaviour:
   enemySpawnPrefab: {fileID: 114572706232016490, guid: f2ad2d4fb7aa56347bdd952a19fd3b85,
     type: 2}
   propScatter: []
+  propMaskLayers:
+    serializedVersion: 2
+    m_Bits: 1024
 --- !u!114 &114448947987373628
 MonoBehaviour:
   m_ObjectHideFlags: 1

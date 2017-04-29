@@ -155,6 +155,9 @@ MonoBehaviour:
     clusterCount: 5
     clusterSize: 5
     clusterRadius: 3
+  propMaskLayers:
+    serializedVersion: 2
+    m_Bits: 1024
 --- !u!114 &114448947987373628
 MonoBehaviour:
   m_ObjectHideFlags: 1
