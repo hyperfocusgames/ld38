@@ -29,6 +29,12 @@ public class SurfaceEntity : MonoBehaviour {
 		}
 	}
 
+	public Vector3 normal {
+		get {
+			return transform.position - planet.transform.position;
+		}
+	}
+
 	void Awake() {
 		planet = FindObjectOfType<Planet>();
 		body = GetComponent<Rigidbody>();

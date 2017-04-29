@@ -18,10 +18,10 @@ public class CameraRig : SingletonBehaviour<CameraRig> {
 
 	void Update() {
 		PlayerData player = PlayerData.player;
-		Planet planet = LevelManager.instance.planet;
+		Planet planet = Planet.activePlanet;
 		if (player != null) {
 			transform.position = planet.transform.position;
-			transform.LookAt(transform.position - player.transform.localPosition, transform.up);
+			transform.LookAt(transform.position - (player.entity.normal), transform.up);
 		}
 	}
 

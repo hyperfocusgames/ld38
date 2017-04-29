@@ -6,13 +6,7 @@ public class TerrainProp : MonoBehaviour {
 
 	public float radius;
 
-	public Planet planet { get; private set; }
-
-	public void AttachToPlanet(Planet planet)	{
-		this.planet = planet;
-		transform.parent = planet.transform;
-		transform.localPosition = transform.localPosition.normalized * planet.radius;
-	}
+	public Planet planet { get; set; }
 
 	void OnDrawGizmosSelected() {
 		Color color = Gizmos.color;

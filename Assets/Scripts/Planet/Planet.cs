@@ -5,49 +5,46 @@ using System.Collections.Generic;
 public class Planet : MonoBehaviour {
 
 	public Transform surfaceModel;
-	public float radius = 1;
 	public float enemySpawnFactor = 1;
-	public float radiusVariance = 0.5f;
 	public Gradient sky;
 	public AudioClip customMusic;
 
+	float _radius;
+	public float radius {
+		get {
+			return _radius;
+		} set {
+			_radius = value;
+			if (surfaceModel != null) {
+				surfaceModel.transform.localScale = Vector3.one * value * 2;
+			}
+		}
+	}
 	public WarpGate warpGate { get; set; }
 
-	void Awake() {
-		radius += Random.Range(-radiusVariance, radiusVariance);
-		surfaceModel.localScale = Vector3.one * radius * 2;
+	static Planet _activePlanet;
+	public static Planet activePlanet {
+		get {
+			LevelManager level = LevelManager.instance;
+			if (level != null) {
+				return level.planet;
+			}
+			if (_activePlanet == null) {
+				_activePlanet = FindObjectOfType<Planet>();
+			}
+			return _activePlanet;
+		}
 	}
 
 	void Start() {
-		if (LevelManager.instance.menuBackground) {
-
-		}
-		else {
+		MusicManager music = MusicManager.instance;
+		if (music != null) {
 			if (customMusic != null) {
-				MusicManager.instance.SetCustomMusic(customMusic);
+				music.SetCustomMusic(customMusic);
 			}
 			else {
-				MusicManager.instance.ResetCustomMusic();
+				music.ResetCustomMusic();
 			}
-		}
-	}
-
-	void OnValidate() {
-		if (surfaceModel) {
-			surfaceModel.localScale = Vector3.one * radius * 2;
-		}
-	}
-
-	void Update() {
-		if (LevelManager.instance.menuBackground) {
-
-		}
-		else {
-			CameraRig rig = CameraRig.instance;
-			Sun sun = Sun.instance;
-			float day = Vector3.Dot(rig.transform.forward.normalized, sun.transform.forward.normalized);
-			day = (day + 1) / 2;
-			rig.skyColor = sky.Evaluate(day);
 		}
 	}
 

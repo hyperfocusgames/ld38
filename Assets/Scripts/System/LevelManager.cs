@@ -6,11 +6,7 @@ using UnityEngine.SceneManagement;
 public class LevelManager : SingletonBehaviour<LevelManager> {
 
 	public string levelName;
-	public bool menuBackground;
 	public PlayerData playerPrefab;
-	public PlayerSpawn playerSpawnPrefab;
-	public WarpGate warpGatePrefab;
-	public EnemySpawn enemySpawnPrefab;
 	public int planetCount = 5;
 	public WeightedPlanet[] planetPrefabs;
 	public EnemySpawnInfo[] enemySpawns;
@@ -24,16 +20,11 @@ public class LevelManager : SingletonBehaviour<LevelManager> {
 	public static string nextLevelAfterUpgrades { get; private set; }
 
 	void Awake() {
-		if (menuBackground) {
-			Planet planet = GeneratePlanet();
+		planetNumber = 0;
+		if (PlayerData.player == null) {
+			Instantiate(playerPrefab);
 		}
-		else {
-			planetNumber = 0;
-			if (PlayerData.player == null) {
-				Instantiate(playerPrefab);
-			}
-			NextPlanet();
-		}
+		NextPlanet();
 	}
 
 	Planet GeneratePlanet() {

@@ -31,7 +31,7 @@ public class ShipData : MonoBehaviour
 	protected float stunTime = 0f;						// Amount of time to stun for
 	protected bool stunned = false;						// Is this stunned?
 	private float lastHitTime = float.MinValue;			// Time of last damage taken
-	protected SurfaceEntity entity;						// Surface entity attached to this
+	public SurfaceEntity entity { get; private set; }						// Surface entity attached to this
 	protected AudioSource audioSource;					// Audio Source attached to this
 	protected Shield shieldObject;						// Shield attatched to this
 

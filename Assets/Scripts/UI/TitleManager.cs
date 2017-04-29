@@ -10,6 +10,7 @@ public class TitleManager : MonoBehaviour {
     public Button startButton;
     public Button quitButton;
     public Button creditsButton;
+		public string startScene = "IntroText";
 
     private Animator animator;
     private bool toggle;
@@ -30,7 +31,7 @@ public class TitleManager : MonoBehaviour {
 
     void StartGame() {
 				UpgradesDeck.InitializeDeck();
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene(startScene);
     }
 
     void Credits() {

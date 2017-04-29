@@ -4,27 +4,55 @@ using System.Collections.Generic;
 
 public class PlanetGenerator : MonoBehaviour {
 
+	public bool generateOnAwake = true;
+	public float averageRadius = 5;
+	public float radiusVariance = 0.5f;
+	public PlayerSpawn playerSpawnPrefab;
+	public WarpGate warpGatePrefab;
+	public EnemySpawn enemySpawnPrefab;
 	public PropScatter[] propScatter;
 
 	Planet planet;
 	List<TerrainProp> props;
+	Transform generationRoot;
 
 	void Awake() {
+		if (generateOnAwake) {
+			Generate();
+		}
+	}
+
+	[ContextMenu("Generate")]
+	void Generate() {
 		planet = GetComponent<Planet>();
+		if (generationRoot != null) {
+			Destroy(generationRoot.gameObject);
+		}
+		generationRoot = new GameObject("generation").transform;
+		generationRoot.parent = planet.transform;
+		generationRoot.localPosition = Vector3.zero;
+		planet.radius = averageRadius + Random.Range(-radiusVariance, radiusVariance);
 		props = new List<TerrainProp>();
+		System.Func<Vector3> oppositePlayer;
+		if (playerSpawnPrefab != null) {
+			PlayerSpawn playerSpawn = EnsurePropSpawn(playerSpawnPrefab);
+			oppositePlayer = RandomOpposite(playerSpawn.transform.localPosition);
+		}
+		else {
+			oppositePlayer = () => Random.onUnitSphere;
+		}
+		if (warpGatePrefab != null) {
+			planet.warpGate = EnsurePropSpawn(warpGatePrefab, oppositePlayer);
+		}
 		LevelManager level = LevelManager.instance;
 		if (level != null) {
-			PlayerSpawn playerSpawn = EnsurePropSpawn(level.playerSpawnPrefab);
-			System.Func<Vector3> oppositePlayer = RandomOpposite(playerSpawn.transform.localPosition);
-			planet.warpGate = EnsurePropSpawn(level.warpGatePrefab, oppositePlayer);
 			LevelManager.EnemySpawnInfo[] spawnInfos = level.enemySpawns;
 			float progress = (float) level.planetNumber / level.planetCount;
 			foreach (LevelManager.EnemySpawnInfo spawnInfo in spawnInfos) {
 				int count = (int) Mathf.Ceil(spawnInfo.spawnRate.Evaluate(progress) * spawnInfo.spawnFactor * planet.enemySpawnFactor);
-				// Debug.LogFormat("Planet {0}: Spawned {1} of {2}", level.planetNumber, count, spawnInfo.prefab.name);
 				while (count > 0) {
 					int clusterSize = (count > spawnInfo.maxClusterSize) ? spawnInfo.maxClusterSize : count;
-					EnemySpawn spawn = EnsurePropSpawn(level.enemySpawnPrefab, oppositePlayer);
+					EnemySpawn spawn = EnsurePropSpawn(enemySpawnPrefab, oppositePlayer);
 					spawn.prefab = spawnInfo.prefab;
 					spawn.enemyCount = clusterSize;
 					count -= spawnInfo.maxClusterSize;
@@ -60,8 +88,10 @@ public class PlanetGenerator : MonoBehaviour {
 	// if there is not enough space, destroy the prop and return false
 	// return true if prop is succesfully placed
 	bool PlaceProp(TerrainProp prop, Vector3 position) {
-			prop.transform.position = planet.transform.position + position;
-			prop.AttachToPlanet(planet);
+			prop.transform.parent = generationRoot;
+			position = position.normalized * planet.radius;
+			prop.transform.localPosition = position;
+			prop.planet = planet;
 			foreach (TerrainProp p in props) {
 				float distance = Vector3.Distance(p.transform.position, prop.transform.position);
 				if (distance < (p.radius + prop.radius)) {
@@ -92,7 +122,7 @@ public class PlanetGenerator : MonoBehaviour {
 			for (int i = 0; i < clusterCount; i ++) {
 				Vector3 clusterCenter = Random.onUnitSphere * generator.planet.radius;
 				Transform cluster = new GameObject(string.Format("{0} cluster {1}", prefab.name, i)).transform;
-				cluster.parent = generator.planet.transform;
+				cluster.parent = generator.generationRoot;
 				cluster.localPosition = Vector3.zero;
 				for (int j = 0; j < clusterSize; j ++) {
 					TerrainProp prop = Instantiate(prefab);

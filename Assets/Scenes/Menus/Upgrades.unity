@@ -20,13 +20,13 @@ RenderSettings:
   m_FogDensity: 0.01
   m_LinearFogStart: 0
   m_LinearFogEnd: 300
-  m_AmbientSkyColor: {r: 0.212, g: 0.227, b: 0.259, a: 1}
+  m_AmbientSkyColor: {r: 0.5955882, g: 0.5955882, b: 0.5955882, a: 1}
   m_AmbientEquatorColor: {r: 0.114, g: 0.125, b: 0.133, a: 1}
   m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
   m_AmbientIntensity: 1
   m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
-  m_SkyboxMaterial: {fileID: 10304, guid: 0000000000000000f000000000000000, type: 0}
+  m_SkyboxMaterial: {fileID: 0}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44607645, g: 0.4958421, b: 0.57449955, a: 1}
+  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -1070,21 +1070,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 3
       objectReference: {fileID: 0}
-    - target: {fileID: 20463888646984426, guid: 30c563bd36b0be74284ba71234bc0b98,
-        type: 2}
-      propertyPath: m_BackGroundColor.r
-      value: 0.13738519
-      objectReference: {fileID: 0}
-    - target: {fileID: 20463888646984426, guid: 30c563bd36b0be74284ba71234bc0b98,
-        type: 2}
-      propertyPath: m_BackGroundColor.g
-      value: 0.10229239
-      objectReference: {fileID: 0}
-    - target: {fileID: 20463888646984426, guid: 30c563bd36b0be74284ba71234bc0b98,
-        type: 2}
-      propertyPath: m_BackGroundColor.b
-      value: 0.32352942
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 30c563bd36b0be74284ba71234bc0b98, type: 2}
   m_IsPrefabParent: 0
@@ -1203,7 +1188,7 @@ Prefab:
     - target: {fileID: 224291592273455042, guid: fb36f61af1876174392bd8334964e40a,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -200
       objectReference: {fileID: 0}
     - target: {fileID: 224291592273455042, guid: fb36f61af1876174392bd8334964e40a,
         type: 2}
@@ -1213,7 +1198,7 @@ Prefab:
     - target: {fileID: 224291592273455042, guid: fb36f61af1876174392bd8334964e40a,
         type: 2}
       propertyPath: m_SizeDelta.y
-      value: 0
+      value: 46.543
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: fb36f61af1876174392bd8334964e40a, type: 2}

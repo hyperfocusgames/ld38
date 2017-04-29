@@ -123,6 +123,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8dc98bddf1b2a0d418176e2aa66973fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  generateOnAwake: 1
+  averageRadius: 3.5
+  radiusVariance: 0.5
+  playerSpawnPrefab: {fileID: 114807969500106566, guid: 2c2f3024b4d15b448908b1d772f85f8a,
+    type: 2}
+  warpGatePrefab: {fileID: 114480790586819870, guid: d925f49e6a4b4ed4d9553b20c78ebc75,
+    type: 2}
+  enemySpawnPrefab: {fileID: 114572706232016490, guid: f2ad2d4fb7aa56347bdd952a19fd3b85,
+    type: 2}
   propScatter:
   - prefab: {fileID: 114250901012907408, guid: dcd66238893e5b542830836d495f5850, type: 2}
     spawnRate:
@@ -158,9 +167,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   surfaceModel: {fileID: 4080898546710430}
-  radius: 4
   enemySpawnFactor: 0.7
-  radiusVariance: 0.5
   sky:
     serializedVersion: 2
     key0: {r: 0.45588237, g: 0.19106834, b: 0.38283017, a: 1}
