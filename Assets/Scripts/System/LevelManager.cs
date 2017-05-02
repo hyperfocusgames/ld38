@@ -17,7 +17,8 @@ public class LevelManager : SingletonBehaviour<LevelManager> {
 	public string upgradesScene = "Upgrades";
 	public string nextLevel = "";
 
-	public int planetNumber { get; private set; }
+
+    public int planetNumber { get; private set; }
 
 	public Planet planet { get; private set; }
 
@@ -31,10 +32,10 @@ public class LevelManager : SingletonBehaviour<LevelManager> {
 			planetNumber = 0;
 			if (PlayerData.player == null) {
 				Instantiate(playerPrefab);
-			}
-			NextPlanet();
-		}
-	}
+            }
+            NextPlanet();
+        }
+    }
 
 	Planet GeneratePlanet() {
 		Planet prefab = planetPrefabs.WeightedChoice();
@@ -53,7 +54,7 @@ public class LevelManager : SingletonBehaviour<LevelManager> {
 			planetNumber ++;
 			if (planet != null) {
 				Destroy(planet.gameObject);
-			}
+            }
 			planet = GeneratePlanet();
 			CameraRig rig = CameraRig.instance;
 			rig.ZoomToFitPlanet(planet);
@@ -62,8 +63,7 @@ public class LevelManager : SingletonBehaviour<LevelManager> {
 				Destroy(projectile.gameObject);
 			}
 			UI.instance.UpdateLevelText();
-		}
-		else {
+        } else {
 			NextLevel();
 		}
 	}
@@ -71,7 +71,7 @@ public class LevelManager : SingletonBehaviour<LevelManager> {
 	public void NextLevel() {
 		nextLevelAfterUpgrades = nextLevel;
 		SceneManager.LoadScene(upgradesScene);
-	}
+    }
 
 	[System.Serializable]
 	public class WeightedPlanet : WeightedElement<Planet> {}
