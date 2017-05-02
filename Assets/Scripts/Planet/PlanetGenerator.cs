@@ -2,51 +2,55 @@ using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 
-public class PlanetGenerator : MonoBehaviour {
+// main planet generation module responsible for spawning the player, placing
+// the exit portal, spawning enemies, and calling all other modules for the
+// planet. other modules are called in the order they are placed on the planet GameObject
+public class PlanetGenerator : GenerationModule {
 
 	public bool generateOnAwake = true;
-	public float averageRadius = 5;
-	public float radiusVariance = 0.5f;
+	public float averageRadius = 5;				// average planet radius
+	public float radiusVariance = 0.5f;		// maximum random variation of planet radius
+
 	public PlayerSpawn playerSpawnPrefab;
 	public WarpGate warpGatePrefab;
 	public EnemySpawn enemySpawnPrefab;
-	public PropScatter[] propScatter;
+
 	public LayerMask propMaskLayers = 0; //	layers to check against when placing props (cannot place props in spaces in these layers) 
 
-	Planet planet;
-	List<TerrainProp> props;
-	Transform generationRoot;
+	Planet _planet;
+	public override Planet planet { get { return _planet; } }
+	public List<TerrainProp> props { get; private set; }
 
 	void Awake() {
+		_planet = GetComponent<Planet>();
+		props = new List<TerrainProp>();
 		if (generateOnAwake) {
 			Generate();
 		}
 	}
 
-	[ContextMenu("Generate")]
-	void Generate() {
-		planet = GetComponent<Planet>();
-		if (generationRoot != null) {
-			Destroy(generationRoot.gameObject);
-		}
-		generationRoot = new GameObject("generation").transform;
-		generationRoot.parent = planet.transform;
-		generationRoot.localPosition = Vector3.zero;
+	public override void Generate() {
 		planet.radius = averageRadius + Random.Range(-radiusVariance, radiusVariance);
-		props = new List<TerrainProp>();
 		System.Func<Vector3> oppositePlayer;
 		if (playerSpawnPrefab != null) {
+			// place player spawn
 			PlayerSpawn playerSpawn = EnsurePropSpawn(playerSpawnPrefab);
-			oppositePlayer = RandomOpposite(playerSpawn.transform.localPosition);
+			oppositePlayer = () => {
+				Vector3 p = Random.onUnitSphere;
+				p *= - Vector3.Dot(p, playerSpawn.transform.localPosition);
+				return p;
+			};
 		}
 		else {
 			oppositePlayer = () => Random.onUnitSphere;
 		}
 		if (warpGatePrefab != null) {
+			// place exit portal
 			planet.warpGate = EnsurePropSpawn(warpGatePrefab, oppositePlayer);
 		}
 		LevelManager level = LevelManager.instance;
 		if (level != null) {
+			// place enemy spawns
 			LevelManager.EnemySpawnInfo[] spawnInfos = level.enemySpawns;
 			float progress = (float) level.planetNumber / level.planetCount;
 			foreach (LevelManager.EnemySpawnInfo spawnInfo in spawnInfos) {
@@ -60,83 +64,9 @@ public class PlanetGenerator : MonoBehaviour {
 				}
 			}
 		}
-		foreach (PropScatter propScatter in propScatter) {
-			propScatter.PlaceClusters(this);
-		}
-	}
-
-	// return a random position on the opposite hemisphere from a given point
-	System.Func<Vector3> RandomOpposite(Vector3 position) {
-		return () => {
-			Vector3 p = Random.onUnitSphere;
-			p *= - Vector3.Dot(p, position);
-			return p;
-		};
-	}
-
-	// try to spawn and place a prop, make sure it happens
-	T EnsurePropSpawn<T>(T prefab, System.Func<Vector3> position) where T : TerrainProp {
-			T prop;
-			do {
-				prop = Instantiate(prefab);
-				prop.name = prefab.name;
-			} while(!PlaceProp(prop, position()));
-			return prop;
-	}
-	T EnsurePropSpawn<T>(T prefab) where T : TerrainProp { return EnsurePropSpawn(prefab, () => Random.onUnitSphere); }
-
-	// try to place a prop at a position on the planet (position in planetary local space)
-	// if there is not enough space, destroy the prop and return false
-	// return true if prop is succesfully placed
-	bool PlaceProp(TerrainProp prop, Vector3 position) {
-			position = position.normalized * planet.radius;
-			if (Physics.CheckSphere(planet.transform.position + position, prop.radius, propMaskLayers)) {
-				Destroy(prop.gameObject);
-				return false;
-			}
-			prop.transform.parent = generationRoot;
-			prop.transform.localPosition = position;
-			prop.planet = planet;
-			foreach (TerrainProp p in props) {
-				float distance = Vector3.Distance(p.transform.position, prop.transform.position);
-				if (distance < (p.radius + prop.radius)) {
-					Destroy(prop.gameObject);
-					return false;
-				}
-			}
-			props.Add(prop);
-			// randomize facing direction
-			Vector3 normal = prop.transform.localPosition.normalized;
-			Vector3 forward = Vector3.ProjectOnPlane(Random.onUnitSphere, normal);
-			prop.transform.LookAt(prop.transform.position + forward, normal);
-			return true;
-	}
-
-	[System.Serializable]
-	public class PropScatter {
-
-		public TerrainProp prefab;
-		public AnimationCurve spawnRate = AnimationCurve.Linear(0, 1, 1, 1);
-		public int clusterCount = 5;
-
-		public int clusterSize = 10;
-		public float clusterRadius = 1;
-
-		public void PlaceClusters(PlanetGenerator generator) {
-			int clusterCount = (int) spawnRate.Evaluate(Random.value) * this.clusterCount;
-			for (int i = 0; i < clusterCount; i ++) {
-				Vector3 clusterCenter = Random.onUnitSphere * generator.planet.radius;
-				Transform cluster = new GameObject(string.Format("{0} cluster {1}", prefab.name, i)).transform;
-				cluster.parent = generator.generationRoot;
-				cluster.localPosition = Vector3.zero;
-				for (int j = 0; j < clusterSize; j ++) {
-					TerrainProp prop = Instantiate(prefab);
-					prop.name = string.Format("{0} {1}", prefab.name, j);
-					Vector3 position = clusterCenter + Random.onUnitSphere * clusterRadius;
-					if (generator.PlaceProp(prop, position)) {
-						prop.transform.parent = cluster;
-					}
-				}
+		foreach (GenerationModule module in GetComponents<GenerationModule>()) {
+			if (module != this) {
+				module.Generate();
 			}
 		}
 	}

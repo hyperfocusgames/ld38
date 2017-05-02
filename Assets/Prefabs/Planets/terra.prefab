@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: 4617393792644500}
   - component: {fileID: 114448947987373628}
   - component: {fileID: 114207947920328952}
+  - component: {fileID: 114230103980042784}
   m_Layer: 0
   m_Name: terra
   m_TagString: Untagged
@@ -132,6 +133,20 @@ MonoBehaviour:
     type: 2}
   enemySpawnPrefab: {fileID: 114572706232016490, guid: f2ad2d4fb7aa56347bdd952a19fd3b85,
     type: 2}
+  propMaskLayers:
+    serializedVersion: 2
+    m_Bits: 1024
+--- !u!114 &114230103980042784
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1049835575194690}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df65021672e98b24da9b4a4a2980c79b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
   propScatter:
   - prefab: {fileID: 114178843488461484, guid: 6d3a5303a148d774c9aaa33cb6813ac9, type: 2}
     spawnRate:
@@ -151,10 +166,10 @@ MonoBehaviour:
         tangentMode: 0
       m_PreInfinity: 2
       m_PostInfinity: 2
-      m_RotationOrder: 4
-    clusterCount: 5
-    clusterSize: 5
-    clusterRadius: 3
+      m_RotationOrder: 0
+    clusterCount: 7
+    clusterSize: 12
+    clusterRadius: 2
   - prefab: {fileID: 114640839866832476, guid: 89c4cbc71239bff4694b803aed699d1f, type: 2}
     spawnRate:
       serializedVersion: 2
@@ -173,35 +188,10 @@ MonoBehaviour:
         tangentMode: 0
       m_PreInfinity: 2
       m_PostInfinity: 2
-      m_RotationOrder: 4
-    clusterCount: 10
-    clusterSize: 25
+      m_RotationOrder: 0
+    clusterCount: 20
+    clusterSize: 20
     clusterRadius: 2
-  - prefab: {fileID: 114740645293154344, guid: af997a0b70e4468448d78b7376b40bc8, type: 2}
-    spawnRate:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 2
-        time: 0
-        value: 1
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-      - serializedVersion: 2
-        time: 1
-        value: 1
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    clusterCount: 5
-    clusterSize: 15
-    clusterRadius: 1.5
-  propMaskLayers:
-    serializedVersion: 2
-    m_Bits: 1024
 --- !u!114 &114448947987373628
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -52,7 +52,9 @@ public class LevelManager : SingletonBehaviour<LevelManager> {
 			foreach (Projectile projectile in FindObjectsOfType<Projectile>()) {
 				Destroy(projectile.gameObject);
 			}
-			UI.instance.UpdateLevelText();
+			if (UI.instance != null) {
+				UI.instance.UpdateLevelText();
+			}
 		}
 		else {
 			NextLevel();
