@@ -189,9 +189,9 @@ MonoBehaviour:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 0
-    clusterCount: 20
-    clusterSize: 20
-    clusterRadius: 2
+    clusterCount: 30
+    clusterSize: 15
+    clusterRadius: 1
 --- !u!114 &114448947987373628
 MonoBehaviour:
   m_ObjectHideFlags: 1
