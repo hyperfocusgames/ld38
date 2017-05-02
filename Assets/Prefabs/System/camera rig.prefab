@@ -218,6 +218,8 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
+  occlusionCullerPrefab: {fileID: 1880403104533938, guid: 39c73fc58539f0647aa4a76c2e381e1b,
+    type: 2}
 --- !u!124 &124670860777489128
 Behaviour:
   m_ObjectHideFlags: 1

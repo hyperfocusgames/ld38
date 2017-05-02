@@ -1,10 +1,16 @@
 fileFormatVersion: 2
 guid: 81fbcb62d26b1004ea0cc167ecd665ec
-timeCreated: 1492911839
+timeCreated: 1493702920
 licenseType: Free
 MonoImporter:
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - playerPrefab: {instanceID: 0}
+  - playerSpawnPrefab: {instanceID: 0}
+  - warpGatePrefab: {instanceID: 0}
+  - enemySpawnPrefab: {instanceID: 0}
+  - occlusionCullerPrefab: {fileID: 1880403104533938, guid: 39c73fc58539f0647aa4a76c2e381e1b,
+      type: 2}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

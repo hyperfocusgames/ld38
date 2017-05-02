@@ -4,16 +4,30 @@ using System.Collections.Generic;
 
 public class CameraRig : SingletonBehaviour<CameraRig> {
 
-	public Camera cam { get; private set; }
 	public AnimationCurve planetZoomFactor = AnimationCurve.Linear(0, 1, 1, 1);
 
+	Camera _cam;
+	public Camera cam {
+		get {
+			if (_cam == null ) {
+				_cam = GetComponentInChildren<Camera>();
+			}
+			return _cam;
+		}
+	}
+	
+	OcclusionCullingTrigger _occlusionCuller;
+	public OcclusionCullingTrigger occlusionCuller {
+		get {
+			if (_occlusionCuller == null) {
+				_occlusionCuller = GetComponentInChildren<OcclusionCullingTrigger>();
+			}
+			return _occlusionCuller;
+		}
+	}
 	public Color skyColor {
 		get { return cam.backgroundColor; }
 		set { cam.backgroundColor = value; }
-	}
-
-	void Awake() {
-		cam = GetComponentInChildren<Camera>();
 	}
 
 	void Update() {
@@ -26,11 +40,9 @@ public class CameraRig : SingletonBehaviour<CameraRig> {
 	}
 
 	public void ZoomToFitPlanet(Planet planet) {
-		transform.localScale = new Vector3(
-			1,
-			1,
-			planet.radius * 2 * planetZoomFactor.Evaluate(planet.radius)
-		);
+		float zoom = planet.radius * 2 * planetZoomFactor.Evaluate(planet.radius);
+		cam.transform.localPosition = new Vector3(0, 0, - zoom);
+		occlusionCuller.Refresh();
 	} 
 
 

@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: 0ea4581193ad3dc4c96c5cc0ec82d3af
-timeCreated: 1492907768
+guid: 183cb629ff7b0074596127d87bf83acc
+timeCreated: 1493699879
 licenseType: Free
 ModelImporter:
   serializedVersion: 19
@@ -13,15 +13,12 @@ ModelImporter:
     400004: treetrunk
     2300000: treeleaves
     2300002: treetrunk
-    2300004: //RootNode
     3300000: treeleaves
     3300002: treetrunk
-    3300004: //RootNode
     4300000: treetrunk
     4300002: treeleaves
-    4300004: treeleaves.001
   materials:
-    importMaterials: 0
+    importMaterials: 1
     materialName: 0
     materialSearch: 1
   animations:
