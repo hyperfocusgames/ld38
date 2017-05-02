@@ -43,7 +43,7 @@ public abstract class GenerationModule : MonoBehaviour {
 	// return true if prop is succesfully placed
 	public bool PlaceProp(TerrainProp prop, Vector3 position) {
 			position = position.normalized * planet.radius;
-			if (Physics.CheckSphere(planet.transform.position + position, prop.radius, generator.propMaskLayers)) {
+			if (Physics.CheckSphere(planet.transform.position + position, prop.exclusionRadius, generator.propMaskLayers)) {
 				Destroy(prop.gameObject);
 				return false;
 			}
@@ -52,7 +52,7 @@ public abstract class GenerationModule : MonoBehaviour {
 			prop.planet = planet;
 			foreach (TerrainProp p in generator.props) {
 				float distance = Vector3.Distance(p.transform.position, prop.transform.position);
-				if (distance < (p.radius + prop.radius)) {
+				if (distance < (p.exclusionRadius + prop.exclusionRadius)) {
 					Destroy(prop.gameObject);
 					return false;
 				}

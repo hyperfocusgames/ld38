@@ -51,6 +51,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 036fafd67fb8bd34eb5488a61df84386, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  radius: 0.5
+  exclusionRadius: 1
+  boundingRadius: 0
   enemyCount: 0
   prefab: {fileID: 0}

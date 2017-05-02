@@ -39,10 +39,27 @@ public class CameraRig : SingletonBehaviour<CameraRig> {
 		}
 	}
 
+	void LateUpdate() {
+		Planet planet = Planet.activePlanet;
+		Vector3 forward = transform.forward;
+		foreach (TerrainProp prop in planet.generator.props) {
+			Vector3 propPos = Vector3.ProjectOnPlane(prop.transform.position, forward);
+			Vector3 planetPos = Vector3.ProjectOnPlane(planet.transform.position, forward);
+			if (Vector3.Distance(cam.transform.position, prop.transform.position) >
+			    Vector3.Distance(cam.transform.position, planet.transform.position)) {
+				Vector3 diff = propPos - planetPos;
+				prop.visible = !(diff.magnitude < (planet.radius - prop.boundingRadius));
+			}
+			else {
+				prop.visible = true;
+			}
+		}
+	}
+
 	public void ZoomToFitPlanet(Planet planet) {
 		float zoom = planet.radius * 2 * planetZoomFactor.Evaluate(planet.radius);
 		cam.transform.localPosition = new Vector3(0, 0, - zoom);
-		occlusionCuller.Refresh();
+		// occlusionCuller.Refresh();
 	} 
 
 

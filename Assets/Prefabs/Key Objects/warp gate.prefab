@@ -147,7 +147,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1437836380734064}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 7.413068, y: 4.736456, z: 18.92419}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4674379595991386}
@@ -244,7 +244,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8be447e561ddb9c4a9ec9e86a2077a5c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  radius: 2
+  exclusionRadius: 1.5
+  boundingRadius: 1.5
   flashColor: {r: 1, g: 1, b: 1, a: 1}
   flashDuration: 1
   portalEffect: {fileID: 1994766310428236}

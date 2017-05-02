@@ -20,7 +20,13 @@ public class Planet : MonoBehaviour {
 			}
 		}
 	}
+	
 	public WarpGate warpGate { get; set; }
+	public PlanetGenerator generator { get; private set; }
+
+	void Awake() {
+		generator = GetComponent<PlanetGenerator>();
+	}
 
 	static Planet _activePlanet;
 	public static Planet activePlanet {
