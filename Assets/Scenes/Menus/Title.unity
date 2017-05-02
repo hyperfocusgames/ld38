@@ -1298,6 +1298,7 @@ MonoBehaviour:
   startButton: {fileID: 291884693}
   quitButton: {fileID: 126017861}
   creditsButton: {fileID: 884813914}
+  startScene: IntroText
 --- !u!4 &607557332
 Transform:
   m_ObjectHideFlags: 0
@@ -1503,6 +1504,11 @@ Prefab:
     - target: {fileID: 4145700246949474, guid: 30c563bd36b0be74284ba71234bc0b98, type: 2}
       propertyPath: m_RootOrder
       value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 114286870454835512, guid: 30c563bd36b0be74284ba71234bc0b98,
+        type: 2}
+      propertyPath: averageRadius
+      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 30c563bd36b0be74284ba71234bc0b98, type: 2}
