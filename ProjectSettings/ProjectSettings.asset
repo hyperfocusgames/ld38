@@ -11,7 +11,7 @@ PlayerSettings:
   useOnDemandResources: 0
   accelerometerFrequency: 60
   companyName: Hyperfocus Games
-  productName: ld38
+  productName: Roguelike One
   defaultCursor: {fileID: 0}
   cursorHotspot: {x: 0, y: 0}
   m_SplashScreenBackgroundColor: {r: 0.2002364, g: 0.13078503, b: 0.30147058, a: 1}
@@ -59,13 +59,13 @@ PlayerSettings:
   iosAppInBackgroundBehavior: 0
   displayResolutionDialog: 1
   iosAllowHTTPDownload: 1
-  allowedAutorotateToPortrait: 1
-  allowedAutorotateToPortraitUpsideDown: 1
+  allowedAutorotateToPortrait: 0
+  allowedAutorotateToPortraitUpsideDown: 0
   allowedAutorotateToLandscapeRight: 1
   allowedAutorotateToLandscapeLeft: 1
   useOSAutorotation: 1
   use32BitDisplayBuffer: 1
-  disableDepthAndStencilBuffers: 0
+  disableDepthAndStencilBuffers: 1
   defaultIsFullScreen: 1
   defaultIsNativeResolution: 1
   runInBackground: 0
@@ -496,6 +496,7 @@ PlayerSettings:
   webGLCompressionFormat: 1
   scriptingDefineSymbols:
     1: TMP_PRESENT
+    7: TMP_PRESENT
   platformArchitecture: {}
   scriptingBackend: {}
   incrementalIl2cppBuild: {}
