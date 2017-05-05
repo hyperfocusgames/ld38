@@ -22,7 +22,9 @@ public class OcclusionCullingTrigger : MonoBehaviour {
 
     public void Refresh() {
         renderers = FindObjectsOfType(typeof(Renderer)) as Renderer[];
-        scale = transform.parent.localScale.z;
+        if (transform.parent) {
+            scale = transform.parent.localScale.z;
+        }
         //Debug.Log(renderers.Length);
     }
 }

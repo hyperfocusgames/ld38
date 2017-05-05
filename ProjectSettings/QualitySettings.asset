@@ -48,7 +48,7 @@ QualitySettings:
     blendWeights: 4
     textureQuality: 0
     anisotropicTextures: 2
-    antiAliasing: 8
+    antiAliasing: 0
     softParticles: 1
     softVegetation: 1
     realtimeReflectionProbes: 0
@@ -62,8 +62,38 @@ QualitySettings:
     excludedTargetPlatforms:
     - Standalone
     - WebGL
+  - serializedVersion: 2
+    name: WebGL
+    pixelLightCount: 4
+    shadows: 0
+    shadowResolution: 3
+    shadowProjection: 1
+    shadowCascades: 4
+    shadowDistance: 150
+    shadowNearPlaneOffset: 3
+    shadowCascade2Split: 0.33333334
+    shadowCascade4Split: {x: 0.06666667, y: 0.2, z: 0.46666667}
+    blendWeights: 4
+    textureQuality: 0
+    anisotropicTextures: 2
+    antiAliasing: 2
+    softParticles: 1
+    softVegetation: 1
+    realtimeReflectionProbes: 0
+    billboardsFaceCameraPosition: 1
+    vSyncCount: 0
+    lodBias: 2
+    maximumLODLevel: 0
+    particleRaycastBudget: 4096
+    asyncUploadTimeSlice: 2
+    asyncUploadBufferSize: 4
+    excludedTargetPlatforms:
+    - Standalone
+    - WebGL
+    - iPhone
+    - Android
   m_PerPlatformDefaultQuality:
-    Android: 0
+    Android: 1
     Nintendo 3DS: 0
     PS4: 0
     PSM: 0
@@ -72,9 +102,9 @@ QualitySettings:
     Standalone: 0
     Tizen: 0
     Web: 0
-    WebGL: 0
+    WebGL: 2
     WiiU: 0
     Windows Store Apps: 0
     XboxOne: 0
-    iPhone: 0
+    iPhone: 1
     tvOS: 0
