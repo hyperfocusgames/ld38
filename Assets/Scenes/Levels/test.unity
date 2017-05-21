@@ -623,7 +623,7 @@ MonoBehaviour:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 0
-    spawnFactor: 2
+    spawnFactor: 0
     maxClusterSize: 1
   - prefab: {fileID: 114488253990559428, guid: 0262133121deb7845b63590484ae4253, type: 2}
     spawnRate:
@@ -665,7 +665,7 @@ MonoBehaviour:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 0
-    spawnFactor: 0
+    spawnFactor: 1
     maxClusterSize: 3
   - prefab: {fileID: 114376407332925960, guid: 876a906b60fe8304592cc7747dddf3aa, type: 2}
     spawnRate:

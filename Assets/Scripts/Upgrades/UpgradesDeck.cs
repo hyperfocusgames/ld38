@@ -23,7 +23,7 @@ public static class UpgradesDeck
 		AddToDeck(new HPUpgrade(), 4);
 		AddToDeck(new GunUpgrade(), 1);
 		AddToDeck(new ROFUpgrade(), 5);
-		AddToDeck(new MissileUpgrade(), 1);
+		// AddToDeck(new MissileUpgrade(), 1);
 		AddToDeck(new ShieldRechargeUpgrade(), 4);
 
 		AddToDeck(new HealUpgrade(), 1);
