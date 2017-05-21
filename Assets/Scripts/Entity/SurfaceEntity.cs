@@ -15,7 +15,7 @@ public class SurfaceEntity : MonoBehaviour {
 	public Rigidbody body { get; private set; }
 
 	Vector3 oldVelocity;
-	Vector3 smoothAcceleration;
+	public Vector3 smoothAcceleration { get; private set; }
 
 	Vector3 accelerationSmoothVelocity;
 
