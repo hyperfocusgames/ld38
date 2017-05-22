@@ -15,9 +15,12 @@ public class ShipStat<T> : IShipStat {
 
 }
 
-[System.Serializable]
-public class FloatShipStat : ShipStat<float> {}
-[System.Serializable]
-public class IntShipStat : ShipStat<int> {}
+[System.Serializable] public class FloatShipStat : ShipStat<float> {}
+[System.Serializable] public class IntShipStat : ShipStat<int> {}
 
-public class MaxHealthStat : IntShipStat {}
+[System.Serializable] public class MaxHealthShipStat : IntShipStat {}
+[System.Serializable] public class MoveSpeedShipStat : FloatShipStat {}
+[System.Serializable] public class DamageRateShipStat : IntShipStat {}
+[System.Serializable] public class FireRateShipStat : FloatShipStat {}
+[System.Serializable] public class ShieldCountShipStat : IntShipStat {}
+[System.Serializable] public class ShieldRechargeRateShipStat : FloatShipStat {}
