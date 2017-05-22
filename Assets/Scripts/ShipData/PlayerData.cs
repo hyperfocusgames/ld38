@@ -7,6 +7,8 @@ public class PlayerData : ShipData
 {
 	public static PlayerData player;
 
+	public MaxHealthStat maxHealth;
+
 	private static float 	moveSpeedUpgradeAmount = 1f;
 	private static int 		hpUpgradeAmount = 1;
 	private static int		shieldUpgradeAmount = 1;
