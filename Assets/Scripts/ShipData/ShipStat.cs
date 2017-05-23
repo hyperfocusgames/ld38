@@ -18,13 +18,13 @@ public class ShipStat {
 
 public class ShipStatCollection<T> {
 
+	public T moveSpeed;
 	public T maxHealth;
 	public T maxShields;
-	public T moveSpeed;
 	public T shieldRechargeDelay;
-	public T fireDelay;
-	public T damage;
 	public T recoveryDelay;
+	public T damage;
+	public T fireDelay;
 
 }
 

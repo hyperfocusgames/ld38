@@ -293,6 +293,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a6272aefa08d3c4bbb9c34f13f0384b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  stats:
+    maxHealth:
+      baseValue: 15
+    maxShields:
+      baseValue: 0
+    moveSpeed:
+      baseValue: 10
+    shieldRechargeDelay:
+      baseValue: 0
+    fireDelay:
+      baseValue: Infinity
+    damage:
+      baseValue: 2
+    recoveryDelay:
+      baseValue: 0.25
   moveSpeed: 50
   baseHP: 1
   hp: 0
@@ -306,7 +321,7 @@ MonoBehaviour:
   damEnemy: 1
   shootSound: {fileID: 0}
   shootSoundPitchOffset: 0.05
-  explosion: {fileID: 0}
+  explosion: {fileID: 1820137755216622, guid: 2b19b00b094de2c4eb541f1f96d21397, type: 2}
   damageRecoveryTime: 0
 --- !u!114 &114564492335528442
 MonoBehaviour:
