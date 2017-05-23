@@ -1,13 +1,14 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 
-public interface IShipStat { }
 
-public class ShipStat<T> : IShipStat {
+[Serializable]
+public class ShipStat {
 
-	public T baseValue; 
+	public float baseValue; 
 
-	public T value {
+	public float value {
 		get {
 			return baseValue;
 		}
@@ -15,12 +16,17 @@ public class ShipStat<T> : IShipStat {
 
 }
 
-[System.Serializable] public class FloatShipStat : ShipStat<float> {}
-[System.Serializable] public class IntShipStat : ShipStat<int> {}
+public class ShipStatCollection<T> {
 
-[System.Serializable] public class MaxHealthShipStat : IntShipStat {}
-[System.Serializable] public class MoveSpeedShipStat : FloatShipStat {}
-[System.Serializable] public class DamageRateShipStat : IntShipStat {}
-[System.Serializable] public class FireRateShipStat : FloatShipStat {}
-[System.Serializable] public class ShieldCountShipStat : IntShipStat {}
-[System.Serializable] public class ShieldRechargeRateShipStat : FloatShipStat {}
+	public T maxHealth;
+	public T maxShields;
+	public T moveSpeed;
+	public T shieldRechargeDelay;
+	public T fireDelay;
+	public T damage;
+	public T recoveryDelay;
+
+}
+
+[Serializable]
+public class ShipStatCollection : ShipStatCollection<ShipStat> {}

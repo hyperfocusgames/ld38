@@ -290,24 +290,24 @@ MonoBehaviour:
   m_GameObject: {fileID: 1785572661960934}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c0351b17189b88141aae46283c8a6be8, type: 3}
+  m_Script: {fileID: 11500000, guid: 2a6272aefa08d3c4bbb9c34f13f0384b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 10
-  baseHP: 15
+  moveSpeed: 50
+  baseHP: 1
   hp: 0
-  baseShield: 0
+  baseShield: 1
   shield: 0
   baseShieldRechargeTime: 5
   projectile: {fileID: 0}
-  rateOfFire: Infinity
+  rateOfFire: 0.5
   damage: 1
-  damPlayer: 1
-  damEnemy: 0
+  damPlayer: 0
+  damEnemy: 1
   shootSound: {fileID: 0}
-  shootSoundPitchOffset: 0.15
-  explosion: {fileID: 1820137755216622, guid: 2b19b00b094de2c4eb541f1f96d21397, type: 2}
-  damageRecoveryTime: 0.25
+  shootSoundPitchOffset: 0.05
+  explosion: {fileID: 0}
+  damageRecoveryTime: 0
 --- !u!114 &114564492335528442
 MonoBehaviour:
   m_ObjectHideFlags: 1

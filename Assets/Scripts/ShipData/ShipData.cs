@@ -2,8 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ShipData : MonoBehaviour
-{
+public class ShipData : MonoBehaviour {
+
+	public ShipStatCollection stats;
+
     public float moveSpeed = 50f;             			// Force to be applied in movement
 	public int baseHP = 1;								// Starting HP
 	public int hp;										// Current HP
