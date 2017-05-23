@@ -10,8 +10,20 @@ public class ShipStat {
 
 	public float value {
 		get {
-			return baseValue;
+			float value = baseValue;
+			foreach (IShipStatModifier modifier in modifiers) {
+				if (modifier != null) {
+					modifier.modifyShipStatValue(ref value);
+				}
+			}
+			return value;
 		}
+	}
+
+	public List<IShipStatModifier> modifiers { get; private set; }
+
+	public ShipStat() {
+		modifiers = new List<IShipStatModifier>();
 	}
 
 	public static implicit operator float(ShipStat stat) {
