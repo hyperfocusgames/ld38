@@ -6,24 +6,16 @@ public class ShipData : MonoBehaviour {
 
 	public ShipStatCollection stats;
 
-    public float moveSpeed = 50f;             			// Force to be applied in movement
-	public int baseHP = 1;								// Starting HP
-	public int hp;										// Current HP
-	public int baseShield = 1;							// Starting shield	
-	public int shield;									// Current shield
-	public float baseShieldRechargeTime = 5f;			// Time for shield to recharge
-    public GameObject projectile;               		// Projectile to fire
-    public float rateOfFire = .5f;             			// Base rate of fire (This is divided by the number of guns to get effective ROF)
-    private float projectileSpeed = 10f;        		// Speed of projectile when fired
-    public int damage = 1;                     		// Damage to be done by projectile
-    public bool damPlayer = false;						// Should the player be damaged by this?
+	public float hp;										// Current HP
+	public float shield;									// Current shield
+	public GameObject projectile;               		// Projectile to fire
+	public float rateOfFire = .5f;             			// Base rate of fire (This is divided by the number of guns to get effective ROF)
+	private float projectileSpeed = 10f;        		// Speed of projectile when fired
+	public bool damPlayer = false;						// Should the player be damaged by this?
 	public bool damEnemy = true;						// Should enemies be damaged by this?
 	public AudioClip shootSound;
 	public float shootSoundPitchOffset = 0.05f;
 	public GameObject explosion;						// Effect to play on death
-
-	public float damageRecoveryTime = 0;
-
 
 	protected Gun[] guns;								// Array of all guns
 	protected float lastShot = float.MinValue;			// Time of last shot
@@ -39,76 +31,33 @@ public class ShipData : MonoBehaviour {
 
 	float baseAudioPitch;
 
-    public virtual float MoveSpeed {
-		get{ return moveSpeed; }
-		set{ moveSpeed = value; }
-	}
-
-    public virtual float RateOfFire {
-		get{ return rateOfFire; }
-		set{ rateOfFire = value; }
-	}
-
-    public virtual float ProjectileSpeed {
-		get{ return projectileSpeed; }
-		set{ projectileSpeed = value; }
-	}
-
-    public virtual int Damage {
-		get{ return damage; }
-		set{ damage = value; }
-	}
-
-	public virtual int MaxHP {
-		get { return baseHP; }
-		set { baseHP = value; }
-	}
-	public virtual int MaxShield {
-		get { return baseShield; }
-		set { baseHP = value; }
-	}
-	public virtual float ShieldRechargeTime {
-		get { return baseShieldRechargeTime; }
-		set { baseShieldRechargeTime = value; }
-	}
-	public virtual float StunTime {
-		get { return stunTime; }
-		set { stunTime = value; }
-	}
-
-  	protected virtual void Awake()
-	{
+	protected virtual void Awake() {
 		findGuns();
-		hp = MaxHP;
-		shield = MaxShield;
+		hp = stats.maxHealth;
+		shield = stats.maxShields;
 		entity = GetComponent<SurfaceEntity>();
-
 		shieldObject = GetComponentInChildren<Shield>();
 		audioSource = GetComponent<AudioSource> ();
 		if (audioSource != null) {
 			baseAudioPitch = audioSource.pitch;
 		}
-		lastShot = Time.time - Random.value * RateOfFire;
+		lastShot = Time.time - Random.value * stats.fireDelay;
 	}
 
-	void FixedUpdate()
-	{
+	void FixedUpdate() {
 		rechargeShield();
 	}
 
 	// Find all active guns and store them in guns
-	public void findGuns()
-	{
+	public void findGuns() {
 		guns = gameObject.GetComponentsInChildren<Gun>();
 	}
 
 	// Fire a shot if cooldown from the next active gun
-	public void shoot()
-	{
+	public void shoot() {
 		// Cooled down
-		if(guns.Length > 0 && projectile != null && CooledDown())
-		{
-			guns[gunNum].activate(projectile, projectileSpeed + entity.body.velocity.magnitude, Damage, damPlayer, damEnemy);	// Shoot
+		if(guns.Length > 0 && projectile != null && CooledDown()) {
+			guns[gunNum].activate(projectile, projectileSpeed + entity.body.velocity.magnitude, stats.damage, damPlayer, damEnemy);	// Shoot
 			gunNum = (gunNum + 1) % guns.Length;	// Go to next gun
 			lastShot = Time.time;					// Set last shot to now
 			cooledDown = false;
@@ -119,32 +68,26 @@ public class ShipData : MonoBehaviour {
 		}
 	}
 
-	protected bool CooledDown()
-	{
-		if(!cooledDown)
-		{
-			cooledDown = Time.time - lastShot > RateOfFire / guns.Length;
+	protected bool CooledDown() {
+		if(!cooledDown) {
+			cooledDown = Time.time - lastShot > stats.fireDelay / guns.Length;
 		}
 		return cooledDown;
 	}
 
-	public bool isStunned()
-	{
-		if(stunned)
-		{
+	public bool isStunned() {
+		if(stunned) {
 			stunned = (Time.time - startStunTime) <= stunTime;
 		}
 		return stunned;
 	}
 
-	public void stun(float time)
-	{
+	public void stun(float time) {
 		stunTime = time;
 		startStunTime = Time.time;
 	}
 
-	public virtual void dealDamage(int amt)
-	{
+	public virtual void dealDamage(float amt) {
 		lastHitTime = Time.time;
 
 		rechargeShield();
@@ -153,35 +96,28 @@ public class ShipData : MonoBehaviour {
 			shieldObject.Hit();
 		}
 
-		if(shield - amt < 0)
-		{
+		if(shield - amt < 0) {
 			amt -= shield;
 			shield = 0;
 			hp -= amt;
 			BroadcastMessage("OnDamageTaken", amt, SendMessageOptions.DontRequireReceiver);
 		}
-		else
-		{
+		else {
 			shield -= amt;
 		}
 
-		if(shield <= 0)
-		{
-			if(shieldObject != null)
-			{
-				shieldObject.Break();
+		if(shield <= 0) {
+			if(shieldObject != null) {
+			shieldObject.Break();
 			}
 		}
 	}
 
-	public void rechargeShield()
-	{
-		if(MaxShield > shield && Time.time - lastHitTime > ShieldRechargeTime)
-		{
+	public void rechargeShield() {
+		if(stats.maxShields > shield && Time.time - lastHitTime > stats.shieldRechargeDelay) {
 			shield++;
 			lastHitTime = Time.time;	// Just set this to now so it resets recharge cooldown
-			if(shieldObject != null)
-			{
+			if(shieldObject != null) {
 				shieldObject.Reform();
 			}
 		}

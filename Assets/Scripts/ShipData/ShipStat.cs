@@ -14,6 +14,10 @@ public class ShipStat {
 		}
 	}
 
+	public static implicit operator float(ShipStat stat) {
+		return stat.value;
+	}
+
 }
 
 public class ShipStatCollection<T> {

@@ -40,7 +40,7 @@ public class PlayerController : MonoBehaviour {
 		// float moveSpeed = PlayerData.player.MoveSpeed;
 		// entity.body.AddForce(input * moveSpeed, ForceMode.Acceleration);
 		if(Input.GetButton("Fire1")) {
-			float moveSpeed = PlayerData.player.MoveSpeed;
+			float moveSpeed = PlayerData.player.stats.moveSpeed;
 			entity.body.AddForce(transform.forward * moveSpeed, ForceMode.Acceleration);
 		}
 		if(Input.GetButton("Fire2")) {

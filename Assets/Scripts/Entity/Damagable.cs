@@ -12,12 +12,12 @@ public class Damagable : MonoBehaviour
 	void Awake()
 	{
 		ship = GetComponent<ShipData>();
-		lastHitTime = -ship.damageRecoveryTime;
+		lastHitTime = -ship.stats.recoveryDelay;
 	}
 
-	public void damage(int dam)
+	public void damage(float dam)
 	{
-		if ((Time.time - lastHitTime) > ship.damageRecoveryTime) {
+		if ((Time.time - lastHitTime) > ship.stats.recoveryDelay) {
 			lastHitTime = Time.time;
 			ship.dealDamage(dam);
 			if(ship.hp <= 0)

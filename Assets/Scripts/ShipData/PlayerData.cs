@@ -86,35 +86,6 @@ public class PlayerData : ShipData
     public static int NumDamUpgrades { get { return numDamUpgrades; } }
     public static int NumStunUpgrades { get { return numStunUpgrades; } }
 
-	new public float MoveSpeed
-	{
-		get{ return moveSpeed + (moveSpeedUpgradeAmount * numMoveSpeedUpgrades); }
-	}
-	public override int MaxHP
-	{
-		get{ return base.MaxHP + (hpUpgradeAmount * numHPUpgrades); }
-	}
-	public override int MaxShield
-	{
-		get{ return base.MaxShield + (shieldUpgradeAmount * numShieldUpgrades); }
-	}
-	public override float ShieldRechargeTime
-	{
-		get{ return base.ShieldRechargeTime - (shieldRechargeUpgradeAmount * numShieldRechargeUpgrades); }
-	}
-	public override float RateOfFire
-	{
-		get{ return (base.RateOfFire - (rofUpgradeAmount * numROFUpgrades) * (HasGunUpgrade ? gunUpgradeROFPenalty : 1)); }
-	}
-	public override int Damage
-	{
-		get{ return base.Damage + (damUpgradeAmount * numDamUpgrades); }
-	}
-	public override float StunTime
-	{
-		get{ return base.StunTime + (stunUpgradeAmount * numStunUpgrades); }
-	}
-
     public static float MoveSpeedUpgradeAmount { get { return moveSpeedUpgradeAmount; } }
     public static int HpUpgradeAmount { get { return hpUpgradeAmount; } }
     public static int ShieldUpgradeAmount { get { return shieldUpgradeAmount; } }
@@ -143,7 +114,7 @@ public class PlayerData : ShipData
 	}
 	public void heal()
 	{
-		hp = MaxHP;
+		hp = stats.maxHealth;
 	}
 	public static void rofUpgrade()
 	{
@@ -190,7 +161,7 @@ public class PlayerData : ShipData
 		godMode = !godMode;
 	}
 
-	public override void dealDamage(int amt)
+	public override void dealDamage(float amt)
 	{
 		base.dealDamage(amt);
 		if(godMode && hp <= 0)
@@ -204,7 +175,7 @@ public class PlayerData : ShipData
 	}
 
 	void OnDamageTaken(int damage) {
-		ScreenFlash.instance.Flash(damageFlashColor, damageRecoveryTime);
+		ScreenFlash.instance.Flash(damageFlashColor, stats.recoveryDelay);
 	}
 
 	void OnPlanetEnd() {

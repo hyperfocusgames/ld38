@@ -7,7 +7,7 @@ public class Shotgun : Gun
 	protected const int numShots = 5;
 	protected const float timeout = 1f;
 	protected const float angleRange = 20f;
-	public override void activate(GameObject projectile, float speed, int damage, bool damPlayer, bool damEnemy)
+	public override void activate(GameObject projectile, float speed, float damage, bool damPlayer, bool damEnemy)
 	{
 		for(int i = 0; i < numShots; i++)
 		{

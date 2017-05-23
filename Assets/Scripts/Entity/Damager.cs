@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Damager : MonoBehaviour
 {
-	public int damage = 1;
+	public float damage = 1;
 	public bool damPlayer = true;
 	public bool damEnemy = false;
 	public AnimationCurve distanceFallOff = AnimationCurve.Linear(0, 1, 1, 1);

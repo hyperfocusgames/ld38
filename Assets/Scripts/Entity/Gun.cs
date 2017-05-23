@@ -10,7 +10,7 @@ public class Gun : MonoBehaviour
 		parentEntity = GetComponentInParent<SurfaceEntity>();
 	}
 
-	public virtual void activate(GameObject projectile, float speed, int damage, bool damPlayer, bool damEnemy)
+	public virtual void activate(GameObject projectile, float speed, float damage, bool damPlayer, bool damEnemy)
 	{
 		//Debug.Log(projectile.name);
 		GameObject go = Instantiate(projectile, transform.position, transform.rotation);

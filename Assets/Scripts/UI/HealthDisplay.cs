@@ -48,7 +48,7 @@ public class HealthDisplay : MonoBehaviour {
 			camera.orthographicSize - margin,
 			camera.farClipPlane / 2
 		);
-		health = PlayerData.player.hp;
+		health = (int) PlayerData.player.hp;
 	}
 
 }
