@@ -13,7 +13,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   statModifiers:
     moveSpeed:
-      active: 0
+      active: 1
       increment: 0
     maxHealth:
       active: 0
@@ -31,5 +31,5 @@ MonoBehaviour:
       active: 0
       increment: 0
     fireDelay:
-      active: 0
+      active: 1
       increment: 0
